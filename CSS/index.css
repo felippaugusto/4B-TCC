@@ -1,0 +1,128 @@
+/* start globals */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.3s all;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* end globals */
+
+/* start utils */
+.displayFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* end utils */
+
+/* start header */
+/* start header left */
+#header {
+    width: 100vw;
+    height: 20vh;
+    padding: 2rem;
+    justify-content: space-between;
+    background-color: #171718;
+}
+
+#img-logo {
+    height: 13rem;
+    width: 13rem;
+}
+
+#text-logo-left {
+    font-size: 4rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-left: -1rem;
+    color: #fff;
+    cursor: pointer;
+}
+/* ends header left */
+
+/* start header right */
+.header-right {
+    gap: 3rem;
+}
+
+#loginOrSignUp {
+    gap: 1rem;
+}
+
+#loginOrSignUp p {
+    font-size: 2rem;
+    color: #01b92f;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;;
+}
+
+#loginOrSignUp p:hover {
+    text-decoration: underline;
+}
+
+#user-header {
+    height: 3rem;
+}
+
+#theme-white-or-dark {
+    background-color: #fff;
+    padding: 0.4rem;
+    border-radius: 2rem;
+    width: 12rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    gap: 2rem;
+}
+
+#theme-white-or-dark::after {
+    content: "";
+    width: 38%;
+    height: 90%;
+    background-color: #171718;
+    position: absolute;
+    left: 5%;
+    border-radius: 100%;
+    transition: 0.3s left;
+}
+
+#theme-white-or-dark.active::after {
+    left: 55%;
+}
+
+.img-theme {
+    height: 4rem;
+    width: 4rem;
+}
+
+#carrinho {
+    padding: 1.5rem 1.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: rgb(6, 211, 6);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+#carrinho:hover {
+    padding: 1.7rem;
+}
+
+#carrinho p {
+    color: #fff;
+}
+
+#shopping-cart-img {
+    height: 3rem;
+}
+/* end header right */
+/* end header */
