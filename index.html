@@ -9,10 +9,10 @@
     <link rel="shortcut icon" href="IMAGES/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
-    <header id="header" class="displayFlex">
+    <header class="displayFlex header">
         <div class="header-left displayFlex">
-            <img src="IMAGES/header/graphic-card-3.png" alt="video-card-logo" id="img-logo">
-            <div id="text-logo-left">
+            <img src="IMAGES/header/video-card-image/graphic-card-3.png" alt="video-card-logo" id="img-logo">
+            <div class="text-logo-header">
                 <p>Assembly</p>
                 <p>Tech</p>
             </div>
@@ -21,13 +21,15 @@
         <div class="header-right displayFlex">
             <div id="loginOrSignUp" class="displayFlex">
                 <img src="IMAGES/header/user.png" alt="" id="user-header">
-                <p>Entrar \ Cadastrar</p>
+                <p class="loginOrSignUpText">Entrar \ Cadastrar</p>
             </div>
+
             <div id="theme-white-or-dark"
             class="displayFlex">
-                <img src="IMAGES/theme-white-and-dark/sun.png" alt="sun" class="img-theme sun">
-                <img src="IMAGES/theme-white-and-dark/moon.png" alt="moon" class="img-theme moon">
+                <img src="IMAGES/header/theme-white-and-dark/sun.png" alt="sun" class="img-theme sun">
+                <img src="IMAGES/header/theme-white-and-dark/moon.png" alt="moon" class="img-theme moon">
             </div>
+
             <button id="carrinho" class="displayFlex">
                 <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <p>Carrinho</p>
@@ -35,9 +37,51 @@
         </div>
     </header>
 
-    <main></main>
+    <main>
+        <div class="containerIntelAndAmd displayFlex">
+            <div class="containerIntel displayFlex" onmouseover="toggleBtnIntelAmd.intelActive()" onmouseout="toggleBtnIntelAmd.intelDesactive()">
+                <p class="intel">INTEL</p>
+            </div>
+    
+            <div class="containerAmd displayFlex" onmouseover="toggleBtnIntelAmd.amdActive()" onmouseout="toggleBtnIntelAmd.amdDesactive()">
+                <img src="IMAGES/main/ryzen-amd-logo.png" alt="image-logo-ryzen" class="imgLogoRyzen">
+            </div>
+        </div>
 
-    <footer></footer>
+        <div class="selectAmdOrIntel displayFlex">
+            <button class="selectIntel btnSelectIntel">Selecionar</button>
+            <button class="selectAmd btnSelectAmd">Selecionar</button>
+        </div>
+    </main>
+
+
+    <div class="social-medias displayFlex">
+        <a href="https://www.youtube.com" target="_blank"><img src="IMAGES/footer/youtube.png" alt="youtube" id="youtube"></a>
+        
+        <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/footer/instagram.png" alt="instagram" id="instagram"></a>
+
+        <a href="www.facebook.com/" target="_blank"><img src="IMAGES/footer/facebook.png" alt="facebook" id="facebook"></a>
+
+        <a href="twitter.com/" target="_blank"><img src="IMAGES/footer/twitter.png" alt="twitter" id="twitter"></a>
+
+        <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
+    </div>
+
+    <footer class="displayFlex footer">
+        <div class="container-logo-footer displayFlex">
+            <img src="IMAGES/header/video-card-image/graphic-card-3.png" alt="" class="footerImg">
+            <p class="logo-footer">Assembly Tech</p>
+        </div>
+
+        <div class="footer-text">
+            <p>Assembly Tech e varejo de produtos voltados a informática</p>
+            <p id="address-footer">Cascavel-PR</p>
+        </div>
+
+        <div class="footer-text-2">
+            <p>Somos um E-commerce - não temos atendimento disponível presencialmente</p>
+        </div>
+    </footer>
     <script src="JS/index.js"></script>
 </body>
 </html>

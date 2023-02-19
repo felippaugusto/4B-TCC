@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    transition: 0.3s all;
+    transition: 0.2s all;
 }
 
 html {
@@ -22,7 +22,7 @@ html {
 
 /* start header */
 /* start header left */
-#header {
+.header {
     width: 100vw;
     height: 20vh;
     padding: 2rem;
@@ -30,12 +30,16 @@ html {
     background-color: #171718;
 }
 
+.header.active {
+    background-color: rgb(180, 179, 179);
+}
+
 #img-logo {
     height: 13rem;
     width: 13rem;
 }
 
-#text-logo-left {
+.text-logo-header {
     font-size: 4rem;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -44,6 +48,10 @@ html {
     color: #fff;
     cursor: pointer;
 }
+
+.text-logo-header.active {
+    color: #171718;
+}
 /* ends header left */
 
 /* start header right */
@@ -51,15 +59,16 @@ html {
     gap: 3rem;
 }
 
-#loginOrSignUp {
-    gap: 1rem;
-}
-
 #loginOrSignUp p {
     font-size: 2rem;
     color: #01b92f;
     font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#loginOrSignUp p.active {
+    color: #000;
 }
 
 #loginOrSignUp p:hover {
@@ -81,6 +90,10 @@ html {
     gap: 2rem;
 }
 
+#theme-white-or-dark.active {
+    background-color: #171718;
+}
+
 #theme-white-or-dark::after {
     content: "";
     width: 38%;
@@ -94,6 +107,7 @@ html {
 
 #theme-white-or-dark.active::after {
     left: 55%;
+    background-color: #fff;
 }
 
 .img-theme {
@@ -115,6 +129,7 @@ html {
 
 #carrinho:hover {
     padding: 1.7rem;
+    background-color: rgb(0, 161, 0);
 }
 
 #carrinho p {
@@ -126,3 +141,106 @@ html {
 }
 /* end header right */
 /* end header */
+
+/* start main */
+.containerIntel, .containerAmd {
+    height: 50vh;
+    width: 50vw;
+}
+
+.containerIntel {
+    background-image: linear-gradient(to bottom right ,rgb(0, 0, 114), rgb(0, 0, 148), rgb(0, 0, 255));
+    cursor: pointer;
+}
+
+.containerAmd {
+    background-image: linear-gradient(to bottom right ,rgb(71, 0, 0), rgb(126, 0, 0),  rgb(255, 0, 0));
+    cursor: pointer;
+}
+
+.imgLogoRyzen {
+    height: 30rem;
+}
+
+p.intel {
+	display: inline-block;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(to bottom right ,rgba(129, 129, 129, 0.699), rgb(204, 204, 221), rgba(212, 212, 233, 0.459));
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+    font-size: 10rem;
+}
+
+.btnSelectIntel, .btnSelectAmd {
+    width: 50vw;
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    background-color: #01e63a;
+    border: none;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.btnSelectIntel.active, .btnSelectAmd.active {
+    visibility: visible;
+    opacity: 1;
+}
+/* end main */
+
+/* start footer */
+.footer {
+    background-color: #171718;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 5rem;
+    padding: 3rem;
+}
+
+.social-medias {
+    background: linear-gradient(to top right ,rgb(59, 0, 59),rgb(117, 0, 117) , rgb(141, 0, 141));
+    height: 8vh;
+    gap: 2rem;
+}
+
+.social-medias.active {
+    background: linear-gradient(rgb(233, 233, 233), rgb(233, 233, 233));
+}
+
+.social-medias img {
+    height: 5rem;
+    cursor: pointer;
+}
+
+.social-medias img:hover {
+    height: 6rem;
+}
+
+.footer.active {
+    background-color: rgb(180, 179, 179);
+    color: #000;
+}
+
+.container-logo-footer p {
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+
+.footerImg {
+    height: 8rem;
+    transform: rotate(45deg);
+    margin-right: 2rem;
+}
+
+#address-footer {
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+/* end footer */
