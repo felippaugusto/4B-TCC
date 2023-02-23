@@ -12,7 +12,6 @@ const containerIntel = document.querySelector(".containerIntel");
 const containerAmd = document.querySelector(".containerAmd");
 const selectIntel = document.querySelector(".btnSelectIntel");
 const selectAmd = document.querySelector(".btnSelectAmd");
-const selectAmdOrIntel = document.querySelector(".selectAmdOrIntel");
 
 // theme white or dark
 themeWhiteDark.addEventListener("click", function() {

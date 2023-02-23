@@ -6,16 +6,27 @@
     transition: 0.2s all;
 }
 
+@font-face {
+    font-family: poppins-semiBold;
+    src: url("../FONTS/Poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: poppins-extraLight;
+    src: url("../FONTS/Poppins/Poppins-ExtraLight.ttf");
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
-    background-color: #171718;
+    /* background-color: #171718; */
+    background: linear-gradient(to bottom right ,rgb(50, 0, 50), rgb(31, 1, 70));
 }
 
 body.active {
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
 /* end globals */
@@ -35,11 +46,12 @@ body.active {
     height: 20vh;
     padding: 2rem;
     justify-content: space-between;
-    background-color: #171718;
+    background: linear-gradient(to bottom right ,rgb(50, 0, 50), rgb(31, 1, 70));
+    /* background: linear-gradient(to bottom right, #0a0a0a, #242425, #1f1f20); */
 }
 
 .header.active {
-    background-color: rgb(180, 179, 179);
+    background: linear-gradient(rgb(180, 179, 179), rgb(180, 179, 179));
 }
 
 #img-logo {
@@ -68,11 +80,12 @@ body.active {
 }
 
 #loginOrSignUp p {
-    font-size: 2rem;
-    color: #01b92f;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    background: #009225;
+    font-family: poppins-semiBold;
     cursor: pointer;
-    font-weight: 600;
+    padding: 1rem 1.4rem;
+    border-radius: 0.5rem;
 }
 
 #loginOrSignUp p.active {
@@ -80,15 +93,16 @@ body.active {
 }
 
 #loginOrSignUp p:hover {
-    text-decoration: underline;
+    background: rgb(190, 29, 0);
+    padding: 1.3rem;
 }
 
-#user-header {
+/* #user-header {
     height: 3rem;
-}
+} */
 
 #theme-white-or-dark {
-    background-color: #fff;
+    background-color: #adadad;
     padding: 0.4rem;
     border-radius: 2rem;
     width: 12rem;
@@ -99,7 +113,7 @@ body.active {
 }
 
 #theme-white-or-dark.active {
-    background-color: #171718;
+    background-color: #242425;
 }
 
 #theme-white-or-dark::after {
@@ -124,28 +138,38 @@ body.active {
 }
 
 #carrinho {
-    padding: 1.5rem 1.5rem;
+    padding: 0.8rem 2rem;
     border: none;
     border-radius: 0.4rem;
-    background-color: rgb(6, 211, 6);
+    background-color: rgb(0, 143, 0);
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     cursor: pointer;
-    gap: 1rem;
 }
 
 #carrinho:hover {
-    padding: 1.7rem;
-    background-color: rgb(0, 161, 0);
+    background-color: rgb(0, 184, 0);
 }
 
 #carrinho p {
     color: #fff;
 }
 
+#carrinho .shopping-cart-text div p {
+    margin-left: 1.2rem;
+}
+
+#carrinho .shopping-cart-text div img {
+    margin-left: 0.4rem;
+}
+
+#down-arrow-shopping-cart {
+    height: 4rem;
+}
+
 #shopping-cart-img {
-    height: 3rem;
+    height: 6rem;
 }
 /* end header right */
 /* end header */
@@ -157,12 +181,12 @@ body.active {
 }
 
 .containerIntel {
-    background-image: linear-gradient(to bottom right ,rgb(0, 0, 114), rgb(0, 0, 148), rgb(0, 0, 255));
+    background: linear-gradient(to bottom right ,rgb(0, 0, 40),rgb(0, 0, 112), rgb(0, 0, 223));
     cursor: pointer;
 }
 
 .containerAmd {
-    background-image: linear-gradient(to bottom right ,rgb(71, 0, 0), rgb(126, 0, 0),  rgb(255, 0, 0));
+    background-image: linear-gradient(to bottom right ,rgb(40, 0, 0), rgb(110, 0, 0),  rgb(230, 0, 0));
     cursor: pointer;
 }
 
@@ -183,12 +207,11 @@ p.intel {
 
 .btnSelectIntel, .btnSelectAmd {
     width: 50vw;
-    padding: 1.5rem;
-    font-size: 2.5rem;
+    padding: 1.1rem;
+    font-size: 3rem;
     background-color: #01e63a;
     border: none;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: poppins-semiBold;
     text-transform: uppercase;
     visibility: hidden;
     opacity: 0;
@@ -201,9 +224,10 @@ p.intel {
 }
 
 .hardware-showcase {
-    background-color: #171718;
+    /* background-color: #171718; */
     width: 100vw;
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .hardware-showcase.active {
@@ -216,17 +240,19 @@ p.intel {
 }
 
 .column-products {
-    background-color: #3c3c3d;
+    /* background-color: #3c3c3d; */
+    background: linear-gradient(rgb(35, 0, 100), rgb(90, 1, 90));
     flex-direction: column;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     padding: 2rem 4rem;
     gap: 2rem;
     cursor: pointer;
+    border-radius: 0.4rem;
 }
 
 .column-products.active {
-    background-color: rgb(180, 179, 179);
+    background: linear-gradient(rgb(180, 179, 179), rgb(180, 179, 179));
 }
 
 .hardware-image {
@@ -244,9 +270,24 @@ p.intel {
     color: #01e63a;
 }
 
-.add-cart {
-    border: 1px solid red;
+.container-product .add-cart {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 2.5rem;
+    background-color: #01e63a;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: poppins-semiBold;
+    visibility: hidden;
+    opacity: 0;
 }
+
+.container-product:hover .add-cart {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* end main */
 
 /* start footer */
@@ -262,7 +303,8 @@ p.intel {
 }
 
 .social-medias {
-    background: linear-gradient(to top right ,rgb(59, 0, 59),rgb(117, 0, 117) , rgb(141, 0, 141));
+    /* background: linear-gradient(to top right ,rgb(59, 0, 59),rgb(117, 0, 117) , rgb(141, 0, 141)); */
+    background: linear-gradient(to top right ,rgb(102, 0, 63), rgb(13, 0, 128));
     height: 8vh;
     gap: 2rem;
 }
@@ -288,6 +330,13 @@ p.intel {
 .container-logo-footer p {
     text-transform: uppercase;
     font-size: 5rem;
+    font-family: poppins-semibold;
+}
+
+.footer-text {
+    font-family: poppins-extraLight;
+    font-size: 3rem;
+    font-weight: 500;
 }
 
 .footerImg {
@@ -298,6 +347,6 @@ p.intel {
 
 #address-footer {
     text-transform: uppercase;
-    letter-spacing: 0.3rem;
+    font-weight: 800;
 }
 /* end footer */
