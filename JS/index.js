@@ -25,7 +25,6 @@ themeWhiteDark.addEventListener("click", function() {
     })
 
     hardwareShowcase.classList.toggle("active");
-    footer.classList.toggle("active");
     socialMedias.classList.toggle("active");
     loginOrSignUpText.classList.toggle("active");
 })
