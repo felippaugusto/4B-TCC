@@ -12,6 +12,7 @@ const containerIntel = document.querySelector(".containerIntel");
 const containerAmd = document.querySelector(".containerAmd");
 const selectIntel = document.querySelector(".btnSelectIntel");
 const selectAmd = document.querySelector(".btnSelectAmd");
+const goToHeader = document.querySelector(".goToHeader");
 
 // theme white or dark
 themeWhiteDark.addEventListener("click", function() {
@@ -26,7 +27,7 @@ themeWhiteDark.addEventListener("click", function() {
 
     hardwareShowcase.classList.toggle("active");
     socialMedias.classList.toggle("active");
-    loginOrSignUpText.classList.toggle("active");
+    goToHeader.classList.toggle("activeThemeWhite");
 })
 
 // animation choose intel or amd
@@ -71,3 +72,12 @@ const toggleBtnIntelAmd = {
         })
     }
 }
+
+window.addEventListener("scroll", () => {
+    if(document.documentElement.scrollTop > 200) {
+        goToHeader.classList.add("active");
+    }
+    else {
+        goToHeader.classList.remove("active");
+    }
+})

@@ -18,6 +18,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -37,6 +38,43 @@ body.active {
     align-items: center;
 }
 /* end utils */
+
+/* start site navegation */
+.goToHeader {
+    position: fixed;
+    bottom: 5%;
+    left: 1%;
+    text-decoration: none;
+    color: #fff;
+    font-family: poppins-semiBold;
+    font-weight: 700;
+    border-radius: 0.4rem;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.goToHeader.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.goToHeader.activeThemeWhite {
+    background: rgb(255, 0, 0);
+}
+
+.goToHeader img {
+    height: 6rem;
+}
+
+.goToHeader img:hover {
+    animation-name: btnNavegationWebsite;
+    animation-iteration-count: infinite;
+    animation-duration: 0.7s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+}
+/* end site navegation */
 
 /* start header */
 /* start header left */
@@ -361,3 +399,15 @@ p.intel {
     font-weight: 800;
 }
 /* end footer */
+
+/* start animations */
+@keyframes btnNavegationWebsite {
+    0% {
+        height: 6rem;
+    }
+
+    50% {
+        height: 6.5rem;
+    }
+}
+/* end animations */
