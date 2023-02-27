@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
+    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/login.css">
     <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
 </head>
-<body>
-    <h1>Login de clientes</h1>
+<body class="displayFlex">
+    <div class="container-login displayFlex">
+        <div class="container-text">
+            <p>Assembly Tech</p>
+            <h1>Faça login em sua conta</h1>
+        </div>
+
+        <div class="container-form displayFlex">
+            <form action="" class="displayFlex">
+                <div class="container-email displayFlex">
+                    <label for="email"><img src="IMAGES/form-login/email.png" alt=""></label>
+                    <input type="email" name="email" id="email" autocomplete="on" placeholder="Digite seu email aqui" required minlength="11">
+                </div>
+
+                <div class="container-password displayFlex">
+                    <label for="password"><img src="IMAGES/form-login/padlock.png" alt=""></label>
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha aqui" required minlength="8">
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <a href="register.html" id="register">Não tem uma conta? <span>Registre-se</span></a>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,37 @@
+/* start globals */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.2s all;
+}
+
+@font-face {
+    font-family: poppins-semiBold;
+    src: url("../FONTS/Poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: poppins-extraLight;
+    src: url("../FONTS/Poppins/Poppins-ExtraLight.ttf");
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* start utils */
+.displayFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* end utils */
+
+body {
+    background: linear-gradient(to bottom right ,rgb(50, 0, 50), rgb(31, 1, 70));
+    width: 100vw;
+    height: 100vh;
+}
+/* end globals */
