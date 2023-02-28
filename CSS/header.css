@@ -1,0 +1,142 @@
+/* start header */
+/* start header left */
+.header {
+    width: 100vw;
+    height: 20vh;
+    padding: 2rem;
+    justify-content: space-between;
+    background: linear-gradient(to bottom right ,rgb(50, 0, 50), rgb(31, 1, 70));
+}
+
+.header.active {
+    background: linear-gradient(rgb(180, 179, 179), rgb(180, 179, 179));
+}
+
+.text-logo-header {
+    font-size: 5rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.text-logo-header.active {
+    color: #171718;
+}
+/* ends header left */
+
+/* start header right */
+.header-right {
+    gap: 3rem;
+}
+
+#loginOrSignUp {
+    background: #009225;
+    border-radius: 0.5rem;
+    padding: 1rem 1.4rem;
+    cursor: pointer;
+}
+
+#user-header {
+    height: 3rem;
+}
+
+#loginOrSignUp a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+    font-family: poppins-semiBold;
+}
+
+#loginOrSignUp p.active {
+    color: #000;
+}
+
+#loginOrSignUp:hover {
+    background: rgb(190, 29, 0);
+    padding: 1.3rem 1.5rem;
+}
+
+#theme-white-or-dark {
+    background: #222;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 1),
+                inset 0 8px 8px rgba(0, 0, 0, 1),
+                inset 0 -4px 4px rgba(0, 0, 0, 1);
+    padding: 0.4rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    position: relative;
+    gap: 2rem;
+    height: 6rem;
+    width: 12rem;
+}
+
+#theme-white-or-dark::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    transform: scale(0.9);
+    background: linear-gradient(to bottom, #444, #222);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+                inset 0 4px 4px rgba(255, 255, 255, 0.1),
+                inset 0 -4px 4px rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    transition: 0.3s left;
+}
+
+#theme-white-or-dark.active {
+    background-color: #fff;
+    box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.3),
+                inset 0 2px 8px rgba(0, 0, 0, 0.3),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#theme-white-or-dark.active::after {
+    left: 49.5%;
+    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
+                inset 0 4px 4px rgba(255, 255, 255, 0.4),
+                inset 0 -4px 4px rgba(255, 255, 255, 0.4);
+}
+
+#carrinho {
+    padding: 0.3rem 2rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: rgb(0, 143, 0);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#carrinho:hover {
+    background-color: rgb(0, 184, 0);
+}
+
+#carrinho p {
+    color: #fff;
+}
+
+#carrinho .shopping-cart-text div p {
+    margin-left: 1.2rem;
+}
+
+#carrinho .shopping-cart-text div img {
+    margin-left: 0.4rem;
+}
+
+#down-arrow-shopping-cart {
+    height: 4rem;
+}
+
+#shopping-cart-img {
+    height: 5rem;
+}
+/* end header right */
+/* end header */

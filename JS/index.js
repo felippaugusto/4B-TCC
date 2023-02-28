@@ -1,83 +1,82 @@
 // variables globals
-const body = document.querySelector("body");
-const header = document.querySelector(".header");
-const loginOrSignUpText = document.querySelector("#loginOrSignUp p")
-const themeWhiteDark = document.querySelector("#theme-white-or-dark");
-const hardwareShowcase = document.querySelector(".hardware-showcase");
-const columnProducts = document.querySelectorAll(".column-products");
-const socialMedias = document.querySelector(".social-medias");
-const footer = document.querySelector(".footer")
-const textLogoHeader = document.querySelector(".text-logo-header");
-const containerIntel = document.querySelector(".containerIntel");
-const containerAmd = document.querySelector(".containerAmd");
-const selectIntel = document.querySelector(".btnSelectIntel");
-const selectAmd = document.querySelector(".btnSelectAmd");
-const goToHeader = document.querySelector(".goToHeader");
+const body = $("body");
+const header = $(".header");
+const loginOrSignUpText = $("#loginOrSignUp p")
+const themeWhiteDark = $("#theme-white-or-dark");
+const hardwareShowcase = $(".hardware-showcase");
+const containerProduct = $(".container-product")
+const columnProducts = $(".column-products");
+const socialMedias = $(".social-medias");
+const footer = $(".footer")
+const textLogoHeader = $(".text-logo-header");
+const containerIntel = $(".containerIntel");
+const containerAmd = $(".containerAmd");
+const selectIntel = $(".btnSelectIntel");
+const selectAmd = $(".btnSelectAmd");
+const goToHeader = $(".goToHeader");
 
 // theme white or dark
-themeWhiteDark.addEventListener("click", function() {
-    body.classList.toggle("active");
-    themeWhiteDark.classList.toggle("active");
-    header.classList.toggle("active");
-    textLogoHeader.classList.toggle("active");
+themeWhiteDark.click(() => {
+    body.toggleClass("active");
+    themeWhiteDark.toggleClass("active");
+    header.toggleClass("active");
+    textLogoHeader.toggleClass("active");
 
-    columnProducts.forEach(itens => {
-        itens.classList.toggle("active");
-    })
+    containerProduct.find(".column-products").toggleClass("active");
 
-    hardwareShowcase.classList.toggle("active");
-    socialMedias.classList.toggle("active");
-    goToHeader.classList.toggle("activeThemeWhite");
+    hardwareShowcase.toggleClass("active");
+    socialMedias.toggleClass("active");
+    goToHeader.toggleClass("activeThemeWhite");
 })
 
 // animation choose intel or amd
 const toggleBtnIntelAmd = {
     intelActive() {
-            containerIntel.addEventListener("mouseover", function() {
-            selectIntel.classList.add("active");
-        })
+            containerIntel.mouseover(() => {
+                selectIntel.addClass("active");
+            })
 
-        selectIntel.addEventListener("mouseover", function() {
-            selectIntel.classList.add("active");
-        })
+            selectIntel.mouseover(() => {
+                selectIntel.addClass("active");
+            })
     },
 
     intelDesactive() {;
-            containerIntel.addEventListener("mouseout", function() {
-            selectIntel.classList.remove("active");
+        containerIntel.mouseout(() => {
+            selectIntel.removeClass("active");
         })
 
-        selectIntel.addEventListener("mouseout", function() {
-            selectIntel.classList.remove("active");
+        selectIntel.mouseout(() => {
+            selectIntel.removeClass("active");
         })
     },
 
     amdActive() {
-            containerAmd.addEventListener("mouseover", function() {
-            selectAmd.classList.add("active");
+        containerAmd.mouseover(() => {
+            selectAmd.addClass("active");
         })
 
-        selectAmd.addEventListener("mouseover", function() {
-            selectAmd.classList.add("active");
+        selectAmd.mouseover(() => {
+            selectAmd.addClass("active");
         })
     },
 
     amdDesactive() {
-            containerAmd.addEventListener("mouseout", function() {
-            selectAmd.classList.remove("active");
+        containerAmd.mouseout(() => {
+            selectAmd.removeClass("active");
         })
 
-        selectAmd.addEventListener("mouseout", function() {
-            selectAmd.classList.remove("active");
+        selectAmd.mouseout(() => {
+            selectAmd.removeClass("active");
         })
     }
 }
 
 window.addEventListener("scroll", () => {
     if(document.documentElement.scrollTop > 200) {
-        goToHeader.classList.add("active");
+        goToHeader.addClass("active");
     }
     else {
-        goToHeader.classList.remove("active");
+        goToHeader.removeClass("active");
     }
 })

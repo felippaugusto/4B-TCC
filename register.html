@@ -4,9 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assembly Tech | E-commerce de periféricos e hardware</title>
+    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/register.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
-    <h1>register here!!!</h1>
+    <!-- header structure -->
+    <!-- header left -->
+    <header class="displayFlex header" id="header">
+        <a href="index.html" class="text-logo-header displayFlex">
+            <p>Assembly</p>
+            <p>Tech</p>
+        </a>
+
+        <!-- header right -->
+        <div class="header-right displayFlex">
+
+            <div id="theme-white-or-dark"
+            class="displayFlex">
+            
+            </div>
+
+            <button id="carrinho" class="displayFlex">
+                <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
+                <div class="shopping-cart-text">
+                    <div class="displayFlex">
+                        <p>Carrinho</p>
+                        <img src="IMAGES/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
+                    </div>
+                    <p id="product-entry">Produtos: 0</p>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <div class="container-login displayFlex">
+        <div class="container-text">
+            <p>Assembly Tech</p>
+            <h1>Cadastre sua conta</h1>
+        </div>
+
+        <div class="container-form displayFlex">
+            <form action="" class="displayFlex">
+                <input type="text" name="name" id="name" autocomplete="off" placeholder="Digite seu nome aqui" required title="Seu nome por favor">
+
+                <input type="email" name="email" id="email" autocomplete="off" placeholder="Digite seu email aqui" required minlength="11"title="Seu email por favor">
+
+                <input type="password" name="password" id="password" autocomplete="off" placeholder="Digite sua senha aqui" required minlength="8" title="Sua senha por favor">
+
+                <button type="submit">Cadastrar-se</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- social medias -->
+    <div class="social-medias displayFlex">
+        <a href="https://www.youtube.com" target="_blank"><img src="IMAGES/footer/youtube.png" alt="youtube" id="youtube"></a>
+        
+        <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/footer/instagram.png" alt="instagram" id="instagram"></a>
+
+        <a href="www.facebook.com/" target="_blank"><img src="IMAGES/footer/facebook.png" alt="facebook" id="facebook"></a>
+
+        <a href="twitter.com/" target="_blank"><img src="IMAGES/footer/twitter.png" alt="twitter" id="twitter"></a>
+
+        <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
+    </div>
+
+    <div class="backToThePreviousPage">
+        <p>Voltar</p>
+    </div>
+
+    <!-- button to navegate to header -->
+    <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>
+
+    <!-- footer -->
+    <footer class="displayFlex footer">
+        <div class="container-logo-footer displayFlex">
+            <img src="IMAGES/header/video-card-image/graphic-card-4.png" alt="" class="footerImg">
+            <p class="logo-footer">Assembly Tech</p>
+        </div>
+
+        <div class="footer-text">
+            <p>Assembly Tech e varejo de produtos voltados a informática</p>
+            <p id="address-footer">Cascavel-PR</p>
+        </div>
+
+        <div class="footer-text">
+            <p>Somos um E-commerce - não temos atendimento disponível presencialmente</p>
+        </div>
+    </footer>
+
+    <script src="JS/jquery.js"></script>
+    <script src="JS/login.js"></script>
 </body>
 </html>
