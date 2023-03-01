@@ -49,12 +49,25 @@
 
         <div class="container-form displayFlex">
             <form action="" class="displayFlex">
-                <input type="text" name="name" id="name" autocomplete="off" placeholder="Digite seu nome aqui" required title="Seu nome por favor">
+                <div class="displayFlex">
+                    <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome">
+                    <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Sobrenome" required title="Seu nome">
+                </div>
 
-                <input type="email" name="email" id="email" autocomplete="off" placeholder="Digite seu email aqui" required minlength="11"title="Seu email por favor">
+                <div class="displayFlex">
+                    <input type="text" name="cpf" id="cpf" autocomplete="off" placeholder="CPF" required title="Seu CPF" minlength="11" maxlength="11">
+                    <input type="text" name="date" id="date" placeholder="Data de nascimento" required title="Sua data de nascimento">
+                </div>
 
-                <input type="password" name="password" id="password" autocomplete="off" placeholder="Digite sua senha aqui" required minlength="8" title="Sua senha por favor">
-
+                <div class="displayFlex">
+                    <input type="tel" name="telephone" id="telephone" placeholder="Telefone" required title="Seu telefone">
+                    <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11"title="Seu email por favor">
+                </div>
+                
+                <div class="displayFlex">
+                    <input type="password" name="password" id="password" autocomplete="off" placeholder="Digite sua senha" required minlength="8" title="Sua senha por favor">
+                    <input type="password" name="password" id="password" autocomplete="off" placeholder="Confirme sua senha" required minlength="8" title="Sua senha por favor">
+                </div>
                 <button type="submit">Cadastrar-se</button>
             </form>
         </div>
@@ -73,9 +86,7 @@
         <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
     </div>
 
-    <div class="backToThePreviousPage">
-        <p>Voltar</p>
-    </div>
+    <a href="login.html" class="backToThePreviousPage">Voltar</a>
 
     <!-- button to navegate to header -->
     <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>
@@ -98,6 +109,6 @@
     </footer>
 
     <script src="JS/jquery.js"></script>
-    <script src="JS/login.js"></script>
+    <script src="JS/login-register.js"></script>
 </body>
 </html>

@@ -8,7 +8,6 @@ body {
     padding: 5rem;
     gap: 7rem;
     height: 70vh;
-    border: 1px solid red;
 }
 
 .container-login.active {
@@ -40,8 +39,8 @@ body {
     background: rgb(2,0,36);
     background: linear-gradient(to bottom, rgba(2,0,36,1) 20%, rgba(0,0,124,1) 150%, rgba(0,9,119,1) 20%);
     padding: 3rem;
-    width: 50%;
-    height: 90%;
+    height: 80%;
+    width: 60rem;
     flex-direction: column;
     gap: 2rem;
     border-radius: 2rem;
@@ -56,30 +55,15 @@ body {
     flex-direction: column;
     gap: 3rem;
     width: 100%;
-    align-items: start;
 }
 
-.container-email label img, .container-password label img {
-    height: 2rem;
-}
-
-.container-email, .container-password {
-    width: 100%;
-    justify-content: start;
-    padding: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
-    5px 5px 15px rgba(0, 0, 0, .35);
-}
-
-.container-login .container-email, .container-password, input {
-    background-color: #223243;
-    outline: none;
-    border-radius: 1rem;
-}
-
-.container-login.active .container-email, .container-login.active .container-password, .container-login.active input {
+.container-login.active input {
     background-color: #fff;
+}
+
+.container-form form div {
+    gap: 2rem;
+    width: 100%;
 }
 
 input {
@@ -88,8 +72,11 @@ input {
     padding: 1rem;
     font-size: 1.6rem;
     font-weight: 600;
-    width: 90%;
+    width: 100%;
     border: none;
+    background-color: #223243;
+    outline: none;
+    border-radius: 1rem;
 }
 
 .container-login.active input {
@@ -97,8 +84,13 @@ input {
 }
 
 input::placeholder {
-    font-family: poppins-semiBold;
+    font-family: poppins-extraLight;
+    color: #fff;
     font-size: 1.6rem;
+}
+
+.container-login.active input::placeholder {
+    color: #000;
 }
 
 button {
@@ -107,42 +99,43 @@ button {
     outline: none;
     border-radius: 0.4rem;
     cursor: pointer;
-    /* background: rgb(0, 176, 185); */
-    background: rgb(102, 0, 102);
+    background: rgb(0, 176, 185);
     color: #fff;
     font-size: 2rem;
     font-family: poppins-semiBold;
+}
+
+.container-login.active button {
+    background: rgb(102, 0, 102);
 }
 
 button:hover {
-    /* background: rgb(0, 242, 255); */
-    background: rgb(66, 0, 66);
+    background: rgb(0, 203, 214);
     padding: 1rem 2.1rem;
 }
 
-.container-form a {
-    font-size: 2rem;
-    font-family: poppins-semiBold;
-    color: #fff;
-    text-decoration: none;
-}
-
-.container-form a:hover {
-    text-decoration: underline;
-}
-
-.container-form a span {
-    color: rgb(0, 187, 187);
-}
-
-.container-form a span:hover {
-    /* color: rgb(0, 219, 219); */
-    color: rgb(1, 131, 131);
+.container-login.active button:hover {
+    background: rgb(66, 0, 66);
 }
 /* end form right */
 
 /* fazer o botão para voltar para a página de login */
 .backToThePreviousPage {
-    background-color: #fff;
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    background-color: rgb(241, 0, 0);
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: poppins-semiBold;
+    color: #000;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.backToThePreviousPage:hover {
+    background-color: rgb(182, 0, 0);
+    padding: 1.2rem;
 }
 /* end container login */

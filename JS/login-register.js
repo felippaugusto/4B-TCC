@@ -19,6 +19,7 @@ themeWhiteDark.click(() => {
     textLogoHeader.toggleClass("active");
     socialMedias.toggleClass("active");
     containerLogin.toggleClass("active");
+    goToHeader.toggleClass("activeThemeWhite")
 
     if(idImg === 1) {
         imgEmail.attr("src", "IMAGES/form-login/email-dark.png");

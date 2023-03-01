@@ -86,7 +86,7 @@ input {
     padding: 1rem;
     font-size: 1.6rem;
     font-weight: 600;
-    width: 90%;
+    width: 100%;
     border: none;
 }
 
@@ -95,7 +95,7 @@ input {
 }
 
 input::placeholder {
-    font-family: poppins-semiBold;
+    font-family: poppins-extraLight;
     font-size: 1.6rem;
 }
 
@@ -105,17 +105,23 @@ button {
     outline: none;
     border-radius: 0.4rem;
     cursor: pointer;
-    /* background: rgb(0, 176, 185); */
-    background: rgb(102, 0, 102);
+    background: rgb(0, 176, 185);
     color: #fff;
     font-size: 2rem;
     font-family: poppins-semiBold;
 }
 
+.container-login.active button {
+    background: rgb(102, 0, 102);
+}
+
 button:hover {
-    /* background: rgb(0, 242, 255); */
-    background: rgb(66, 0, 66);
+    background: rgb(0, 218, 230);
     padding: 1rem 2.1rem;
+}
+
+.container-login.active button:hover {
+    background: rgb(66, 0, 66);
 }
 
 .container-form a {
