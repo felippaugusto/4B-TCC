@@ -1,1 +1,0 @@
-a parte de cima do site ficará na maioria das páginas, se o usuário clicar na logo do site, ele voltara para a pagina inicial

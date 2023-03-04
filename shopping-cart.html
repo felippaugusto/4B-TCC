@@ -4,9 +4,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assembly Tech | E-commerce de periféricos e hardware</title>
+    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
-    <h1>carrinho</h1>
+    <!-- header structure -->
+    <!-- header left -->
+    <header class="displayFlex header" id="header">
+        <a href="index.html" class="text-logo-header displayFlex">
+            <p>Assembly</p>
+            <p>Tech</p>
+        </a>
+
+        <form class="container-shopping-cart">
+            <div class="address-user">
+                <p>Coloque seu CEP</p>
+                <input type="text" name="cep" id="cep">
+                <button>Confirmar</button>
+            </div>
+
+            <div class="container-products">
+                <div class="container-text-products">
+                    <p>Produtos</p>
+                    <div class="btn-remove">Remover todos os produtos</div>
+                </div>
+
+                <table>
+                    <tr>
+                        <td>
+                            <img src="" alt="">
+                            <p class="product-description">Ryzen 5 5600x</p>
+                            <p class="product-value">R$ 1500,00 reais</p>
+                            <div class="remove-product">Remover</div>
+                        </td>        
+                    </tr>
+                </table>
+
+                <div class="freight">
+                    <p class="paragraph-freight">Frete</p>
+                    <div class="container-choose-freight">
+                        <input type="radio" name="correio" id="correio"><label for="correio">Correios PAC</label>
+                        <input type="radio" name="Rede_sul" id="Rede_sul"><label for="Rede_sul">Rede Sul</label>
+                        <input type="radio" name="brasspress" id="brasspress"><label for="brasspress">BrassPress</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-and-summary-of-products">
+                <p class="paragraph-summary">Resumo do pagamento</p>
+                <container class="values">
+                    <p class="product-value">Valor total dos produtos: <span>R$ 5000,00</span></p>
+                    <p class="freight-value">Valor total do frete: <span>R$ 50,00</span></p>
+
+                    <div class="value-total">
+                        <p class="paragraph-total">Valor total em dinheiro</p>
+                        <p class="value-total">R$ 5000,00</p>
+                    </div>
+
+                    <div class="container-buttons">
+                        <button>Finalizar carrinho</button>
+                        <button>Continuar comprando</button>
+                    </div>
+                </container>
+            </div>
+        </form>
+
+        <!-- header right -->
+        <div class="header-right displayFlex">
+            <div id="loginOrSignUp" class="displayFlex">
+                <img src="IMAGES/header/user.png" alt="" id="user-header">
+                <a href="login.html" class="loginOrSignUpText">Entrar/Cadastrar</a>
+            </div>
+
+            <div id="theme-white-or-dark" class="displayFlex">
+                <div id="ball" class="displayFlex">
+                    <img src="IMAGES/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- social medias -->
+    <div class="social-medias displayFlex">
+        <a href="https://www.youtube.com" target="_blank"><img src="IMAGES/footer/youtube.png" alt="youtube" id="youtube"></a>
+        
+        <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/footer/instagram.png" alt="instagram" id="instagram"></a>
+
+        <a href="www.facebook.com/" target="_blank"><img src="IMAGES/footer/facebook.png" alt="facebook" id="facebook"></a>
+
+        <a href="twitter.com/" target="_blank"><img src="IMAGES/footer/twitter.png" alt="twitter" id="twitter"></a>
+
+        <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
+    </div>
+
+    <!-- footer -->
+    <footer class="displayFlex footer">
+        <div class="container-logo-footer displayFlex">
+            <img src="IMAGES/header/video-card-image/graphic-card-4.png" alt="" class="footerImg">
+            <p class="logo-footer">Assembly Tech</p>
+        </div>
+
+        <div class="footer-text">
+            <p>Assembly Tech e varejo de produtos voltados a informática</p>
+            <p id="address-footer">Cascavel-PR</p>
+        </div>
+
+        <div class="footer-text">
+            <p>Somos um E-commerce - não temos atendimento disponível presencialmente</p>
+        </div>
+    </footer>
+    <script src="JS/jquery.js"></script>
+    <script src="JS/light-mode-and-dark-mode.js"></script>
 </body>
 </html>

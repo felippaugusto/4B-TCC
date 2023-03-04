@@ -6,6 +6,10 @@
     transition: 0.2s all;
 }
 
+a {
+    text-decoration: none;
+}
+
 @font-face {
     font-family: poppins-semiBold;
     src: url("../FONTS/Poppins/Poppins-SemiBold.ttf");

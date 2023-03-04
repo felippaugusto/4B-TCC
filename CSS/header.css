@@ -74,8 +74,7 @@
     width: 12rem;
 }
 
-#theme-white-or-dark::after {
-    content: "";
+#theme-white-or-dark #ball {
     width: 50%;
     height: 100%;
     transform: scale(0.9);
@@ -96,12 +95,16 @@
                 inset 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#theme-white-or-dark.active::after {
+#theme-white-or-dark.active #ball {
     left: 49.5%;
     background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
                 inset 0 4px 4px rgba(255, 255, 255, 0.4),
                 inset 0 -4px 4px rgba(255, 255, 255, 0.4);
+}
+
+#moon-and-sun {
+    height: 5rem;
 }
 
 #carrinho {

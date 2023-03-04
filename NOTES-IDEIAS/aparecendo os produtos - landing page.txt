@@ -1,1 +1,0 @@
-primeiramente eu fazerei o site index escolhendo apenas intel ou JS. Após isso se der certo, fazerei aparecendo alguns produtos e talvez eu coloque barra de pesquisa em cima no header

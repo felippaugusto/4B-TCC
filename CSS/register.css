@@ -2,6 +2,10 @@ body {
     background: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
 }
 
+#header {
+    justify-content: space-around;
+}
+
 /* start container login */
 /* start form left */
 .container-login {

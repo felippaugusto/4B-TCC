@@ -1,4 +1,2 @@
-quando o usuario clicar em adicionar ao carrinho, aparecerá uma nova pagina, dizendo a ele que foi adicionado com sucesso, aparecendo o produto no meio da página e em baixo aparecendo dois botões
-
-continuar comprando
-ir para o carrinho
+quando eu comprar o produto, aparecera uma barra verde em cima do site dizendo que o produto foi adicionado ao carrinho
+toda vez que eu comprar um produto acontecerá isso
