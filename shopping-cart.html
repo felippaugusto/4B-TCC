@@ -7,8 +7,8 @@
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
     <link rel="stylesheet" href="CSS/globals.css">
     <link rel="stylesheet" href="CSS/header.css">
-    <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/shopping-cart.css">
     <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
@@ -19,60 +19,6 @@
             <p>Assembly</p>
             <p>Tech</p>
         </a>
-
-        <form class="container-shopping-cart">
-            <div class="address-user">
-                <p>Coloque seu CEP</p>
-                <input type="text" name="cep" id="cep">
-                <button>Confirmar</button>
-            </div>
-
-            <div class="container-products">
-                <div class="container-text-products">
-                    <p>Produtos</p>
-                    <div class="btn-remove">Remover todos os produtos</div>
-                </div>
-
-                <table>
-                    <tr>
-                        <td>
-                            <img src="" alt="">
-                            <p class="product-description">Ryzen 5 5600x</p>
-                            <p class="product-value">R$ 1500,00 reais</p>
-                            <div class="remove-product">Remover</div>
-                        </td>        
-                    </tr>
-                </table>
-
-                <div class="freight">
-                    <p class="paragraph-freight">Frete</p>
-                    <div class="container-choose-freight">
-                        <input type="radio" name="correio" id="correio"><label for="correio">Correios PAC</label>
-                        <input type="radio" name="Rede_sul" id="Rede_sul"><label for="Rede_sul">Rede Sul</label>
-                        <input type="radio" name="brasspress" id="brasspress"><label for="brasspress">BrassPress</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="value-and-summary-of-products">
-                <p class="paragraph-summary">Resumo do pagamento</p>
-                <container class="values">
-                    <p class="product-value">Valor total dos produtos: <span>R$ 5000,00</span></p>
-                    <p class="freight-value">Valor total do frete: <span>R$ 50,00</span></p>
-
-                    <div class="value-total">
-                        <p class="paragraph-total">Valor total em dinheiro</p>
-                        <p class="value-total">R$ 5000,00</p>
-                    </div>
-
-                    <div class="container-buttons">
-                        <button>Finalizar carrinho</button>
-                        <button>Continuar comprando</button>
-                    </div>
-                </container>
-            </div>
-        </form>
-
         <!-- header right -->
         <div class="header-right displayFlex">
             <div id="loginOrSignUp" class="displayFlex">
@@ -88,6 +34,65 @@
 
         </div>
     </header>
+
+    <!-- cart form -->
+    <form class="container-shopping-cart displayFlex">
+        <div class="container-address-and-products">
+            <div class="address-user">
+                <p>Informe seu CEP</p>
+                <input type="text" name="cep" id="cep" title="Coloque seu CEP">
+                <button>Confirmar</button>
+                <!-- take the button default action -->
+            </div>
+    
+            <div class="container-products">
+                <div class="container-text-products displayFlex">
+                    <!-- put the image inside the p -->
+                    <p>Produtos e Frete</p>
+                    <div class="btn-remove">Remover todos os produtos</div>
+                </div>
+    
+                <table>
+                    <tr>
+                        <td>
+                            <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
+                            <p class="product-description">Ryzen 5 5600x</p>
+                            <p class="product-value">R$ 1500,00 reais</p>
+                            <div class="remove-product">Remover</div>
+                        </td>        
+                    </tr>
+                </table>
+    
+                <div class="freight">
+                    <p class="paragraph-freight">Frete</p>
+                    <div class="container-choose-freight">
+                        <input type="radio" name="correio" id="correio"><label for="correio">Correios PAC</label>
+                        <input type="radio" name="Rede_sul" id="Rede_sul"><label for="Rede_sul">Rede Sul</label>
+                        <input type="radio" name="brasspress" id="brasspress"><label for="brasspress">BrassPress</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="value-and-summary-of-products">
+            <p class="paragraph-summary">Resumo do pagamento</p>
+            <container class="values">
+                <p class="product-value">Valor total dos produtos: <span>R$ 5000,00</span></p>
+                <p class="freight-value">Valor total do frete: <span>R$ 50,00</span></p>
+
+                <div class="value-total">
+                    <p class="paragraph-total">Valor total em dinheiro</p>
+                    <p class="value-total">R$ 5000,00</p>
+                </div>
+
+                <div class="container-buttons">
+                    <button>Finalizar carrinho</button>
+                    <button>Continuar comprando</button>
+                </div>
+            </container>
+        </div>
+    </form>
+
 
     <!-- social medias -->
     <div class="social-medias displayFlex">

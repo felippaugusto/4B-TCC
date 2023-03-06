@@ -20,6 +20,11 @@ a {
     src: url("../FONTS/Poppins/Poppins-ExtraLight.ttf");
 }
 
+@font-face {
+    font-family: poppins-light;
+    src: url("../FONTS/Poppins/Poppins-Light.ttf");
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
