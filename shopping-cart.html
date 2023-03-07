@@ -45,6 +45,10 @@
                 <!-- take the button default action -->
             </div>
     
+            <div class="container-products-and-summary-price">
+                
+            </div>
+
             <div class="container-products">
                 <div class="container-text-products displayFlex">
                     <!-- put the image inside the p -->
@@ -54,12 +58,39 @@
     
                 <table>
                     <tr>
-                        <td>
-                            <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
-                            <p class="product-description">Ryzen 5 5600x</p>
-                            <p class="product-value">R$ 1500,00 reais</p>
-                            <div class="remove-product">Remover</div>
-                        </td>        
+                        <td class="displayFlex" id="cart-product">
+                            <div class="container-left-td displayFlex">
+                                <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
+                                <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                                <span class="displayFlex">
+                                    <p class="addMore">+</p>
+                                    <p class="amount">1</p>
+                                    <p class="subtration">-</p>
+                                </span>
+                            </div>
+
+                            <div class="container-right-td displayFlex">
+                                <p class="product-value">R$ 1500,00 reais</p>
+                                <p class="remove-cart-product">Remover</p>
+                            </div>
+                        </td>
+                        
+                        <td class="displayFlex" id="cart-product">
+                            <div class="container-left-td displayFlex">
+                                <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
+                                <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                                <span class="displayFlex">
+                                    <p class="addMore">+</p>
+                                    <p class="amount">1</p>
+                                    <p class="subtration">-</p>
+                                </span>
+                            </div>
+
+                            <div class="container-right-td displayFlex">
+                                <p class="product-value">R$ 1500,00 reais</p>
+                                <p class="remove-cart-product">Remover</p>
+                            </div>
+                        </td>     
                     </tr>
                 </table>
     
@@ -76,18 +107,15 @@
 
         <div class="value-and-summary-of-products">
             <p class="paragraph-summary">Resumo do pagamento</p>
-            <container class="values">
+
+            <container class="displayFlex" id="container-values">
                 <p class="product-value">Valor total dos produtos: <span>R$ 5000,00</span></p>
                 <p class="freight-value">Valor total do frete: <span>R$ 50,00</span></p>
+                <p class="paragraph-total">Valor total em dinheiro: <span class="products-total">R$ 5000,00</span></p>
 
-                <div class="value-total">
-                    <p class="paragraph-total">Valor total em dinheiro</p>
-                    <p class="value-total">R$ 5000,00</p>
-                </div>
-
-                <div class="container-buttons">
-                    <button>Finalizar carrinho</button>
-                    <button>Continuar comprando</button>
+                <div class="container-buttons displayFlex">
+                    <button id="finaly-cart">Finalizar carrinho</button>
+                    <button id="keep-shopping">Continuar comprando</button>
                 </div>
             </container>
         </div>
