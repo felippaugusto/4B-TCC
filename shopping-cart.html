@@ -44,11 +44,8 @@
                 <button>Confirmar</button>
                 <!-- take the button default action -->
             </div>
-    
-            <div class="container-products-and-summary-price">
-                
-            </div>
 
+            <!-- container cart shopping -->
             <div class="container-products">
                 <div class="container-text-products displayFlex">
                     <!-- put the image inside the p -->
@@ -56,6 +53,7 @@
                     <div class="btn-remove">Remover todos os produtos</div>
                 </div>
     
+                <!-- all products in cart -->
                 <table>
                     <tr>
                         <td class="displayFlex" id="cart-product">
@@ -94,24 +92,37 @@
                     </tr>
                 </table>
     
+                <!-- choose freight -->
                 <div class="freight">
                     <p class="paragraph-freight">Frete</p>
                     <div class="container-choose-freight">
-                        <input type="radio" name="correio" id="correio"><label for="correio">Correios PAC</label>
-                        <input type="radio" name="Rede_sul" id="Rede_sul"><label for="Rede_sul">Rede Sul</label>
-                        <input type="radio" name="brasspress" id="brasspress"><label for="brasspress">BrassPress</label>
+                        <div class="container-freight-one">
+                            <input type="radio" name="freight" id="correio"><label for="correio">Correios PAC</label>
+                            <span>R$ 50,00 reais</span>
+                        </div>
+
+                        <div class="container-freight-two">
+                            <input type="radio" name="freight" id="Rede_sul"><label for="Rede_sul">Rede Sul</label>
+                            <span>R$ 50,00 reais</span>
+                        </div>
+
+                        <div class="container-freight-three">
+                            <input type="radio" name="freight" id="brasspress"><label for="brasspress">BrassPress</label>
+                            <span>R$ 50,00 reais</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- product cart summary  -->
         <div class="value-and-summary-of-products">
             <p class="paragraph-summary">Resumo do pagamento</p>
 
             <container class="displayFlex" id="container-values">
-                <p class="product-value">Valor total dos produtos: <span>R$ 5000,00</span></p>
-                <p class="freight-value">Valor total do frete: <span>R$ 50,00</span></p>
-                <p class="paragraph-total">Valor total em dinheiro: <span class="products-total">R$ 5000,00</span></p>
+                <p class="product-value">Valor total dos produtos: R$ 5000,00</p>
+                <p class="freight-value">Valor total do frete: R$ 50,00</p>
+                <p class="paragraph-total">Valor total à pagar: <span class="products-total">R$ 5000,00</span></p>
 
                 <div class="container-buttons displayFlex">
                     <button id="finaly-cart">Finalizar carrinho</button>

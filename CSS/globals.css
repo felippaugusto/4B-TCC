@@ -39,7 +39,7 @@ html {
 /* end utils */
 
 body {
-    background: linear-gradient(to bottom right ,rgb(50, 0, 50), rgb(31, 1, 70));
+    background: linear-gradient(to top left ,rgb(50, 0, 50), rgb(31, 1, 70));
     width: 100vw;
     height: 100vh;
 }
