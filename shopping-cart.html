@@ -40,7 +40,7 @@
         <div class="container-address-and-products">
             <div class="address-user">
                 <p>Informe seu CEP</p>
-                <input type="text" name="cep" id="cep" title="Coloque seu CEP">
+                <input type="text" name="cep" id="cep" class="cep" title="Coloque seu CEP">
                 <button>Confirmar</button>
                 <!-- take the button default action -->
             </div>
@@ -116,7 +116,7 @@
         </div>
 
         <!-- product cart summary  -->
-        <div class="value-and-summary-of-products">
+        <div class="value-and-summary-of-products active">
             <p class="paragraph-summary">Resumo do pagamento</p>
 
             <container class="displayFlex" id="container-values">
@@ -125,7 +125,8 @@
                 <p class="paragraph-total">Valor total à pagar: <span class="products-total">R$ 5000,00</span></p>
 
                 <div class="container-buttons displayFlex">
-                    <button id="finaly-cart">Finalizar carrinho</button>
+                    <!-- if don't have a user, redirect through php -->
+                    <a href="index.html" id="finaly-cart">Finalizar carrinho</a>
                     <button id="keep-shopping">Continuar comprando</button>
                 </div>
             </container>
@@ -162,7 +163,10 @@
             <p>Somos um E-commerce - não temos atendimento disponível presencialmente</p>
         </div>
     </footer>
+
     <script src="JS/jquery.js"></script>
+    <script src="JS/jquery.mask.js"></script>
+    <script src="JS/mascara.js"></script>
     <script src="JS/light-mode-and-dark-mode.js"></script>
 </body>
 </html>

@@ -7,6 +7,12 @@
     padding: 4rem;
 }
 
+/* start light mode */
+.container-shopping-cart.active {
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+}
+/* end light mode */
+
 /* start form address CEP */
 .address-user, .container-products {
     width: 50vw;
@@ -14,6 +20,12 @@
     padding: 2rem;
     border-radius: 0.6rem;
 }
+
+/* start light mode */
+.container-shopping-cart.active .address-user, .container-shopping-cart.active .container-products, .container-shopping-cart.active .value-and-summary-of-products {
+    background: rgb(122, 122, 122);
+}
+/* end light mode */
 
 .address-user p {
     font-family: poppins-light;
@@ -47,9 +59,34 @@
 .address-user button:hover {
     background-color: rgb(0, 163, 163);
 }
+
+/* start light mode */
+.container-shopping-cart.active .address-user p {
+    color: #000;
+    font-weight: 600;
+}
+
+.container-shopping-cart.active .address-user input {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.container-shopping-cart.active .address-user button {
+    background: rgb(7, 0, 102);
+    color: #fff;
+}
+
+.container-shopping-cart.active .address-user button:hover {
+    background: rgb(0, 11, 167);
+}
+/* end light mode */
 /* end form address CEP */
 
 /* start all products purchased */
+.container-products {
+    margin-top: 2rem;
+}
+
 .container-text-products, table, .freight {
     width: 100%;
 }
@@ -141,6 +178,22 @@ table tr #cart-product {
 .container-right-td .remove-cart-product:hover {
     background-color: rgb(160, 0, 0);
 }
+
+/* end light mode */
+.container-shopping-cart.active table tr #cart-product, .container-shopping-cart.active .container-right-td .product-value {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.container-shopping-cart.active .container-right-td .remove-cart-product {
+    background-color: rgb(119, 0, 0);
+    color: #fff;
+}
+
+.container-shopping-cart.active .container-right-td .remove-cart-product:hover {
+    background-color: rgb(158, 1, 1);
+}
+/* end light mode */
 /* end all products purchased */
 
 /* start choose freight */
@@ -158,6 +211,38 @@ table tr #cart-product {
     flex-direction: column;
     align-items: start;
 }
+
+.container-freight-one, .container-freight-two, .container-freight-three {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.freight input {
+    height: 2rem;
+    width: 2rem;
+    border: 0 none;
+    outline: none;
+}
+
+.freight label {
+    font-size: 2rem;
+}
+
+.container-freight-one span, .container-freight-two span, .container-freight-three span {
+    position: absolute;
+    right: 2%;
+    font-size: 2rem;
+}
+
+/* start light mode */
+.container-shopping-cart.active .freight {
+    color: #000;
+}
+/* end light mode */
 /* end choose freight */
 /* end products form cart-shopping */
 
@@ -167,7 +252,8 @@ table tr #cart-product {
     padding: 2rem;
     font-family: poppins-light;
     font-size: 1.6rem;
-    width: 19vw;
+    width: 20vw;
+    margin-top: 0.1rem;
 }
 
 .paragraph-summary {
@@ -189,22 +275,6 @@ table tr #cart-product {
     gap: 1rem;
 }
 
-#finaly-cart {
-    background-color: rgb(20, 170, 0);
-}
-
-#finaly-cart:hover {
-    background-color: rgb(26, 226, 0);
-}
-
-#keep-shopping {
-    background-color: rgb(0, 172, 172);
-}
-
-#keep-shopping:hover {
-    background-color: rgb(0, 219, 219);
-}
-
 .paragraph-total {
     width: 100%;
     font-size: 2rem;
@@ -215,8 +285,8 @@ table tr #cart-product {
     text-align: center;
 }
 
-.container-buttons button {
-    padding: 1rem 0.7rem;
+.container-buttons button, #finaly-cart {
+    padding: 1.2rem 0.9rem;
     font-size: 1.4rem;
     border: none;
     outline: none;
@@ -225,23 +295,52 @@ table tr #cart-product {
     font-family: poppins-semiBold;
 }
 
-.container-freight-one, .container-freight-two, .container-freight-three {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
+#finaly-cart {
+    background-color: rgb(20, 170, 0);
 }
 
-.freight input {
-    height: 2rem;
-    width: 2rem;
-    border: 0 none;
-    outline: none;
+#finaly-cart:hover {
+    background-color: rgb(26, 226, 0);
 }
 
-.container-freight-one span, .container-freight-two span, .container-freight-three span {
-    position: absolute;
-    right: 2%;
+#finaly-cart {
+    text-decoration: none;
+    color: #000;
 }
+
+#keep-shopping {
+    background-color: rgb(0, 172, 172);
+}
+
+#keep-shopping:hover {
+    background-color: rgb(0, 219, 219);
+}
+
+/* start light mode */
+.container-shopping-cart.active .paragraph-summary, .container-shopping-cart.active .paragraph-total {
+    color: #000;
+}
+
+.container-shopping-cart.active #finaly-cart {
+    background-color: rgb(0, 78, 4);
+}
+
+.container-shopping-cart.active #finaly-cart:hover {
+    background-color: rgb(0, 105, 5);
+}
+
+.container-shopping-cart.active #finaly-cart {
+    color: #fff;
+}
+
+.container-shopping-cart.active #keep-shopping {
+    background: rgb(7, 0, 102);
+    color: #fff;
+}
+
+.container-shopping-cart.active #keep-shopping:hover {
+    background: rgb(11, 0, 158);
+    color: #fff;
+}
+/* end light mode */
 /* end product cart summary */

@@ -1,0 +1,5 @@
+user
+produto
+carrinho-compras
+meus-pedidos
+fornecedor-produtos

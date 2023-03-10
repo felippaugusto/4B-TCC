@@ -14,6 +14,7 @@ body {
     height: 70vh;
 }
 
+/* start light mode */
 .container-login.active {
     background-color: rgb(255, 255, 255);
 }
@@ -21,6 +22,7 @@ body {
 .container-login.active .container-text p, .container-login.active .container-text h1 {
     color: #000;
 }
+/* end light mode */
 
 .container-text {
     color: #fff;
@@ -50,15 +52,15 @@ body {
     border-radius: 2rem;
 }
 
-.container-login.active .container-form {
-    background: linear-gradient(to bottom, #0a0a0a 20%, #585858 150%, #757575 20%);
-    background-color: #252525;
-}
-
 .container-form form {
     flex-direction: column;
     gap: 3rem;
     width: 100%;
+}
+
+.container-login.active .container-form {
+    background: linear-gradient(to bottom, #0a0a0a 20%, #585858 150%, #757575 20%);
+    background-color: #252525;
 }
 
 .container-login.active input {

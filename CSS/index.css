@@ -1,6 +1,8 @@
+/* start light mode */
 body.active {
     background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
 }
+/* end light mode */
 
 /* start main */
 /* start choose intel or amd */
@@ -62,9 +64,11 @@ p.intel {
     margin-top: 2rem;
 }
 
+/* start light mode */
 .hardware-showcase.active {
     background-color: rgb(255, 255, 255);
 }
+/* end light mode */
 
 .row-products {
     gap: 4rem;
@@ -86,9 +90,11 @@ p.intel {
     box-shadow: 1px 5px 20px 6px rgba(252, 252, 252, 0.5);
 }
 
+/* start light mode */
 .column-products.active {
     background: linear-gradient(rgb(180, 179, 179), rgb(70, 70, 70));
 }
+/* end light mode */
 
 .hardware-image {
     height: 25rem;

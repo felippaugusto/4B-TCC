@@ -14,6 +14,7 @@ const goToHeader = $(".goToHeader");
 const imgEmail = $("#img-email");
 const imgPassword = $("#img-password");
 const moonOrSun = $("#moon-and-sun");
+const containerShoppingCart = $(".container-shopping-cart");
 let idImg = 2;
 
 
@@ -30,6 +31,7 @@ themeWhiteDark.click(() => {
     hardwareShowcase.toggleClass("active");
     socialMedias.toggleClass("active");
     goToHeader.toggleClass("activeThemeWhite");
+    containerShoppingCart.toggleClass("active");
 
     if(idImg === 1) {
         moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/moon-black.png");
