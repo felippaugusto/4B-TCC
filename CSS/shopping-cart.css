@@ -285,7 +285,7 @@ table tr #cart-product {
     text-align: center;
 }
 
-.container-buttons button, #finaly-cart {
+#finaly-cart, .container-buttons a {
     padding: 1.2rem 0.9rem;
     font-size: 1.4rem;
     border: none;
@@ -293,6 +293,7 @@ table tr #cart-product {
     cursor: pointer;
     border-radius: 0.4rem;
     font-family: poppins-semiBold;
+    color: #000;
 }
 
 #finaly-cart {

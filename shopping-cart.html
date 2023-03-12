@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="container-right-td displayFlex">
-                                <p class="product-value">R$ 1500,00 reais</p>
+                                <p class="product-value">R$ 1550,00 reais</p>
                                 <p class="remove-cart-product">Remover</p>
                             </div>
                         </td>
@@ -85,7 +85,24 @@
                             </div>
 
                             <div class="container-right-td displayFlex">
-                                <p class="product-value">R$ 1500,00 reais</p>
+                                <p class="product-value">R$ 1520,00 reais</p>
+                                <p class="remove-cart-product">Remover</p>
+                            </div>
+                        </td>     
+
+                        <td class="displayFlex" id="cart-product">
+                            <div class="container-left-td displayFlex">
+                                <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
+                                <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                                <span class="displayFlex">
+                                    <p class="addMore">+</p>
+                                    <p class="amount">1</p>
+                                    <p class="subtration">-</p>
+                                </span>
+                            </div>
+
+                            <div class="container-right-td displayFlex">
+                                <p class="product-value">R$ 1650,00 reais</p>
                                 <p class="remove-cart-product">Remover</p>
                             </div>
                         </td>     
@@ -120,19 +137,18 @@
             <p class="paragraph-summary">Resumo do pagamento</p>
 
             <container class="displayFlex" id="container-values">
-                <p class="product-value">Valor total dos produtos: R$ 5000,00</p>
-                <p class="freight-value">Valor total do frete: R$ 50,00</p>
+                <p class="total-values-products">Valor total dos produtos: <span>R$ 5000.00</span></p>
+                <p class="freight-value">Valor total do frete: <span>R$ 50,00</span></p>
                 <p class="paragraph-total">Valor total à pagar: <span class="products-total">R$ 5000,00</span></p>
 
                 <div class="container-buttons displayFlex">
                     <!-- if don't have a user, redirect through php -->
-                    <a href="index.html" id="finaly-cart">Finalizar carrinho</a>
-                    <button id="keep-shopping">Continuar comprando</button>
+                    <button id="finaly-cart">Finalizar carrinho</button>
+                    <a href="index.html" id="keep-shopping">Continuar comprando</a>
                 </div>
             </container>
         </div>
     </form>
-
 
     <!-- social medias -->
     <div class="social-medias displayFlex">
@@ -168,5 +184,6 @@
     <script src="JS/jquery.mask.js"></script>
     <script src="JS/mascara.js"></script>
     <script src="JS/light-mode-and-dark-mode.js"></script>
+    <script src="JS/shopping-cart.js"></script>
 </body>
 </html>

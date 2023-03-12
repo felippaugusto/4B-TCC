@@ -17,6 +17,34 @@ const moonOrSun = $("#moon-and-sun");
 const containerShoppingCart = $(".container-shopping-cart");
 let idImg = 2;
 
+// use json to activate between pages
+function Theme() {
+    body.toggleClass("active");
+    themeWhiteDark.toggleClass("active");
+    header.toggleClass("active");
+    containerLogin.toggleClass("active");
+    textLogoHeader.toggleClass("active");
+
+    containerProduct.find(".column-products").toggleClass("active");
+
+    hardwareShowcase.toggleClass("active");
+    socialMedias.toggleClass("active");
+    goToHeader.toggleClass("activeThemeWhite");
+    containerShoppingCart.toggleClass("active");
+
+    if(idImg === 1) {
+        moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/moon-black.png");
+        imgEmail.attr("src", "IMAGES/form-login/email.png");
+        imgPassword.attr("src", "IMAGES/form-login/padlock.png");
+        idImg = 2;
+    }
+    else if(idImg === 2) {
+        moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/sun.png");
+        imgEmail.attr("src", "IMAGES/form-login/email-dark.png");
+        imgPassword.attr("src", "IMAGES/form-login/padlock-dark.png");
+        idImg = 1;
+    }
+}
 
 // theme white or dark
 themeWhiteDark.click(() => {
