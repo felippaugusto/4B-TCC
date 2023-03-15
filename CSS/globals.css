@@ -11,11 +11,6 @@ a {
 }
 
 @font-face {
-    font-family: poppins-semiBold;
-    src: url("../FONTS/Poppins/Poppins-SemiBold.ttf");
-}
-
-@font-face {
     font-family: poppins-extraLight;
     src: url("../FONTS/Poppins/Poppins-ExtraLight.ttf");
 }
@@ -23,6 +18,21 @@ a {
 @font-face {
     font-family: poppins-light;
     src: url("../FONTS/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: poppins-semiBold;
+    src: url("../FONTS/Poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url("../FONTS/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: poppins-extraBold;
+    src: url("../FONTS/Poppins/Poppins-ExtraBold.ttf");
 }
 
 html {

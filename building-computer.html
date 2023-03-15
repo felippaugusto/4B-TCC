@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assembly Tech | E-commerce de periféricos e hardware</title>
+    <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/building-computer.css">
+    <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
+</head>
+<body>
+    <header class="displayFlex header" id="header">
+        <a href="index.html" class="text-logo-header displayFlex">
+            <p>Assembly</p>
+            <p>Tech</p>
+        </a>
+
+        <!-- header right -->
+        <div class="header-right displayFlex">
+            <div id="loginOrSignUp" class="displayFlex">
+                <img src="IMAGES/header/user.png" alt="" id="user-header">
+                <a href="login.html" class="loginOrSignUpText">Entrar/Cadastrar</a>
+            </div>
+
+            <div id="theme-white-or-dark" class="displayFlex">
+                <div id="ball" class="displayFlex">
+                    <img src="IMAGES/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
+                </div>
+            </div>
+
+            <a href="shopping-cart.html" id="carrinho" class="displayFlex">
+                <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
+                <div class="shopping-cart-text">
+                    <div class="displayFlex container-img-down-arrow">
+                        <p>Carrinho</p>
+                        <img src="IMAGES/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
+                    </div>
+                    <p>Produtos: 0</p>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="red-team displayFlex">
+            <p class="paragraph-team">Você escolheu o time vermelho da força</p>
+        </div>
+
+        <div class="container-total-values">
+            <div class="building-at-home">
+                <img src="#" alt="" class="img-money">
+                <p id="paragraph-building-pc">Montando em casa:</p>
+                <p class="amount-pay">R$ 500,00</p>
+            </div>
+
+            <div class="building-ready">
+                <img src="#" alt="" class="img-money">
+                <p id="paragraph-building-pc">Montagem pronta:</p>
+                <p class="amount-pay">R$ 1500,00</p>
+            </div>
+        </div>
+
+        <div class="container-choose-hardwares">
+            <div class="container-processor">
+                <p class="paragraph-processor">Processador</p>
+                <div class="choose-processor">
+                    <img src="#processor" alt="">
+                    <p class="processor-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                    <div class="processor-value-choose">
+                        <p class="processor-value">R$ 1500,00</p>
+                        <button type="button">Escolha</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+     <!-- social medias -->
+     <div class="social-medias displayFlex">
+        <a href="https://www.youtube.com" target="_blank"><img src="IMAGES/footer/youtube.png" alt="youtube" id="youtube"></a>
+        
+        <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/footer/instagram.png" alt="instagram" id="instagram"></a>
+
+        <a href="www.facebook.com/" target="_blank"><img src="IMAGES/footer/facebook.png" alt="facebook" id="facebook"></a>
+
+        <a href="twitter.com/" target="_blank"><img src="IMAGES/footer/twitter.png" alt="twitter" id="twitter"></a>
+
+        <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
+    </div>
+
+    <!-- footer -->
+    <footer class="displayFlex footer">
+        <div class="container-logo-footer displayFlex">
+            <img src="IMAGES/header/video-card-image/graphic-card-4.png" alt="" class="footerImg">
+            <p class="logo-footer">Assembly Tech</p>
+        </div>
+
+        <div class="footer-text">
+            <p>Assembly Tech e varejo de produtos voltados a informática</p>
+            <p id="address-footer">Cascavel-PR</p>
+        </div>
+
+        <div class="footer-text">
+            <p>Somos um E-commerce - não temos atendimento disponível presencialmente</p>
+        </div>
+    </footer>
+
+    <script src="JS/jquery.js"></script>
+    <script src="JS/light-mode-and-dark-mode.js"></script>
+    <script>
+    function typeWriter() {
+        const title = document.querySelector(".paragraph-team");
+
+        let counter = 95;
+        const textoArray = title.innerHTML.split('');
+        title.innerHTML = "";
+        textoArray.forEach((letra, i) => {
+            counter += 75;
+            setTimeout(function() {
+                title.innerHTML += letra; 
+            }, counter);
+        })   
+    }
+
+    setTimeout(typeWriter, 2000)
+    </script>
+</body>
+</html>

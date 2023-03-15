@@ -1,0 +1,18 @@
+.red-team {
+    height: 50vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom right ,rgb(40, 0, 0), rgb(110, 0, 0),  rgb(230, 0, 0));
+    /* background: linear-gradient(to bottom right ,rgb(0, 0, 40),rgb(0, 0, 112), rgb(0, 0, 223)); */
+    font-family: poppins-bold;
+    flex-direction: column;
+}
+
+.paragraph-team {
+    background: linear-gradient(to bottom right ,rgba(70, 70, 70, 0.8), rgb(204, 204, 221), rgba(176, 176, 226, 0.459));
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+    font-size: 4rem;
+    width: 30%;
+    text-align: center;
+}
