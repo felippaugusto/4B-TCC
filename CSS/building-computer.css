@@ -1,3 +1,4 @@
+/* start choose the team */
 .red-team {
     height: 50vh;
     width: 100vw;
@@ -16,3 +17,140 @@
     width: 30%;
     text-align: center;
 }
+/* end choose the team */
+
+/* start container total value */
+.container-total-values {
+    background: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
+    color: #fff;
+    gap: 15rem;
+    font-size: 2.5rem;
+    font-family: poppins-light;
+    padding: 2rem;
+}
+
+.building-at-home, .building-ready {
+    padding: 1.5rem;
+    gap: 1rem;
+    background-color: rgb(0, 0, 126);
+    border-radius: 0.4rem;
+}
+
+.img-money {
+    height: 3rem;
+}
+/* end container total value */
+
+/* start container choose hardwares */
+.container-processor .paragraph-processor {
+    background: linear-gradient(to top right,rgba(31, 31, 31, 0.8), rgba(53, 53, 53, 0.8));
+    padding: 1.5rem;
+    font-size: 2rem;
+    font-family: poppins-semiBold;
+    color: #fff;
+}
+
+.choose-processor {
+    justify-content: start;
+    padding: 2rem;
+    gap: 2rem;
+    position: relative;
+    background-color: rgb(39, 0, 39);
+}
+
+.img-demonstration {
+    height: 12rem;
+}
+
+.processor-description {
+    font-size: 2.5rem;
+    font-family: poppins-light;
+    color: #fff;
+    width: 50%;
+}
+
+.processor-value-choose {
+    position: absolute;
+    right: 5%;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.processor-value-choose .processor-value {
+    font-size: 2rem;
+    font-family: poppins-semiBold;
+    color: #00a824;
+}
+
+.processor-value-choose .btn-choose-hardware {
+    font-size: 1.6rem;
+    font-family: poppins-semiBold;
+    padding: 1rem 1.8rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    background-color: #198000;
+    cursor: pointer;
+}
+
+.processor-value-choose .btn-choose-hardware:hover {
+    background-color: #27c400;
+    padding: 1.2rem 2.1rem;
+}
+/* end container choose hardwares */
+
+/* start box model choose hardwares */
+.box-model-choose-hardwares {
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    height: 162vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    gap: 4rem;
+    visibility: hidden;
+    opacity: 0;
+    justify-content: start;
+    padding: 5rem 0 0 0;
+}
+
+.box-model-choose-hardwares.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.exit {
+    position: fixed;
+    top: 3%;
+    right: 8%;
+    z-index: 9;
+}
+
+
+.exit .xOne, .exit .xTwo {
+    position: absolute;
+    height: 2rem;
+    width: 7rem;
+    margin: 2rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.exit .xOne {
+    rotate: 40deg;
+}
+
+.exit .xTwo {
+    rotate: -40deg;
+}
+
+.exit:hover .xOne, .exit:hover .xTwo {
+    background-color: #c40000;
+}
+
+.box-model-choose-hardwares .container-processor .paragraph-processor {
+    border-radius: 0.4rem 0.4rem 0rem 0rem;
+}
+/* end box model choose hardwares */

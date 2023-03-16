@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
+    <!-- header -->
     <header class="displayFlex header" id="header">
         <a href="index.html" class="text-logo-header displayFlex">
             <p>Assembly</p>
@@ -45,38 +46,121 @@
     </header>
 
     <main>
+        <!-- change the team according to the choice of brand -->
         <div class="red-team displayFlex">
             <p class="paragraph-team">Você escolheu o time vermelho da força</p>
         </div>
 
-        <div class="container-total-values">
-            <div class="building-at-home">
-                <img src="#" alt="" class="img-money">
-                <p id="paragraph-building-pc">Montando em casa:</p>
-                <p class="amount-pay">R$ 500,00</p>
+        <div class="container-total-values displayFlex">
+            <div class="building-at-home displayFlex">
+                <img src="IMAGES/main/money.png" alt="" class="img-money">
+                <p id="paragraph-building-pc">Montando em casa: <span id="amount-pay-home">R$ 500,00</span></p>
             </div>
 
-            <div class="building-ready">
-                <img src="#" alt="" class="img-money">
-                <p id="paragraph-building-pc">Montagem pronta:</p>
-                <p class="amount-pay">R$ 1500,00</p>
+            <div class="building-ready displayFlex">
+                <img src="IMAGES/main/money.png" alt="" class="img-money">
+                <p id="paragraph-building-pc">Montagem pronta: <span id="amount-pay-assembly-ready">R$ 1500,00</span></p>
             </div>
         </div>
 
         <div class="container-choose-hardwares">
             <div class="container-processor">
                 <p class="paragraph-processor">Processador</p>
-                <div class="choose-processor">
-                    <img src="#processor" alt="">
+
+                <div class="choose-processor displayFlex">
+                    <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
                     <p class="processor-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                    <div class="processor-value-choose">
+                    <div class="processor-value-choose displayFlex">
                         <p class="processor-value">R$ 1500,00</p>
-                        <button type="button">Escolha</button>
+                        <button type="button" class="btn-choose-hardware">Escolha</button>
                     </div>
                 </div>
             </div>
+
+            <div class="container-choose-hardwares">
+                <div class="container-processor">
+                    <p class="paragraph-processor">Processador</p>
+    
+                    <div class="choose-processor displayFlex">
+                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
+                        <p class="processor-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                        <div class="processor-value-choose displayFlex">
+                            <p class="processor-value">R$ 1500,00</p>
+                            <button type="button" class="btn-choose-hardware">Escolha</button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
         </div>
     </main>
+
+    <!-- box model for choose hardwares -->
+    <div class="box-model-choose-hardwares displayFlex">
+        <div class="exit">
+            <p class="xOne"></p>
+            <p class="xTwo"></p>
+        </div>
+
+        <div class="container-choose-hardwares" id="three">
+            <div class="container-processor">
+                <p class="paragraph-processor">Processador</p>
+
+                <div class="choose-processor displayFlex">
+                    <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
+                    <p class="processor-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                    <div class="processor-value-choose displayFlex">
+                        <p class="processor-value">R$ 1500,00</p>
+                        <button type="button" class="btn-choose-hardware">Escolha</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <div class="container-choose-hardwares">
+            <div class="container-processor">
+                <p class="paragraph-processor">Processador</p>
+
+                <div class="choose-processor displayFlex">
+                    <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
+                    <p class="processor-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                    <div class="processor-value-choose displayFlex">
+                        <p class="processor-value">R$ 1500,00</p>
+                        <button type="button" class="btn-choose-hardware">Escolha</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <div class="container-choose-hardwares">
+            <div class="container-processor">
+                <p class="paragraph-processor">Processador</p>
+
+                <div class="choose-processor displayFlex">
+                    <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
+                    <p class="processor-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                    <div class="processor-value-choose displayFlex">
+                        <p class="processor-value">R$ 1500,00</p>
+                        <button type="button" class="btn-choose-hardware">Escolha</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <div class="container-choose-hardwares">
+            <div class="container-processor">
+                <p class="paragraph-processor">Processador</p>
+
+                <div class="choose-processor displayFlex">
+                    <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
+                    <p class="processor-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                    <div class="processor-value-choose displayFlex">
+                        <p class="processor-value">R$ 1500,00</p>
+                        <button type="button" class="btn-choose-hardware">Escolha</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
 
      <!-- social medias -->
      <div class="social-medias displayFlex">
@@ -90,6 +174,9 @@
 
         <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
     </div>
+
+    <!-- button to navegate to header -->
+    <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>
 
     <!-- footer -->
     <footer class="displayFlex footer">
@@ -110,22 +197,23 @@
 
     <script src="JS/jquery.js"></script>
     <script src="JS/light-mode-and-dark-mode.js"></script>
+    <script src="JS/building-computer.js"></script>
     <script>
-    function typeWriter() {
-        const title = document.querySelector(".paragraph-team");
+        function typeWriter() {
+            const title = document.querySelector(".paragraph-team");
 
-        let counter = 95;
-        const textoArray = title.innerHTML.split('');
-        title.innerHTML = "";
-        textoArray.forEach((letra, i) => {
-            counter += 75;
-            setTimeout(function() {
-                title.innerHTML += letra; 
-            }, counter);
-        })   
-    }
+            let counter = 95;
+            const textoArray = title.innerHTML.split('');
+            title.innerHTML = "";
+            textoArray.forEach((letra, i) => {
+                counter += 75;
+                setTimeout(function() {
+                    title.innerHTML += letra; 
+                }, counter);
+            })   
+        }
 
-    setTimeout(typeWriter, 2000)
+        setTimeout(typeWriter, 2000)
     </script>
 </body>
 </html>
