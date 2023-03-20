@@ -221,15 +221,33 @@ table tr #cart-product {
     margin-top: 1rem;
 }
 
-.freight input {
+.freight input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    border-radius: 50%;
     height: 2rem;
     width: 2rem;
     border: 0 none;
     outline: none;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+.container-shopping-cart.active .freight input[type="radio"] {
+    background-color: #ffffff;
+}
+
+.freight input[type="radio"]:checked {
+    background-color: #ff9100;
+}
+
+.container-shopping-cart.active .freight input[type="radio"]:checked {
+    background-color: #000;
 }
 
 .freight label {
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .container-freight-one span, .container-freight-two span, .container-freight-three span {

@@ -42,7 +42,7 @@
 /* end container total value */
 
 /* start container choose hardwares */
-.container-processor .paragraph-processor {
+.container-hardwares .paragraph-hardwares {
     background: linear-gradient(to top right,rgba(31, 31, 31, 0.8), rgba(53, 53, 53, 0.8));
     padding: 1.5rem;
     font-size: 2rem;
@@ -50,7 +50,7 @@
     color: #fff;
 }
 
-.choose-processor {
+.choose-hardwares {
     justify-content: start;
     padding: 2rem;
     gap: 2rem;
@@ -58,31 +58,40 @@
     background-color: rgb(39, 0, 39);
 }
 
+.container-img {
+    width: 10%;
+    text-align: center;
+}
+
 .img-demonstration {
     height: 12rem;
 }
 
-.processor-description {
+.img-demonstration.ram-memory {
+    height: 5.5rem;
+}
+
+.hardwares-description {
     font-size: 2.5rem;
     font-family: poppins-light;
     color: #fff;
     width: 50%;
 }
 
-.processor-value-choose {
+.hardwares-value-choose {
     position: absolute;
     right: 5%;
     flex-direction: column;
     gap: 5rem;
 }
 
-.processor-value-choose .processor-value {
+.hardwares-value-choose .hardwares-value {
     font-size: 2rem;
     font-family: poppins-semiBold;
     color: #00a824;
 }
 
-.processor-value-choose .btn-choose-hardware {
+.hardwares-value-choose .btn-choose-hardwares {
     font-size: 1.6rem;
     font-family: poppins-semiBold;
     padding: 1rem 1.8rem;
@@ -93,7 +102,7 @@
     cursor: pointer;
 }
 
-.processor-value-choose .btn-choose-hardware:hover {
+.hardwares-value-choose .btn-choose-hardwares:hover {
     background-color: #27c400;
     padding: 1.2rem 2.1rem;
 }
@@ -104,7 +113,7 @@
     position: absolute;
     top: 0;
     min-height: 100vh;
-    height: 162vh;
+    height: 296vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.9);
     flex-direction: column;
@@ -150,7 +159,7 @@
     background-color: #c40000;
 }
 
-.box-model-choose-hardwares .container-processor .paragraph-processor {
+.box-model-choose-hardwares .container-hardwares .paragraph-hardwares {
     border-radius: 0.4rem 0.4rem 0rem 0rem;
 }
 /* end box model choose hardwares */

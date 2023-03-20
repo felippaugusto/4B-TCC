@@ -1,6 +1,6 @@
 const exit = $(".exit");
 const boxModelChooseHardwares = $(".box-model-choose-hardwares");
-const btnChooseHardware = $(".btn-choose-hardware");
+const btnChooseHardware = $(".btn-choose-hardwares");
 
 exit.click(() => {
     boxModelChooseHardwares.removeClass("active");
