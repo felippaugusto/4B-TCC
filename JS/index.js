@@ -2,6 +2,16 @@ const containerIntel = $(".containerIntel");
 const containerAmd = $(".containerAmd");
 const selectIntel = $(".btnSelectIntel");
 const selectAmd = $(".btnSelectAmd");
+const intel = $(".blue");
+const amd = $(".red");
+
+intel.click(() => {
+    sessionStorage.setItem('blueOrRed', 1);
+})
+
+amd.click(() => {
+    sessionStorage.setItem('blueOrRed', 2);
+})
 
 // animation choose intel or amd
 const toggleBtnIntelAmd = {
