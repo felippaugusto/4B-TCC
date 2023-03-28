@@ -1,6 +1,16 @@
 /* start light mode */
-body.active {
-    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+body[data-theme="t-light"] {
+    --color-bg-harware-showcase: rgb(255, 255, 255);
+    background-color: #fff;
+
+    --color-bg-column-products: linear-gradient(rgb(180, 179, 179), rgb(70, 70, 70));
+}
+
+body[data-theme="t-dark"] {
+    --color-bg-harware-showcase: linear-gradient(to top left ,rgb(50, 0, 50), rgb(31, 1, 70));
+    background: linear-gradient(to top left ,rgb(50, 0, 50), rgb(31, 1, 70));
+
+    --color-bg-column-products: linear-gradient(rgb(35, 0, 100), rgb(90, 1, 90));
 }
 /* end light mode */
 
@@ -62,13 +72,8 @@ p.intel {
     width: 100vw;
     margin-bottom: 1rem;
     margin-top: 2rem;
+    background: var(--color-bg-harware-showcase);
 }
-
-/* start light mode */
-.hardware-showcase.active {
-    background-color: rgb(255, 255, 255);
-}
-/* end light mode */
 
 .row-products {
     gap: 4rem;
@@ -76,7 +81,7 @@ p.intel {
 }
 
 .column-products {
-    background: linear-gradient(rgb(35, 0, 100), rgb(90, 1, 90));
+    background: var(--color-bg-column-products);
     flex-direction: column;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -89,12 +94,6 @@ p.intel {
 .column-products:hover {
     box-shadow: 1px 5px 20px 6px rgba(252, 252, 252, 0.5);
 }
-
-/* start light mode */
-.column-products.active {
-    background: linear-gradient(rgb(180, 179, 179), rgb(70, 70, 70));
-}
-/* end light mode */
 
 .hardware-image {
     height: 25rem;

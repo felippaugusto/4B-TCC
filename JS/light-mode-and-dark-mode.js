@@ -17,31 +17,45 @@ const moonOrSun = $("#moon-and-sun");
 const containerShoppingCart = $(".container-shopping-cart");
 idImg = 2;
 
-// theme white or dark
-themeWhiteDark.click(() => {
-    body.toggleClass("active");
-    console.log(body.attr("class"))
-    themeWhiteDark.toggleClass("active");
-    header.toggleClass("active");
-    containerLogin.toggleClass("active");
-    textLogoHeader.toggleClass("active");
+// theme light or dark
+const themes = {
+    't-dark': 't-light',
+    't-light': 't-dark',
+}
 
-    containerProduct.find(".column-products").toggleClass("active");
-    hardwareShowcase.toggleClass("active");
-    socialMedias.toggleClass("active");
-    goToHeader.toggleClass("activeThemeWhite");
-    containerShoppingCart.toggleClass("active");
+document.body.setAttribute('data-theme', 't-dark');
 
-     if(idImg === 1) {
-        moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/moon-black.png");
-        imgEmail.attr("src", "IMAGES/form-login/email.png");
-        imgPassword.attr("src", "IMAGES/form-login/padlock.png");
-        idImg = 2;
-     }
-     else if(idImg === 2) {
-        moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/sun.png");
-        imgEmail.attr("src", "IMAGES/form-login/email-dark.png");
-        imgPassword.attr("src", "IMAGES/form-login/padlock-dark.png");
-        idImg = 1;
-    }
-})
+if(localStorage.getItem("theme")) {
+    document.body.setAttribute('data-theme', localStorage.getItem('theme'));
+}
+
+if(themeWhiteDark) {
+    themeWhiteDark.click(() => {
+        const currentTheme = document.body.dataset.theme;
+        const changingThemes = themes[currentTheme];
+        document.body.setAttribute('data-theme', changingThemes || 't-light');
+        localStorage.setItem("theme", changingThemes);
+        
+        if(changingThemes == 't-dark') {
+            moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/moon-black.png");
+            imgEmail.attr("src", "IMAGES/form-login/email.png");
+            imgPassword.attr("src", "IMAGES/form-login/padlock.png");
+        }
+        else {
+            moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/sun.png");
+            imgEmail.attr("src", "IMAGES/form-login/email-dark.png");
+            imgPassword.attr("src", "IMAGES/form-login/padlock-dark.png");
+        }
+    })
+}
+
+if(localStorage.getItem("theme") == "t-dark") {
+    moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/moon-black.png");
+    imgEmail.attr("src", "IMAGES/form-login/email.png");
+    imgPassword.attr("src", "IMAGES/form-login/padlock.png");
+}
+else if(localStorage.getItem("theme") == "t-light") {
+    moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/sun.png");
+    imgEmail.attr("src", "IMAGES/form-login/email-dark.png");
+    imgPassword.attr("src", "IMAGES/form-login/padlock-dark.png");
+}

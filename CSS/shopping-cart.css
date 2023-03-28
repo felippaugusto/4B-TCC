@@ -1,46 +1,56 @@
+/* start light mode */
+body[data-theme="t-light"] {
+    --color-bg-container-shopping: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+    --color-bg-containers-childs: rgb(122, 122, 122);
+    --color-text: #000;
+    --color-bg-input: #fff;
+    --color-bg-btn-address: rgb(218, 80, 0);
+    --color-bg-btn-address-hover: rgb(151, 48, 0);
+}
+
+body[data-theme="t-dark"] {
+    --color-bg-container-shopping: linear-gradient(to bottom right ,rgb(50, 0, 50), rgb(31, 1, 70));
+    --color-bg-containers-childs: rgb(0, 0, 48);
+    --color-text: #fff;
+    --color-bg-input: #223243;
+    --color-bg-btn-address: rgb(0, 212, 212);
+    --color-bg-btn-address-hover: rgb(0, 163, 163);
+}
+/* end light mode */
+
 /* start products form cart-shopping */
 .container-shopping-cart {
-    background: linear-gradient(to bottom right ,rgb(50, 0, 50), rgb(31, 1, 70));
+    background: var(--color-bg-container-shopping);
     gap: 3rem;
     color: #fff;
     align-items: start;
     padding: 4rem;
 }
 
-/* start light mode */
-.container-shopping-cart.active {
-    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
-}
-/* end light mode */
-
 /* start form address CEP */
 .address-user, .container-products {
     width: 50vw;
-    background-color:rgb(0, 0, 48);
+    background-color:var(--color-bg-containers-childs);
     padding: 2rem;
     border-radius: 0.6rem;
 }
 
-/* start light mode */
-.container-shopping-cart.active .address-user, .container-shopping-cart.active .container-products, .container-shopping-cart.active .value-and-summary-of-products {
-    background: rgb(122, 122, 122);
-}
-/* end light mode */
-
 .address-user p {
     font-family: poppins-light;
     font-size: 1.6rem;
+    color: var(--color-text);
+    font-weight: 600;
 }
 
 .address-user input {
-    color: #fff;
+    color: var(--color-text);
     font-family: poppins-light;
     padding: 1rem;
     font-size: 1.6rem;
     font-weight: 600;
     width: 40%;
     border: none;
-    background-color: #223243;
+    background-color: var(--color-bg-input);
     outline: none;
     border-radius: 1rem;
     margin-right: 1rem;
@@ -52,34 +62,13 @@
     border-radius: 0.4rem;
     font-size: 1.6rem;
     font-family: poppins-semiBold;
-    background: rgb(0, 212, 212);
+    background: var(--color-bg-btn-address);
     cursor: pointer;
 }
 
 .address-user button:hover {
-    background-color: rgb(0, 163, 163);
+    background-color: var(--color-bg-btn-address-hover);
 }
-
-/* start light mode */
-.container-shopping-cart.active .address-user p {
-    color: #000;
-    font-weight: 600;
-}
-
-.container-shopping-cart.active .address-user input {
-    background-color: #ffffff;
-    color: #000;
-}
-
-.container-shopping-cart.active .address-user button {
-    background: rgb(7, 0, 102);
-    color: #fff;
-}
-
-.container-shopping-cart.active .address-user button:hover {
-    background: rgb(0, 11, 167);
-}
-/* end light mode */
 /* end form address CEP */
 
 /* start all products purchased */

@@ -1,3 +1,43 @@
+/* start body */
+body[data-theme="t-light"] {
+    --color-bg-header: linear-gradient(to bottom right, rgb(180, 179, 179), rgb(180, 179, 179));
+    --color-text-header: #171718;
+    --color-bg-theme: #fff;
+
+    --color-bg-theme-box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.3),
+                                inset 0 2px 8px rgba(0, 0, 0, 0.3),
+                                inset 0 -4px 8px rgba(0, 0, 0, 0.1);
+
+    --color-bg-theme-ball: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+
+    --color-theme-ball-shadow-box: 0 8px 20px rgba(0, 0, 0, 0.5),
+                                inset 0 4px 4px rgba(255, 255, 255, 0.4),
+                                inset 0 -4px 4px rgba(255, 255, 255, 0.4);
+
+    --position-ball: 49.5%;
+}
+
+body[data-theme="t-dark"] {
+    --color-bg-header: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
+    --color-text-header: #fff;
+    --color-bg-theme: #222;
+    --color-bg-theme-ball: linear-gradient(to bottom, #444, #222);
+
+    --color-bg-theme-box-shadow: inset 0 8px 60px rgba(0, 0, 0, 1),
+                                inset 0 8px 8px rgba(0, 0, 0, 1),
+                                inset 0 -4px 4px rgba(0, 0, 0, 1);
+
+    --color-bg-theme-ball: linear-gradient(to bottom, #444, #222);
+
+    --color-theme-ball-shadow-box: 0 8px 40px rgba(0, 0, 0, 0.5),
+                                inset 0 4px 4px rgba(255, 255, 255, 0.1),
+                                inset 0 -4px 4px rgba(255, 255, 255, 0.1);
+
+    --position-ball: 0;                            
+
+}
+/* end body */
+
 /* start header */
 /* start header left */
 .header {
@@ -5,11 +45,7 @@
     height: 20vh;
     padding: 2rem;
     justify-content: space-between;
-    background: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
-}
-
-.header.active {
-    background: linear-gradient(rgb(180, 179, 179), rgb(180, 179, 179));
+    background: var(--color-bg-header);
 }
 
 .text-logo-header {
@@ -23,8 +59,8 @@
     text-decoration: none;
 }
 
-.text-logo-header.active {
-    color: #171718;
+.text-logo-header {
+    color: var(--color-text-header);
 }
 /* ends header left */
 
@@ -51,20 +87,14 @@
     font-family: poppins-semiBold;
 }
 
-#loginOrSignUp p.active {
-    color: #000;
-}
-
 #loginOrSignUp:hover {
     background: rgb(190, 29, 0);
     padding: 1.3rem 1.5rem;
 }
 
 #theme-white-or-dark {
-    background: #222;
-    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 1),
-                inset 0 8px 8px rgba(0, 0, 0, 1),
-                inset 0 -4px 4px rgba(0, 0, 0, 1);
+    background: var(--color-bg-theme);
+    box-shadow: var(--color-bg-theme-box-shadow);
     padding: 0.4rem;
     border-radius: 10rem;
     cursor: pointer;
@@ -78,29 +108,12 @@
     width: 50%;
     height: 100%;
     transform: scale(0.9);
-    background: linear-gradient(to bottom, #444, #222);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
-                inset 0 4px 4px rgba(255, 255, 255, 0.1),
-                inset 0 -4px 4px rgba(255, 255, 255, 0.1);
+    background: var(--color-bg-theme-ball);
+    box-shadow: var(--color-theme-ball-shadow-box);
     position: absolute;
-    left: 0;
+    left: var(--position-ball);
     border-radius: 50%;
     transition: 0.3s left;
-}
-
-#theme-white-or-dark.active {
-    background-color: #fff;
-    box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.3),
-                inset 0 2px 8px rgba(0, 0, 0, 0.3),
-                inset 0 -4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#theme-white-or-dark.active #ball {
-    left: 49.5%;
-    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
-                inset 0 4px 4px rgba(255, 255, 255, 0.4),
-                inset 0 -4px 4px rgba(255, 255, 255, 0.4);
 }
 
 #moon-and-sun {

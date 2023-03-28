@@ -1,3 +1,13 @@
+/* start light mode */
+body[data-theme="t-light"] {
+    --color-bg-medias: linear-gradient(rgb(233, 233, 233), rgb(233, 233, 233));
+}
+
+body[data-theme="t-dark"] {
+    --color-bg-medias: linear-gradient(to top right ,rgb(102, 0, 63), rgb(13, 0, 128));
+}
+/* end light mode */
+
 /* start footer */
 .footer {
     background-color: #171718;
@@ -11,13 +21,9 @@
 }
 
 .social-medias {
-    background: linear-gradient(to top right ,rgb(102, 0, 63), rgb(13, 0, 128));
+    background: var(--color-bg-medias);
     height: 8vh;
     gap: 2rem;
-}
-
-.social-medias.active {
-    background: linear-gradient(rgb(233, 233, 233), rgb(233, 233, 233));
 }
 
 .social-medias img {

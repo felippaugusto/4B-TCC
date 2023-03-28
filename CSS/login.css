@@ -1,6 +1,24 @@
-body {
-    background: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
+/* start light mode */
+body[data-theme="t-light"] {
+    --color-bg-container-login: rgb(255, 255, 255);
+    --color-text: #000;
+    --color-bg-container-form: #252525;
+    --color-bg-container-form-gradient: linear-gradient(to bottom, #0a0a0a 20%, #585858 150%, #757575 20%);
+    --color-bg-input: #fff;
+    --color-bg-btn: rgb(87, 1, 87);
+    --color-bg-btn-hover: rgb(66, 0, 66);
 }
+
+body[data-theme="t-dark"] {
+    --color-bg-container-login: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
+    --color-text: #fff;
+    --color-bg-container-form: rgb(2,0,36);
+    --color-bg-container-form-gradient: linear-gradient(to bottom, rgba(2,0,36,1) 20%, rgba(0,0,124,1) 150%, rgba(0,9,119,1) 20%);
+    --color-bg-input: #223243;
+    --color-bg-btn: rgb(0, 176, 185);
+    --color-bg-btn-hover: rgb(0, 218, 230);
+}
+/* end light mode */
 
 #header {
     justify-content: space-around;
@@ -11,14 +29,11 @@ body {
 .container-login {
     padding: 5rem;
     gap: 10rem;
+    background: var(--color-bg-container-login);
 }
 
-.container-login.active {
-    background-color: rgb(255, 255, 255);
-}
-
-.container-login.active .container-text p, .container-login.active .container-text h1 {
-    color: #000;
+.container-text p, .container-text h1 {
+    color: var(--color-text);
 }
 
 .container-text {
@@ -39,19 +54,14 @@ body {
 
 /* start form right */
 .container-form {
-    background: rgb(2,0,36);
-    background: linear-gradient(to bottom, rgba(2,0,36,1) 20%, rgba(0,0,124,1) 150%, rgba(0,9,119,1) 20%);
+    background: var(--color-bg-container-form);
+    background: var(--color-bg-container-form-gradient);
     padding: 3rem;
     width: 40rem;
     height: 50rem;
     flex-direction: column;
     gap: 2rem;
     border-radius: 2rem;
-}
-
-.container-login.active .container-form {
-    background: linear-gradient(to bottom, #0a0a0a 20%, #585858 150%, #757575 20%);
-    background-color: #252525;
 }
 
 .container-form form {
@@ -75,27 +85,19 @@ body {
 }
 
 .container-login .container-email, .container-password, input {
-    background-color: #223243;
+    background-color: var(--color-bg-input);
     outline: none;
     border-radius: 1rem;
 }
 
-.container-login.active .container-email, .container-login.active .container-password, .container-login.active input {
-    background-color: #fff;
-}
-
 input {
-    color: #fff;
+    color: var(--color-text);
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem;
     font-size: 1.6rem;
     font-weight: 600;
     width: 100%;
     border: none;
-}
-
-.container-login.active input {
-    color: #000;
 }
 
 input::placeholder {
@@ -109,23 +111,15 @@ button {
     outline: none;
     border-radius: 0.4rem;
     cursor: pointer;
-    background: rgb(0, 176, 185);
+    background: var(--color-bg-btn);
     color: #fff;
     font-size: 2rem;
     font-family: poppins-semiBold;
 }
 
-.container-login.active button {
-    background: rgb(102, 0, 102);
-}
-
 button:hover {
-    background: rgb(0, 218, 230);
+    background: var(--color-bg-btn-hover);
     padding: 1rem 2.1rem;
-}
-
-.container-login.active button:hover {
-    background: rgb(66, 0, 66);
 }
 
 .container-form a {

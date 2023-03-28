@@ -1,3 +1,13 @@
+/* start light mode */
+body[data-theme="t-light"] {
+    --color-bg-goToHeader: rgb(255, 0, 0);
+}
+
+body[data-theme="t-dark"] {
+    --color-bg-goToHeader: #fff;
+}
+/* end light mode */
+
 /* start globals */
 * {
     padding: 0;
@@ -49,7 +59,6 @@ html {
 /* end utils */
 
 body {
-    background: linear-gradient(to top left ,rgb(50, 0, 50), rgb(31, 1, 70));
     width: 100vw;
     height: 100vh;
 }
@@ -64,7 +73,7 @@ body {
     font-family: poppins-semiBold;
     font-weight: 700;
     border-radius: 0.4rem;
-    background: #fff;
+    background: var(--color-bg-goToHeader);
     visibility: hidden;
     opacity: 0;
 }
