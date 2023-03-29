@@ -6,6 +6,15 @@ body[data-theme="t-light"] {
     --color-bg-input: #fff;
     --color-bg-btn-address: rgb(218, 80, 0);
     --color-bg-btn-address-hover: rgb(151, 48, 0);
+    --color-bg-cart-product: #fff;
+    --color-text-product-value: #000;
+    --font-weight: 600;
+    --input-bg-radio-checked: #000;
+    --color-text-inverse: #fff;
+    --color-bg-btn-keep-shopping: rgb(7, 0, 102);
+    --color-bg-btn-keep-shopping-hover: rgb(11, 0, 158);
+    --color-bg-btn-finaly-cart: rgb(0, 78, 4);
+    --color-bg-btn-finaly-cart-hover: rgb(0, 105, 5);
 }
 
 body[data-theme="t-dark"] {
@@ -15,6 +24,14 @@ body[data-theme="t-dark"] {
     --color-bg-input: #223243;
     --color-bg-btn-address: rgb(0, 212, 212);
     --color-bg-btn-address-hover: rgb(0, 163, 163);
+    --color-bg-cart-product: #223243;
+    --color-text-product-value: rgb(0, 124, 0);
+    --input-bg-radio-checked: #ff9100;
+    --color-text-inverse: #000;
+    --color-bg-btn-keep-shopping: rgb(0, 172, 172);
+    --color-bg-btn-keep-shopping-hover: rgb(0, 219, 219);
+    --color-bg-btn-finaly-cart: rgb(20, 170, 0);
+    --color-bg-btn-finaly-cart-hover: rgb(26, 226, 0);
 }
 /* end light mode */
 
@@ -114,7 +131,7 @@ table tr #cart-product {
     gap: 1rem;
     width: 100%;
     margin-bottom: 5rem;
-    background-color: #223243;
+    background-color: var(--color-bg-cart-product);
     padding: 2rem;
     border-radius: 0.5rem;
 }
@@ -128,6 +145,7 @@ table tr #cart-product {
     font-size: 2rem;
     font-family: poppins-semiBold;
     width: 70%;
+    color: var(--color-text);
 }
 
 .container-left-td span {
@@ -152,7 +170,7 @@ table tr #cart-product {
 }
 
 .container-right-td .product-value {
-    color: green;
+    color: var(--color-text-product-value);
     font-family: poppins-semiBold;
     font-size: 2rem;
 }
@@ -168,12 +186,6 @@ table tr #cart-product {
     background-color: rgb(160, 0, 0);
 }
 
-/* end light mode */
-.container-shopping-cart.active table tr #cart-product, .container-shopping-cart.active .container-right-td .product-value {
-    background-color: #ffffff;
-    color: #000;
-}
-
 .container-shopping-cart.active .container-right-td .remove-cart-product {
     background-color: rgb(119, 0, 0);
     color: #fff;
@@ -182,12 +194,11 @@ table tr #cart-product {
 .container-shopping-cart.active .container-right-td .remove-cart-product:hover {
     background-color: rgb(158, 1, 1);
 }
-/* end light mode */
 /* end all products purchased */
 
 /* start choose freight */
 .freight {
-    font-family: poppins-light;
+    font-family: poppins-semiBold;
     font-size: 1.6rem;
 }
 
@@ -210,6 +221,10 @@ table tr #cart-product {
     margin-top: 1rem;
 }
 
+.freight {
+    color: var(--color-text);
+}
+
 .freight input[type="radio"] {
     appearance: none;
     background-color: #fff;
@@ -222,16 +237,8 @@ table tr #cart-product {
     border: 2px solid #fff;
 }
 
-.container-shopping-cart.active .freight input[type="radio"] {
-    background-color: #ffffff;
-}
-
 .freight input[type="radio"]:checked {
-    background-color: #ff9100;
-}
-
-.container-shopping-cart.active .freight input[type="radio"]:checked {
-    background-color: #000;
+    background-color: var(--input-bg-radio-checked);
 }
 
 .freight label {
@@ -244,18 +251,12 @@ table tr #cart-product {
     right: 2%;
     font-size: 2rem;
 }
-
-/* start light mode */
-.container-shopping-cart.active .freight {
-    color: #000;
-}
-/* end light mode */
 /* end choose freight */
 /* end products form cart-shopping */
 
 /* start product cart summary */
 .value-and-summary-of-products {
-    background-color:rgb(0, 0, 48);
+    background-color: var(--color-bg-containers-childs);
     padding: 2rem;
     font-family: poppins-light;
     font-size: 1.6rem;
@@ -266,7 +267,7 @@ table tr #cart-product {
 .paragraph-summary {
     margin-bottom: 3rem;
     font-family: poppins-semiBold;
-    color: green;
+    color: var(--color-text-product-value);
     text-transform: uppercase;
     text-align: center;
 }
@@ -286,7 +287,7 @@ table tr #cart-product {
     width: 100%;
     font-size: 2rem;
     text-transform: uppercase;
-    color: rgb(0, 151, 0);
+    color: var(--color-text-product-value);
     font-family: poppins-semiBold;
     margin-top: 5rem;
     text-align: center;
@@ -300,55 +301,24 @@ table tr #cart-product {
     cursor: pointer;
     border-radius: 0.4rem;
     font-family: poppins-semiBold;
-    color: #000;
+    color: var(--color-text-inverse);
 }
 
 #finaly-cart {
-    background-color: rgb(20, 170, 0);
+    background-color: var(--color-bg-btn-finaly-cart);
+    text-decoration: none;
+    color: var(--color-text-inverse);
 }
 
 #finaly-cart:hover {
-    background-color: rgb(26, 226, 0);
-}
-
-#finaly-cart {
-    text-decoration: none;
-    color: #000;
+    background-color: var(--color-bg-btn-finaly-cart-hover);
 }
 
 #keep-shopping {
-    background-color: rgb(0, 172, 172);
+    background-color: var(--color-bg-btn-keep-shopping);
 }
 
 #keep-shopping:hover {
-    background-color: rgb(0, 219, 219);
+    background-color: var(--color-bg-btn-keep-shopping-hover);
 }
-
-/* start light mode */
-.container-shopping-cart.active .paragraph-summary, .container-shopping-cart.active .paragraph-total {
-    color: #000;
-}
-
-.container-shopping-cart.active #finaly-cart {
-    background-color: rgb(0, 78, 4);
-}
-
-.container-shopping-cart.active #finaly-cart:hover {
-    background-color: rgb(0, 105, 5);
-}
-
-.container-shopping-cart.active #finaly-cart {
-    color: #fff;
-}
-
-.container-shopping-cart.active #keep-shopping {
-    background: rgb(7, 0, 102);
-    color: #fff;
-}
-
-.container-shopping-cart.active #keep-shopping:hover {
-    background: rgb(11, 0, 158);
-    color: #fff;
-}
-/* end light mode */
 /* end product cart summary */
