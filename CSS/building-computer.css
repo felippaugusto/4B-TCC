@@ -1,3 +1,25 @@
+/* start light mode */
+body[data-theme="t-light"] {
+    --color-bg-container-total-values: linear-gradient(to bottom right, #fff, #fff);
+    --color-bg-choose-hardwares: rgb(255, 255, 255);
+    --color-bg-paragraph-hardwares: linear-gradient(#8d8d8d, #8d8d8d);
+    --color-text: #000;
+    --font-weight: 600;
+    --font-family: poppins-semiBold;
+    --color-harwares-value: #000;
+}
+
+body[data-theme="t-dark"] {
+    --color-bg-container-total-values: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
+    --color-bg-choose-hardwares: rgb(39, 0, 39);
+    --color-bg-paragraph-hardwares: linear-gradient(to top right,rgba(31, 31, 31, 0.8), rgba(53, 53, 53, 0.8));
+    --color-text: #fff;
+    --font-weight: normal;
+    --font-family: poppins-light;
+    --color-harwares-value: #00a824;
+}
+/* end light mode */
+
 /* start choose the team */
 .blueOrRedTeam {
     height: 50vh;
@@ -27,16 +49,12 @@
 
 /* start container total value */
 .container-total-values {
-    background: linear-gradient(to bottom right ,rgb(34, 0, 34), rgb(18, 0, 43));
+    background: var(--color-bg-container-total-values);
     color: #fff;
     gap: 15rem;
     font-size: 2.5rem;
     font-family: poppins-light;
     padding: 2rem;
-}
-
-body.active .container-total-values {
-    background: linear-gradient(to bottom right, #fff, #fff);
 }
 
 .building-at-home, .building-ready {
@@ -53,16 +71,11 @@ body.active .container-total-values {
 
 /* start container choose hardwares */
 .container-hardwares .paragraph-hardwares {
-    background: linear-gradient(to top right,rgba(31, 31, 31, 0.8), rgba(53, 53, 53, 0.8));
+    background: var(--color-bg-paragraph-hardwares);
     padding: 1.5rem;
     font-size: 2rem;
     font-family: poppins-semiBold;
-    color: #fff;
-}
-
-body.active .paragraph-hardwares {
-    background: linear-gradient(#8d8d8d, #8d8d8d);
-    color: #000;
+    color: var(--color-text);
 }
 
 .choose-hardwares {
@@ -70,11 +83,7 @@ body.active .paragraph-hardwares {
     padding: 2rem;
     gap: 2rem;
     position: relative;
-    background-color: rgb(39, 0, 39);
-}
-
-body.active .choose-hardwares {
-    background: rgb(255, 255, 255);
+    background-color: var(--color-bg-choose-hardwares);
 }
 
 .container-img {
@@ -92,14 +101,9 @@ body.active .choose-hardwares {
 
 .hardwares-description {
     font-size: 2.5rem;
-    font-family: poppins-light;
-    color: #fff;
+    font-family: var(--font-family);
+    color: var(--color-text);
     width: 50%;
-}
-
-body.active .hardwares-description {
-    color: #000;
-    font-weight: 600;
 }
 
 .hardwares-value-choose {
@@ -112,11 +116,7 @@ body.active .hardwares-description {
 .hardwares-value-choose .hardwares-value {
     font-size: 2rem;
     font-family: poppins-semiBold;
-    color: #00a824;
-}
-
-body.active .hardwares-value {
-    color: #000;
+    color: var(--color-harwares-value);
 }
 
 .hardwares-value-choose .btn-choose-hardwares {
@@ -130,18 +130,11 @@ body.active .hardwares-value {
     cursor: pointer;
 }
 
-body.active .btn-choose-hardwares {
-    background-color: #00a824;
-}
-
 .hardwares-value-choose .btn-choose-hardwares:hover {
     background-color: #27c400;
     padding: 1.2rem 2.1rem;
 }
 
-body.active .btn-choose-hardwares:hover {
-    background-color: #007419;
-}
 /* end container choose hardwares */
 
 /* start box model choose hardwares */
