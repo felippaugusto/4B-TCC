@@ -15,7 +15,7 @@
     <!-- header structure -->
     <!-- header left -->
     <header class="displayFlex header" id="header">
-        <a href="index.html" class="text-logo-header displayFlex">
+        <a href="index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>
         </a>
@@ -24,7 +24,7 @@
         <div class="header-right displayFlex">
             <div id="loginOrSignUp" class="displayFlex">
                 <img src="IMAGES/header/user.png" alt="" id="user-header">
-                <a href="login.html" class="loginOrSignUpText">Entrar/Cadastrar</a>
+                <a href="login.php" class="loginOrSignUpText">Entrar/Cadastrar</a>
             </div>
 
             <div id="theme-white-or-dark" class="displayFlex">
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <a href="shopping-cart.html" id="carrinho" class="displayFlex">
+            <a href="shopping-cart.php" id="carrinho" class="displayFlex">
                 <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
                     <div class="displayFlex container-img-down-arrow">
@@ -50,18 +50,18 @@
     <main>
         <!-- choose intel or amd -->
         <div class="containerIntelAndAmd displayFlex">
-            <a href="building-computer.html" class="containerIntel displayFlex blue" onmouseover="toggleBtnIntelAmd.intelActive()" onmouseout="toggleBtnIntelAmd.intelDesactive()">
+            <a href="building-computer.php" class="containerIntel displayFlex blue" onmouseover="toggleBtnIntelAmd.intelActive()" onmouseout="toggleBtnIntelAmd.intelDesactive()">
                 <p class="intel">INTEL</p>
             </a>
     
-            <a href="building-computer.html" class="containerAmd displayFlex red" onmouseover="toggleBtnIntelAmd.amdActive()" onmouseout="toggleBtnIntelAmd.amdDesactive()">
+            <a href="building-computer.php" class="containerAmd displayFlex red" onmouseover="toggleBtnIntelAmd.amdActive()" onmouseout="toggleBtnIntelAmd.amdDesactive()">
                 <img src="IMAGES/main/logo-amd/ryzen-amd-logo.png" alt="image-logo-ryzen" class="imgLogoRyzen">
             </a>
         </div>
 
         <div class="selectAmdOrIntel displayFlex">
-            <a href="building-computer.html" class="btnSelectIntel">Selecionar</a>
-            <a href="building-computer.html" class="btnSelectAmd">Selecionar</a>
+            <a href="building-computer.php" class="btnSelectIntel">Selecionar</a>
+            <a href="building-computer.php" class="btnSelectAmd">Selecionar</a>
         </div>
 
 

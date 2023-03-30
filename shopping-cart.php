@@ -15,7 +15,7 @@
     <!-- header structure -->
     <!-- header left -->
     <header class="displayFlex header" id="header">
-        <a href="index.html" class="text-logo-header displayFlex">
+        <a href="index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>
         </a>
@@ -23,7 +23,7 @@
         <div class="header-right displayFlex">
             <div id="loginOrSignUp" class="displayFlex">
                 <img src="IMAGES/header/user.png" alt="" id="user-header">
-                <a href="login.html" class="loginOrSignUpText">Entrar/Cadastrar</a>
+                <a href="login.php" class="loginOrSignUpText">Entrar/Cadastrar</a>
             </div>
 
             <div id="theme-white-or-dark" class="displayFlex">
@@ -144,7 +144,7 @@
                 <div class="container-buttons displayFlex">
                     <!-- if don't have a user, redirect through php -->
                     <button id="finaly-cart">Finalizar carrinho</button>
-                    <a href="index.html" id="keep-shopping">Continuar comprando</a>
+                    <a href="index.php" id="keep-shopping">Continuar comprando</a>
                 </div>
             </container>
         </div>

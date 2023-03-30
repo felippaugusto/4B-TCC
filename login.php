@@ -15,7 +15,7 @@
     <!-- header structure -->
     <!-- header left -->
     <header class="displayFlex header" id="header">
-        <a href="index.html" class="text-logo-header displayFlex">
+        <a href="index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>
         </a>
@@ -51,7 +51,7 @@
                 </div>
                 <button type="submit">Entrar</button>
             </form>
-            <a href="register.html" id="register">Não tem uma conta? <span>Registre-se</span></a>
+            <a href="register.php" id="register">Não tem uma conta? <span>Registre-se</span></a>
         </div>
     </div>
 

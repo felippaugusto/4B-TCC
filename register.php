@@ -15,7 +15,7 @@
     <!-- header structure -->
     <!-- header left -->
     <header class="displayFlex header" id="header">
-        <a href="index.html" class="text-logo-header displayFlex">
+        <a href="index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>
         </a>
@@ -77,7 +77,7 @@
         <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
     </div>
 
-    <a href="login.html" class="backToThePreviousPage">Voltar</a>
+    <a href="login.php" class="backToThePreviousPage">Voltar</a>
 
     <!-- button to navegate to header -->
     <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>

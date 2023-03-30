@@ -14,7 +14,7 @@
 <body>
     <!-- header -->
     <header class="displayFlex header" id="header">
-        <a href="index.html" class="text-logo-header displayFlex">
+        <a href="index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>
         </a>
@@ -23,7 +23,7 @@
         <div class="header-right displayFlex">
             <div id="loginOrSignUp" class="displayFlex">
                 <img src="IMAGES/header/user.png" alt="" id="user-header">
-                <a href="login.html" class="loginOrSignUpText">Entrar/Cadastrar</a>
+                <a href="login.php" class="loginOrSignUpText">Entrar/Cadastrar</a>
             </div>
 
             <div id="theme-white-or-dark" class="displayFlex">
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <a href="shopping-cart.html" id="carrinho" class="displayFlex">
+            <a href="shopping-cart.php" id="carrinho" class="displayFlex">
                 <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
                     <div class="displayFlex container-img-down-arrow">
