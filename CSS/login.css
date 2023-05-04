@@ -20,10 +20,6 @@ body[data-theme="t-dark"] {
 }
 /* end light mode */
 
-#header {
-    justify-content: space-around;
-}
-
 /* start container login */
 /* start form left */
 .container-login {
@@ -53,7 +49,7 @@ body[data-theme="t-dark"] {
 /* end form left */
 
 /* start form right */
-.container-form {
+.container-form.login {
     background: var(--color-bg-container-form);
     background: var(--color-bg-container-form-gradient);
     padding: 3rem;
@@ -64,7 +60,7 @@ body[data-theme="t-dark"] {
     border-radius: 2rem;
 }
 
-.container-form form {
+.container-form.login form {
     flex-direction: column;
     gap: 3rem;
     width: 100%;

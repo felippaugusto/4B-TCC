@@ -20,11 +20,6 @@ body[data-theme="t-dark"] {
 }
 /* end light mode */
 
-
-#header {
-    justify-content: space-around;
-}
-
 /* start container login */
 /* start form left */
 .container-login {
