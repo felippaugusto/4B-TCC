@@ -31,7 +31,7 @@ include_once 'includes/header.php';
             <div class="address-user">
                 <p>Informe seu CEP</p>
                 <input type="text" name="cep" id="cep" class="cep" title="Coloque seu CEP">
-                <button>Confirmar</button>
+                <button class="btn-shopping-cart">Confirmar</button>
                 <!-- take the button default action -->
             </div>
 

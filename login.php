@@ -29,7 +29,8 @@ include_once 'includes/header.php';
         </div>
 
         <div class="container-form login displayFlex">
-            <form action="" class="displayFlex">
+            <form action="php_actions/read.php" class="displayFlex" method="POST">
+
                 <div class="container-email displayFlex">
                     <label for="email"><img src="IMAGES/form-login/email.png" alt="" id="img-email"></label>
                     <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11" title="Seu email por favor">
@@ -39,7 +40,7 @@ include_once 'includes/header.php';
                     <label for="password"><img src="IMAGES/form-login/padlock.png" alt="" id="img-password"></label>
                     <input type="password" name="password" id="password" autocomplete="off" placeholder="Senha" required minlength="8" title="Sua senha por favor">
                 </div>
-                <button type="submit">Entrar</button>
+                <button type="submit" name="btn_submit">Entrar</button>
             </form>
             <a href="register.php" id="register">Não tem uma conta? <span>Registre-se</span></a>
         </div>

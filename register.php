@@ -29,7 +29,7 @@ include_once 'includes/header.php';
         </div>
 
         <div class="container-form displayFlex">
-            <form action="" class="displayFlex">
+            <form action="php_actions/create.php" class="displayFlex" method="POST">
                 <div class="displayFlex">
                     <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome">
                     <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Sobrenome" required title="Seu nome">
@@ -47,9 +47,9 @@ include_once 'includes/header.php';
                 
                 <div class="displayFlex">
                     <input type="password" name="password" id="password" autocomplete="off" placeholder="Digite sua senha" required minlength="8" title="Sua senha por favor">
-                    <input type="password" name="password" id="password" autocomplete="off" placeholder="Confirme sua senha" required minlength="8" title="Sua senha por favor">
+                    <input type="password" name="confirm_password" id="password" autocomplete="off" placeholder="Confirme sua senha" required minlength="8" title="Sua senha por favor">
                 </div>
-                <button type="submit">Cadastrar-se</button>
+                <button type="submit" name="btn_submit">Cadastrar-se</button>
             </form>
         </div>
     </div>

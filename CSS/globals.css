@@ -31,6 +31,11 @@ a {
 }
 
 @font-face {
+    font-family: poppins-intermediare;
+    src: url("../FONTS/Poppins/Poppins-medium.ttf");
+}
+
+@font-face {
     font-family: poppins-semiBold;
     src: url("../FONTS/Poppins/Poppins-SemiBold.ttf");
 }

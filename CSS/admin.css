@@ -1,0 +1,15 @@
+#tableAdmin {
+    width: 100%;
+    padding: 10rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#tableAdmin thead {
+    background-color: rgb(189, 224, 255);
+}
+
+#tableAdmin thead tr th {
+    padding: 1rem;
+    border: 1px solid red;
+}

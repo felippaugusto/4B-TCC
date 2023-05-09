@@ -1,3 +1,10 @@
+<?php
+// Connection with database
+require_once 'php_actions/db_connect.php';
+// Start sessions 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
     <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/admin.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/footer.css">

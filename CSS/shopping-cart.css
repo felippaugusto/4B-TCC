@@ -73,7 +73,7 @@ body[data-theme="t-dark"] {
     margin-right: 1rem;
 }
 
-.address-user button {
+.address-user .btn-shopping-cart {
     padding: 0.9rem 1.2rem;
     border: none;
     border-radius: 0.4rem;
@@ -83,7 +83,7 @@ body[data-theme="t-dark"] {
     cursor: pointer;
 }
 
-.address-user button:hover {
+.address-user .btn-shopping-cart:hover {
     background-color: var(--color-bg-btn-address-hover);
 }
 /* end form address CEP */

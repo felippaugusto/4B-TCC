@@ -35,6 +35,8 @@
     <script src="JS/shopping-cart.js"></script>
     <script src="JS/building-computer.js"></script>
     <script>
+
+
         function typeWriter() {
             const title = document.querySelector(".paragraph-team");
 
@@ -50,6 +52,23 @@
         }
 
         setTimeout(typeWriter, 2000)
+
+
+    </script>
+    <script>
+        const containerLoggedUser = $("#containerLoggedUser");
+        const modelLoggedUser = $(".modelLoggedUser");
+
+        containerLoggedUser.mouseover(() => {
+            modelLoggedUser.addClass("active");
+
+            console.log("adicionou");
+        })
+
+        containerLoggedUser.mouseout(() => {
+            modelLoggedUser.removeClass("active");
+            console.log("removeu");
+        })
     </script>
 </body>
 </html>
