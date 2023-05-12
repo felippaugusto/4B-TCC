@@ -118,9 +118,10 @@ body[data-theme="t-dark"] {
 
 .modelLoggedUser a {
     color: var(--color-text-model-user);
+    display: block;
 }
 
-.modelLoggedUser p:hover,.modelLoggedUser a:hover {
+.modelLoggedUser #userPage:hover,.modelLoggedUser a:hover {
     text-decoration: underline var(--color-text-model-user);
 }
 

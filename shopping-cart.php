@@ -11,10 +11,8 @@ include_once 'includes/header.php';
         </a>
         <!-- header right -->
         <div class="header-right displayFlex">
-            <div id="loginOrSignUp" class="displayFlex">
-                <img src="IMAGES/header/user.png" alt="" id="user-header">
-                <a href="login.php" class="loginOrSignUpText">Entrar/Cadastrar</a>
-            </div>
+            <!-- registered or logged user -->
+            <?php include_once 'includes/loggedUser.php'; ?>
 
             <div id="theme-white-or-dark" class="displayFlex">
                 <div id="ball" class="displayFlex">
