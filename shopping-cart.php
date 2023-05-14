@@ -106,7 +106,8 @@ include_once 'includes/header.php';
                             <span>R$ 50,00 reais</span>
                         </div>
 
-                        <div class="container-freight-two">
+                        <!-- a possible implementation
+                             <div class="container-freight-two">
                             <input type="radio" name="freight" id="Rede_sul"><label for="Rede_sul">Rede Sul</label>
                             <span>R$ 50,00 reais</span>
                         </div>
@@ -114,7 +115,7 @@ include_once 'includes/header.php';
                         <div class="container-freight-three">
                             <input type="radio" name="freight" id="brasspress"><label for="brasspress">BrassPress</label>
                             <span>R$ 50,00 reais</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
