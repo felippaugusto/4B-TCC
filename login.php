@@ -29,7 +29,7 @@ include_once 'includes/header.php';
         </div>
 
         <div class="container-form login displayFlex">
-            <form action="php_actions/read.php" class="displayFlex" method="POST">
+            <form action="php_actions/login.php" class="displayFlex" method="POST">
 
                 <div class="container-email displayFlex">
                     <label for="email"><img src="IMAGES/form-login/email.png" alt="" id="img-email"></label>

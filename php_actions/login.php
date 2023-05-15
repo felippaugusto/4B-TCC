@@ -30,11 +30,13 @@ if(isset($_POST['btn_submit'])) {
                     header('Location: ../index.php');
                 }
                 else {
-                    echo "Email e senha inválidos";
+                    // add error messages with sessions
+                    header('Location: ../login.php');
                 }
             }
             else {
-                echo "Email inválido";
+                // add error messages with sessions
+                header('Location: ../login.php');
             }
         }
     }
