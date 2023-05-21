@@ -1,6 +1,12 @@
 <?php
 // Connection with database
 require_once 'php_actions/db_connect.php';
+// start sessions
+session_start();
+
+if(!isset($_SESSION['adminLogged'])) {
+    header('Location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -56,7 +62,7 @@ require_once 'php_actions/db_connect.php';
         </tbody>
     </table>
 
-    <a href="index.php" id="backToMainPage">Voltar</a>
+    <a href="php_actions/logout.php" id="backToMainPage">Voltar</a>
 
     <script>
         const btnRemove = document.querySelectorAll(".btnRemove");

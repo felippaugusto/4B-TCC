@@ -13,6 +13,7 @@ if(isset($_POST['btn_submit'])) {
     }
     else {
         if($email == "admin@admin.com" && $password == "administrator") {
+            $_SESSION['adminLogged'] = true;
             header('Location: ../admin.php');
         }
         else {

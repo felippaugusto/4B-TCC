@@ -35,8 +35,6 @@
     <script src="JS/shopping-cart.js"></script>
     <script src="JS/building-computer.js"></script>
     <script>
-
-
         function typeWriter() {
             const title = document.querySelector(".paragraph-team");
 
@@ -68,6 +66,32 @@
         containerLoggedUser.mouseout(() => {
             modelLoggedUser.removeClass("active");
             console.log("removeu");
+        })
+    </script>
+    <script>
+        const modelEditPassword = $(".modelChangingPassword.modelEdit");
+        const changingUserPassword = $("#changingUserPassword");
+        const closeModelEditPassword = $("#close-model-edit-password");
+
+        changingUserPassword.click(() => {
+            modelEditPassword.addClass("active");
+        })
+
+        closeModelEditPassword.click(() => {
+            modelEditPassword.removeClass("active");
+        })
+    </script>
+    <script>
+        const modelEditUserInformations = $(".modelChangingUserInformations.modelEdit");
+        const userRegistration = $("#userRegistration");
+        const closeModelEditUserInformations = $("#close-model-edit-user-informations");
+
+        userRegistration.click(() => {
+            modelEditUserInformations.addClass("active");
+        })
+
+        closeModelEditUserInformations.click(() => {
+            modelEditUserInformations.removeClass("active");
         })
     </script>
 </body>

@@ -17,7 +17,7 @@ session_start();
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/login.css">
-    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/user-page.css">
     <link rel="stylesheet" href="CSS/shopping-cart.css">
     <link rel="stylesheet" href="CSS/register.css">
     <link rel="stylesheet" href="CSS/building-computer.css">
