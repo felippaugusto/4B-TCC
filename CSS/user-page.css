@@ -1,3 +1,15 @@
+/* start light mode */
+body[data-theme="t-light"] {
+    --boxShadowBackgroundDivChilds: rgba(54, 54, 54, 1);
+    --boxShadowDivChilds: 10px 10px 20px 6px;
+}
+
+body[data-theme="t-dark"] {
+    --boxShadowBackgroundDivChilds: rgba(252, 252, 252, 0.5);
+    --boxShadowDivChilds: 1px 5px 20px 6px;
+}
+/* end light mode */
+
 /* start user container with personal information */
 #containerUserPage {
     width: 100vw;
@@ -22,7 +34,9 @@
 }
 
 #containerUserPage .divChilds:hover {
-    box-shadow: 1px 5px 20px 6px rgba(252, 252, 252, 0.5);
+    box-shadow: var(--boxShadowDivChilds) var(--boxShadowBackgroundDivChilds);
+    padding: 11rem 0rem;
+    width: 23%;
 }
 
 #containerUserInformation {
