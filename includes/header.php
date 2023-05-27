@@ -3,6 +3,18 @@
 require_once 'php_actions/db_connect.php';
 // Start sessions 
 session_start();
+
+if(isset($_SESSION['messages'])): ?>
+
+<script>
+    // messages
+    window.onload = () => {
+        M.toast({html: '<?php echo $_SESSION['messages']; ?>'})
+    }
+</script>
+
+<?php
+endif;
 ?>
 
 <!DOCTYPE html>

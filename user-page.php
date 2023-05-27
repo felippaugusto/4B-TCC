@@ -5,6 +5,15 @@ include_once 'includes/header.php';
 if(!isset($_SESSION['logged'])) {
     header('Location: index.php');
 }
+
+if(isset($_GET['id'])) {
+    $id = mysqli_escape_string($connect, $_GET['id']);
+
+    $sql = "SELECT * FROM tb_users WHERE id_users = '$id'";
+    $result = mysqli_query($connect, $sql);
+    $data = mysqli_fetch_array($result);
+}
+
 ?>
 <!-- header structure -->
     <!-- header left -->
@@ -42,39 +51,30 @@ if(!isset($_SESSION['logged'])) {
         <!-- add users information and edit button -->
         <div id="userRegistration" class="divChilds">
             <p>Informações pessoais</p>
-
-            <!-- make a form to edit -->
-            <!-- <div id="containerUserInformation">
-                
-                <p id="fistName">Felipp</p>
-                <p id="lastName">Piran</p>
-                <p id="date">21/03/1990</p>
-                <p id="cpf">192.121.342.42</p>
-                <p id="email">felipp@gmail.com</p>
-                <p id="telephone">(45)934265823</p>
-            </div> -->
         </div>
 
         <!-- form model changing user personal informations -->
         <div class="modelChangingUserInformations modelEdit displayFlex">
             <form action="php_actions/edit_user_informations.php" method="POST" class="modelForm personalInformations displayFlex">
+                <input type="hidden" name="id" value="<?php echo $data['id_users']; ?>">
+
                 <div class="displayFlex inputs">
-                    <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome">
-                    <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Sobrenome" required title="Seu nome">
+                    <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome" value="<?php echo $data['first_name']; ?>">
+                    <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Sobrenome" required title="Seu nome" value="<?php echo $data['last_name']; ?>">
                 </div>
 
                 <div class="displayFlex inputs">
-                    <input type="text" name="cpf" id="cpf" class="cpf" autocomplete="off" placeholder="CPF" required title="Seu CPF" minlength="11" maxlength="11">
-                    <input type="text" name="date" id="date" class="date" placeholder="Data de nascimento" required title="Sua data de nascimento">
+                    <input type="text" name="cpf" id="cpf" class="cpf" autocomplete="off" placeholder="CPF" required title="Seu CPF" minlength="11" maxlength="11" value="<?php echo $data['cpf']; ?>">
+                    <input type="text" name="date" id="date" class="date" placeholder="Data de nascimento" required title="Sua data de nascimento" value="<?php echo $data['data_birthday']; ?>">
                 </div>
 
                 <div class="displayFlex inputs">
-                    <input type="tel" name="telephone" id="telephone" class="phone_with_ddd" placeholder="Telefone" required title="Seu telefone">
-                    <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11"title="Seu email por favor">
+                    <input type="tel" name="telephone" id="telephone" class="phone_with_ddd" placeholder="Telefone" required title="Seu telefone" value="<?php echo $data['telephone']; ?>">
+                    <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11"title="Seu email por favor" value="<?php echo $data['email']; ?>">
                 </div>  
 
                 <div id="container-btns-edit" class="displayFlex">
-                    <button type="submit" name="btn_submit_edit_user-informations">Alterar a senha</button>
+                    <button type="submit" name="btn_submit_edit_user-informations">Confirmar as alterações</button>
                     <p id="close-model-edit-user-informations">Cancelar</p>
                 </div>
             </form>
@@ -86,11 +86,13 @@ if(!isset($_SESSION['logged'])) {
         <!-- form model changing user Password -->
         <div class="modelChangingPassword modelEdit displayFlex ">
             <form action="php_actions/edit_password.php" method="POST" class="modelForm displayFlex">
+                <input type="hidden" name="id" value="<?php echo $data['id_users']; ?>">
+
                 <label for="current-password">Senha Atual</label>
-                <input type="text" name="currentPassword" required placeholder="Senha atual" id="current-password">
+                <input type="text" name="currentPassword" required placeholder="Senha atual" id="current-password" title="Senha Atual">
 
                 <label for="new-password">Senha Nova</label>
-                <input type="text" name="currentPassword" required placeholder="Senha atual" id="new-password">
+                <input type="text" name="newPassword" required placeholder="Nova Senha" id="new-password" minlength="8" title="Nova senha">
 
                 <div id="container-btns-edit" class="displayFlex">
                     <button type="submit" name="btn_submit_edit_password">Alterar a senha</button>

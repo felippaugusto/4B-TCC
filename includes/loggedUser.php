@@ -19,7 +19,7 @@
                 <p id="userName"><?php echo $datas['first_name']; ?></p>
 
                 <div class="modelLoggedUser">
-                    <a href="user-page.php" id="userPage">Meu perfil</a>
+                    <a href="user-page.php?id=<?php echo $datas['id_users']; ?>" id="userPage">Meu perfil</a>
                     <a href="php_actions/logout.php" id="exitUser">Sair</a>
                 </div>
             </div>

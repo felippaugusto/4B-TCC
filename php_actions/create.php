@@ -12,7 +12,7 @@ if(isset($_POST['btn_submit'])) {
     $password = mysqli_escape_string($connect, $_POST['password']);
     $confirmPassword = mysqli_escape_string($connect, $_POST['confirm_password']);
 
-    $sql = "INSERT INTO tb_users (first_name, last_name, cpf, data_birthday, telephone, email, password, repeat_password) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password', '$confirmPassword')";
+    $sql = "INSERT INTO tb_users (first_name, last_name, cpf, data_birthday, telephone, email, password) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password')";
 
     if(mysqli_query($connect, $sql)) {
         header('Location: ../login.php?sucess');
