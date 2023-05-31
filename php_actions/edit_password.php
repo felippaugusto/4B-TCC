@@ -3,11 +3,13 @@
 session_start();
 // Connection with database
 require_once 'db_connect.php';
+// function to clear data
+include_once '../includes/cleaningData.php';
 
 if(isset($_POST['btn_submit_edit_password'])) {
-    $currentPassword = mysqli_escape_string($connect, $_POST['currentPassword']);
-    $newPassword = mysqli_escape_string($connect, $_POST['newPassword']);
-    $id = mysqli_escape_string($connect, $_POST['id']);
+    $currentPassword = cleaningData($_POST['currentPassword']);;
+    $newPassword = cleaningData($_POST['newPassword']);
+    $id = cleaningData($_POST['id']);;
 
     $sql = "SELECT password FROM tb_users WHERE password = '$currentPassword' AND id_users = '$id'";
     $result = mysqli_query($connect, $sql);

@@ -3,7 +3,7 @@
 require_once 'db_connect.php';
 
 if(isset($_POST['delete-btn'])) {
-    $id = mysqli_escape_string($connect, $_POST['id']);
+    $id = cleaningData($_POST['id']);
 
     $sql = "DELETE FROM tb_users WHERE id_users = '$id'";
 

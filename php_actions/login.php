@@ -3,10 +3,12 @@
 require_once 'db_connect.php';
 // Start sessions
 session_start();
+// function to clear data
+include_once '../includes/cleaningData.php';
 
 if(isset($_POST['btn_submit'])) {
-    $email = mysqli_escape_string($connect, $_POST['email']);
-    $password = mysqli_escape_string($connect, $_POST['password']);
+    $email = cleaningData($_POST['email']);
+    $password = cleaningData($_POST['password']);
 
     if(empty($email) || empty($password)) {
         echo "Está vazio algum dos campos";

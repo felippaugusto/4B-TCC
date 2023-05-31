@@ -51,6 +51,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
+        <!-- switch to products kits -->
         <div class="container-choose-hardwares">
             <div class="container-hardwares">
                 <p class="paragraph-hardwares">Processador</p>
@@ -118,76 +119,6 @@ include_once 'includes/header.php';
                     </div>
                 </div>    
             </div>
-
-            <div class="container-choose-hardwares">
-                <div class="container-hardwares">
-                    <p class="paragraph-hardwares">Memória ram</p>
-    
-                    <div class="choose-hardwares displayFlex">
-                        <div class="container-img">
-                            <img src="IMAGES/main/hardwares-puschase/ssd.png" alt="" class="img-demonstration">
-                        </div>
-                        <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <div class="hardwares-value-choose displayFlex">
-                            <p class="hardwares-value">R$ 1500,00</p>
-                            <button type="button" class="btn-choose-hardwares">Escolha</button>
-                        </div>
-                    </div>
-                </div>
-                </div>    
-            </div>
-
-            <div class="container-choose-hardwares">
-                <div class="container-hardwares">
-                    <p class="paragraph-hardwares">Armazenamento</p>
-    
-                    <div class="choose-hardwares displayFlex">
-                        <div class="container-img">
-                            <img src="IMAGES/main/hardwares-puschase/ssd.png" alt="" class="img-demonstration">
-                        </div>
-                        <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <div class="hardwares-value-choose displayFlex">
-                            <p class="hardwares-value">R$ 1500,00</p>
-                            <button type="button" class="btn-choose-hardwares">Escolha</button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-
-            <div class="container-choose-hardwares">
-                <div class="container-hardwares">
-                    <p class="paragraph-hardwares">Fonte</p>
-    
-                    <div class="choose-hardwares displayFlex">
-                        <div class="container-img">
-                            <img src="IMAGES/main/hardwares-puschase/power-supply.png" alt="" class="img-demonstration">
-                        </div>
-                        <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <div class="hardwares-value-choose displayFlex">
-                            <p class="hardwares-value">R$ 1500,00</p>
-                            <button type="button" class="btn-choose-hardwares">Escolha</button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-
-            <div class="container-choose-hardwares">
-                <div class="container-hardwares">
-                    <p class="paragraph-hardwares">Gabinete</p>
-    
-                    <div class="choose-hardwares displayFlex">
-                        <div class="container-img">
-                            <img src="IMAGES/main/hardwares-puschase/cabinet.png" alt="" class="img-demonstration">
-                        </div>
-                        <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <div class="hardwares-value-choose displayFlex">
-                            <p class="hardwares-value">R$ 1500,00</p>
-                            <button type="button" class="btn-choose-hardwares">Escolha</button>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-
         </div>
     </main>
 
