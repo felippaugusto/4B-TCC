@@ -18,14 +18,20 @@ if(isset($_POST['btn_submit_edit_password'])) {
         $sql = "UPDATE tb_users SET password = '$newPassword' WHERE id_users = '$id'";
 
         if(mysqli_query($connect, $sql)) {
-            header("Location: ../user-page.php?id=$id?sucessful=true");
+            $_SESSION['messagesVerify'] = true;
+        $_SESSION['messages'] = "Atualizado com sucesso!";
+            header("Location: ../user-page.php?id=$id");
         }
         else {
+            $_SESSION['messagesVerify'] = true;
+            $_SESSION['messages'] = "Erro ao atualizar!";
             header("Location: ../user-page.php?id=$id");
         }
     }
     else {
-        header("Location: ../user-page.php?id=$id?failured=true");
+        $_SESSION['messagesVerify'] = true;
+        $_SESSION['messages'] = "Senha atual incorreta!";
+        header("Location: ../user-page.php?id=$id");
     }
 }
 ?>

@@ -105,6 +105,29 @@ body {
 }
 /* end site navegation */
 
+/* start messages */
+#paragraphMessages {
+    background-color: aliceblue;
+    width: 9%;
+    padding: 0.8rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: poppins-intermediare;
+    position: fixed;
+    top: 0%;
+    right: 5%;
+    z-index: 999;
+    border-radius: 0.4rem;
+    visibility: hidden;
+    opacity: 0;
+    animation-name: messages;
+    animation-iteration-count: normal;
+    animation-duration: 6s;
+    animation-direction: normal;
+    animation-timing-function: ease;
+}
+/* end messages */
+
 /* start animations */
 @keyframes btnNavegationWebsite {
     0% {
@@ -113,6 +136,37 @@ body {
 
     50% {
         height: 6.5rem;
+    }
+}
+
+@keyframes messages {
+    0% {
+        top: 0%;
+        opacity: 0;
+        visibility: visible;
+    }
+
+    20% {
+        opacity: 1;
+        top: 8%;
+    }
+
+    50% {
+        top: 8%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    75% {
+        top: 8%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        top: 0%;
+        opacity: 0;
+        visibility: hidden;
     }
 }
 /* end animations */

@@ -33,12 +33,14 @@ if(isset($_POST['btn_submit'])) {
                     header('Location: ../index.php');
                 }
                 else {
-                    // add error messages with sessions
+                    $_SESSION['messagesVerify'] = true;
+                    $_SESSION['messages'] = "Email/Senha incorreto!";
                     header('Location: ../login.php');
                 }
             }
             else {
-                // add error messages with sessions
+                $_SESSION['messagesVerify'] = true;
+                $_SESSION['messages'] = "Email incorreto";
                 header('Location: ../login.php');
             }
         }

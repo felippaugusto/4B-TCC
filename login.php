@@ -1,6 +1,8 @@
 <?php
 // Header
 include_once 'includes/header.php';
+// Messages
+include_once 'includes/messages.php';
 ?>
     <!-- header structure -->
     <!-- header left -->

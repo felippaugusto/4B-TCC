@@ -3,6 +3,8 @@
 require_once 'db_connect.php';
 // function to clear data
 include_once '../includes/cleaningData.php';
+// sessions start
+session_start();
 
 if(isset($_POST['btn_submit'])) {
     $firstName = cleaningData($_POST['firstName']);
@@ -17,10 +19,14 @@ if(isset($_POST['btn_submit'])) {
     $sql = "INSERT INTO tb_users (first_name, last_name, cpf, data_birthday, telephone, email, password) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password')";
 
     if(mysqli_query($connect, $sql)) {
-        header('Location: ../login.php?sucess');
+        $_SESSION['messagesVerify'] = true;
+        $_SESSION['messages'] = "Cadastrado com sucesso!";
+        header('Location: ../login.php');
     }
     else {
-        header('Location: ../register.php?failed');
+        $_SESSION['messagesVerify'] = true;
+        $_SESSION['messages'] = "Erro ao cadastrar!";
+        header('Location: ../register.php');
     }
 }
 else {

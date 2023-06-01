@@ -136,6 +136,8 @@ include_once 'includes/header.php';
     <!-- button to navegate to header -->
     <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>
 
+    <!-- <p id="paragraphMessages">Sucesso ao cadastrar</p> -->
+
 <?php
 // Footer
 include_once 'includes/footer.php';

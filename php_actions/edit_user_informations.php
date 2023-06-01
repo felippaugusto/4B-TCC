@@ -19,9 +19,13 @@ if(isset($_POST['btn_submit_edit_user-informations'])) {
     $sql = "UPDATE tb_users SET first_name = '$firstName', last_name = '$lastName', cpf = '$cpf', data_birthday = '$date', telephone = '$telephone', email = '$email' WHERE id_users = '$id'";
 
     if(mysqli_query($connect, $sql)) {
+        $_SESSION['messagesVerify'] = true;
+        $_SESSION['messages'] = "Atualizado com sucesso!";
         header("Location: ../user-page.php?id=$id");
     }
     else {
+        $_SESSION['messagesVerify'] = true;
+        $_SESSION['messages'] = "Erro ao atualizar!";
         header("Location: ../user-page.php?id='$id'");
     }
 }
