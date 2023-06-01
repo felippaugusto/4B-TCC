@@ -1,10 +1,14 @@
 /* start light mode */
 body[data-theme="t-light"] {
     --color-bg-goToHeader: rgb(255, 0, 0);
+    --color-bg-messages: rgb(73, 73, 73);
+    --color-text-messages: #fff;
 }
 
 body[data-theme="t-dark"] {
     --color-bg-goToHeader: #fff;
+    --color-bg-messages: aliceBlue;
+    --color-text-messages: #000;
 }
 /* end light mode */
 
@@ -107,7 +111,8 @@ body {
 
 /* start messages */
 #paragraphMessages {
-    background-color: aliceblue;
+    background-color: var(--color-bg-messages);
+    color: var(--color-text-messages);
     width: 9%;
     padding: 0.8rem;
     text-align: center;
