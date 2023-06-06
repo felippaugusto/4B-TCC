@@ -65,6 +65,34 @@ html {
     justify-content: center;
     align-items: center;
 }
+
+input[type="file"] {
+    display: none;
+}
+
+.inputFile {
+    background-color: rgb(250, 0, 75);
+    padding: 0.9rem;
+    font-size: 1.6rem;
+    font-family: poppins-intermediare;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.inputFile:hover {
+    background-color: rgb(204, 0, 61);
+}
+
+.selectCategory {
+    width: 15rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    line-height: 1;
+    border: 0;
+    border-radius: 0.4rem;
+    height: 5rem;
+    cursor: pointer;
+}
 /* end utils */
 
 body {

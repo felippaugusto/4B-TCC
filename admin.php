@@ -4,7 +4,7 @@ require_once 'php_actions/db_connect.php';
 // start sessions
 session_start();
 
-if(!isset($_SESSION['adminLogged'])) {
+if(!isset($_SESSION['adminLogged']) == true) {
     header('Location: login.php');
 }
 ?>
@@ -62,6 +62,7 @@ if(!isset($_SESSION['adminLogged'])) {
         </tbody>
     </table>
 
+    <a href="productsRegister.php" id="productRegister">Registro de produtos</a>
     <a href="php_actions/logout.php" id="backToMainPage">Voltar</a>
 
     <script>

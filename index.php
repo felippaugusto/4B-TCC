@@ -58,74 +58,74 @@ include_once 'includes/header.php';
             <tr class="row-products displayFlex">
 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button id="product-1" class="add-cart">Adicionar ao carrinho</button>
                 </td>
 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button id="product-2" class="add-cart">Adicionar ao carrinho</button>
                 </td>
                 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button id="product-3" class="add-cart">Adicionar ao carrinho</button>
                 </td>
                 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button class="add-cart">Adicionar ao carrinho</button>
                 </td>
 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button id="product-1" class="add-cart">Adicionar ao carrinho</button>
                 </td>
 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button id="product-2" class="add-cart">Adicionar ao carrinho</button>
                 </td>
                 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button id="product-3" class="add-cart">Adicionar ao carrinho</button>
                 </td>
                 
                 <td class="container-product">
-                    <div class="column-products displayFlex">
+                    <a href="productPage.php" class="column-products displayFlex">
                         <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
                         <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <p class="product-value">R$ 1200,00 reais</p>
-                    </div>
+                    </a>
                     <button class="add-cart">Adicionar ao carrinho</button>
                 </td>
 

@@ -143,8 +143,23 @@ body {
     right: 3%;
 }
 
-#backToMainPage:hover {
+#backToMainPage:hover, #productRegister:hover {
     background-color: rgb(206, 55, 0);
     padding: 1.2rem 1.7rem;
 }
+
+/* start products register */
+#productRegister {
+    background-color: rgb(255, 68, 0);
+    padding: 1rem 1.5rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5%;
+    right: 9%;
+}
+/* end products register */
 /* end backToPage */
