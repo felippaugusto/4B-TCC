@@ -1,2 +1,0 @@
-quando eu comprar o produto, aparecera uma barra verde em cima do site dizendo que o produto foi adicionado ao carrinho
-toda vez que eu comprar um produto acontecerá isso

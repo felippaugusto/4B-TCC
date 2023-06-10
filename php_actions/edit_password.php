@@ -11,11 +11,11 @@ if(isset($_POST['btn_submit_edit_password'])) {
     $newPassword = cleaningData($_POST['newPassword']);
     $id = cleaningData($_POST['id']);;
 
-    $sql = "SELECT password FROM tb_users WHERE password = '$currentPassword' AND id_users = '$id'";
+    $sql = "SELECT senha FROM tb_usuarios WHERE senha = '$currentPassword' AND id_usuarios = '$id'";
     $result = mysqli_query($connect, $sql);
     
     if(mysqli_num_rows($result) == 1) {
-        $sql = "UPDATE tb_users SET password = '$newPassword' WHERE id_users = '$id'";
+        $sql = "UPDATE tb_usuarios SET senha = '$newPassword' WHERE cod_cliente = '$id'";
 
         if(mysqli_query($connect, $sql)) {
             $_SESSION['messagesVerify'] = true;

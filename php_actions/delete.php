@@ -5,7 +5,7 @@ require_once 'db_connect.php';
 if(isset($_POST['delete-btn'])) {
     $id = cleaningData($_POST['id']);
 
-    $sql = "DELETE FROM tb_users WHERE id_users = '$id'";
+    $sql = "DELETE FROM tb_usuarios WHERE cod_cliente = '$id'";
 
     if(mysqli_query($connect, $sql)) {
         header('Location: ../admin.php?Deletado');

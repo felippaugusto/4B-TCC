@@ -9,6 +9,7 @@ include_once '../includes/cleaningData.php';
 if(isset($_POST['btn_submit_edit_user-informations'])) {
     $firstName = cleaningData($_POST['firstName']);
     $lastName = cleaningData($_POST['lastName']);
+    $name = $firstName . " " . $lastName;
     $cpf = cleaningData($_POST['cpf']);
     $date = cleaningData($_POST['date']);
     $telephone = cleaningData($_POST['telephone']);
@@ -16,7 +17,7 @@ if(isset($_POST['btn_submit_edit_user-informations'])) {
 
     $id = cleaningData($_POST['id']);
 
-    $sql = "UPDATE tb_users SET first_name = '$firstName', last_name = '$lastName', cpf = '$cpf', data_birthday = '$date', telephone = '$telephone', email = '$email' WHERE id_users = '$id'";
+    $sql = "UPDATE tb_usuarios SET primeiro_nome = '$firstName', sobrenome = '$lastName', cpf = '$cpf', data_nasc = '$date', telefone_cliente = '$telephone', email_cliente = '$email' WHERE cod_cliente = '$id'";
 
     if(mysqli_query($connect, $sql)) {
         $_SESSION['messagesVerify'] = true;

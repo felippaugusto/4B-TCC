@@ -19,17 +19,17 @@ if(isset($_POST['btn_submit'])) {
             header('Location: ../admin.php');
         }
         else {
-            $sql = "SELECT email FROM tb_users WHERE email = '$email'";
+            $sql = "SELECT email_cliente FROM tb_usuarios WHERE email_cliente = '$email'";
             $result = mysqli_query($connect, $sql);
     
             if(mysqli_num_rows($result) > 0) {
-                $sql = "SELECT * FROM tb_users WHERE email = '$email' AND password = '$password'";
+                $sql = "SELECT * FROM tb_usuarios WHERE email_cliente = '$email' AND senha = '$password'";
                 $result = mysqli_query($connect, $sql);
     
                 if(mysqli_num_rows($result) == 1) {
                     $datas = mysqli_fetch_array($result);
                     $_SESSION['logged'] = true;
-                    $_SESSION['id_user'] = $datas['id_users'];
+                    $_SESSION['id_user'] = $datas['cod_cliente'];
                     header('Location: ../index.php');
                 }
                 else {

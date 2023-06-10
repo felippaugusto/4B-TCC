@@ -1,1 +1,0 @@
-ele clica em um produto para comprar, após isso ele é redirecionado para o carrinho, onde terá os produtos, se ele clicar em fechar pedido sem se cadastrar ou logar, ele será redirecionado para a página de login/cadastramento

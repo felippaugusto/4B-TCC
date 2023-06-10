@@ -16,7 +16,7 @@ if(isset($_POST['btn_submit'])) {
     $password = cleaningData($_POST['password']);
     $confirmPassword = cleaningData($_POST['confirm_password']);
 
-    $sql = "INSERT INTO tb_users (first_name, last_name, cpf, data_birthday, telephone, email, password) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password')";
+    $sql = "INSERT INTO tb_usuarios (primeiro_nome, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password')";
 
     if(mysqli_query($connect, $sql)) {
         $_SESSION['messagesVerify'] = true;
