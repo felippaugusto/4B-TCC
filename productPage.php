@@ -33,7 +33,58 @@ include_once 'includes/header.php';
             </a>
         </div>
     </header>
-<!-- !!! Create the product page !!! -->
+
+    <main id="productPageMain" class="displayFlex">
+        <!-- product container -->
+        <div class="container-product productPage displayFlex">
+            <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
+            <div class="product-description">
+                <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
+                <p id="available">Produto disponível</p>
+                <p class="product-value">R$ 1200,00 reais</p>
+                <button id="btn-product-add">Adicionar ao carrinho</button>
+            </div>
+        </div>
+
+        <table id="especification-table">
+            <tr>
+                <td>Marca:</td>
+                <td>AMD</td>
+            </tr>
+            <tr>
+                <td>Soquete:</td>
+                <td>AM4</td>
+            </tr>
+            <tr>
+                <td>Núcleos:</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Threads:</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Frequência base:</td>
+                <td>3.6GHZ</td>
+            </tr>
+            <tr>
+                <td>Frequência máxima:</td>
+                <td>4.6GHZ</td>
+            </tr>
+            <tr>
+                <td>Cache:</td>
+                <td>32MB</td>
+            </tr>
+            <tr>
+                <td>Litografia:</td>
+                <td>14Nnm</td>
+            </tr>
+            <tr>
+                <td>TDP:</td>
+                <td>65W</td>
+            </tr>
+        </table>
+    </main>
 <?php
 // Footer
 include_once 'includes/footer.php';

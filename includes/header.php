@@ -14,6 +14,7 @@ session_start();
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
     <link rel="stylesheet" href="CSS/globals.css">
     <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/productPage.css">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/login.css">

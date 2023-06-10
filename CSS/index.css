@@ -1,16 +1,16 @@
 /* start light mode */
 body[data-theme="t-light"] {
     --color-bg-harware-showcase: rgb(255, 255, 255);
-    background-color: #fff;
-
     --color-bg-column-products: linear-gradient(rgb(180, 179, 179), rgb(70, 70, 70));
 }
 
 body[data-theme="t-dark"] {
     --color-bg-harware-showcase: linear-gradient(to top left ,rgb(50, 0, 50), rgb(31, 1, 70));
-    background: linear-gradient(to top left ,rgb(50, 0, 50), rgb(31, 1, 70));
-
     --color-bg-column-products: linear-gradient(rgb(35, 0, 100), rgb(90, 1, 90));
+}
+
+body {
+    background: var(--color-bg-harware-showcase);
 }
 /* end light mode */
 

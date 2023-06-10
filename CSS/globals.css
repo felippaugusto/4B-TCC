@@ -3,12 +3,14 @@ body[data-theme="t-light"] {
     --color-bg-goToHeader: rgb(255, 0, 0);
     --color-bg-messages: rgb(73, 73, 73);
     --color-text-messages: #fff;
+    --color-text-reverse: #000;
 }
 
 body[data-theme="t-dark"] {
     --color-bg-goToHeader: #fff;
     --color-bg-messages: aliceBlue;
     --color-text-messages: #000;
+    --color-text-reverse: #fff;
 }
 /* end light mode */
 
