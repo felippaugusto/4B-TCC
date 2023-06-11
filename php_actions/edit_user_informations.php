@@ -17,6 +17,18 @@ if(isset($_POST['btn_submit_edit_user-informations'])) {
 
     $id = cleaningData($_POST['id']);
 
+    // formatted date
+    $date = date("Y-d-m", strtotime($date));
+    $date = str_replace("/", "-", $date);
+
+    // formatted cpf
+    $arrayCpf = array(".", "-");
+    $cpf = str_replace($arrayCpf, "", $cpf);
+
+    // formatted telephone
+    $arrayTelephone = array("(", ")", "-", " ");
+    $telephone = str_replace($arrayTelephone, "", $telephone);
+
     $sql = "UPDATE tb_usuarios SET primeiro_nome = '$firstName', sobrenome = '$lastName', cpf = '$cpf', data_nasc = '$date', telefone_cliente = '$telephone', email_cliente = '$email' WHERE cod_cliente = '$id'";
 
     if(mysqli_query($connect, $sql)) {

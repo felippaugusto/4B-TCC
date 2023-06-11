@@ -14,6 +14,7 @@ if(isset($_GET['id'])) {
     $sql = "SELECT * FROM tb_usuarios WHERE cod_cliente = '$id'";
     $result = mysqli_query($connect, $sql);
     $data = mysqli_fetch_array($result);
+    $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));
 }
 
 ?>
@@ -67,7 +68,7 @@ if(isset($_GET['id'])) {
 
                 <div class="displayFlex inputs">
                     <input type="text" name="cpf" id="cpf" class="cpf" autocomplete="off" placeholder="CPF" required title="Seu CPF" minlength="11" maxlength="11" value="<?php echo $data['cpf']; ?>">
-                    <input type="text" name="date" id="date" class="date" placeholder="Data de nascimento" required title="Sua data de nascimento" value="<?php echo $data['data_nasc']; ?>">
+                    <input type="text" name="date" id="date" class="date" placeholder="Data de nascimento" required title="Sua data de nascimento" value="<?php echo $dataNasc; ?>">
                 </div>
 
                 <div class="displayFlex inputs">

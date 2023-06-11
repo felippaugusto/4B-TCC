@@ -16,6 +16,18 @@ if(isset($_POST['btn_submit'])) {
     $password = cleaningData($_POST['password']);
     $confirmPassword = cleaningData($_POST['confirm_password']);
 
+    // formatted date
+    $date = date("Y-d-m", strtotime($date));
+    $date = str_replace("/", "-", $date);
+
+    // formatted cpf
+    $arrayCpf = array(".", "-");
+    $cpf = str_replace($arrayCpf, "", $cpf);
+
+    // formatted telephone
+    $arrayTelephone = array("(", ")", "-", " ");
+    $telephone = str_replace($arrayTelephone, "", $telephone);
+
     $sql = "INSERT INTO tb_usuarios (primeiro_nome, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password')";
 
     if(mysqli_query($connect, $sql)) {
