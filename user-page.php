@@ -83,6 +83,46 @@ if(isset($_GET['id'])) {
             </form>
         </div>
 
+        <!-- add users address -->
+        <div class="divChilds" id="userAddress">
+            <p>Endereço</p>
+        </div>
+
+        <!-- form model add users address -->
+        <div class="modelEdit modelUserAddress displayFlex">
+            <form action="php_actions/addUserAddress.php" method="POST" class="modelForm displayFlex" id="formUserAddress">
+                <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
+
+                <div class="displayFlex">
+                    <input type="text" name="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep">
+                    <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua">
+                </div>
+
+                <div class="displayFlex">
+                    <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua">
+                    <input type="text" name="complement" id="complement" placeholder="Informe o complemento" required title="Complemento atual"> 
+                </div>
+
+                <div class="displayFlex"> 
+                    <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência">
+
+                    <div class="select">
+                        <select name="selectState" class="selectCategory">
+                            <option selected disabled>Selecione o estado</option>
+                            <option value="Paraná">Paraná</option>
+                            <option value="Santa Catarina">Santa Catarina</option>
+                            <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="container-btns-edit" class="displayFlex">
+                    <button type="submit" name="btn_submit_user-address">Adicionar endereço</button>
+                    <p id="close-model-user-address">Cancelar</p>
+                </div>
+            </form>
+        </div>
+
         <!-- Change user password -->
         <div id="changingUserPassword" class="divChilds"><p>Mudar Senha</p></div>
 

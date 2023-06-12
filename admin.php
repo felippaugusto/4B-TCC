@@ -33,23 +33,23 @@ if(!isset($_SESSION['adminLogged']) == true) {
 
         <tbody>
             <?php
-            $sql = "SELECT * FROM tb_users";
+            $sql = "SELECT * FROM tb_usuarios";
             $result = mysqli_query($connect, $sql);
             while($data = mysqli_fetch_array($result)):
             ?>
             <tr>
-                <td><?php echo $data['first_name']; ?></td>
-                <td><?php echo $data['last_name']; ?></td>
-                <td><?php echo $data['email']; ?></td>
+                <td><?php echo $data['primeiro_nome']; ?></td>
+                <td><?php echo $data['sobrenome']; ?></td>
+                <td><?php echo $data['email_cliente']; ?></td>
                 <td><?php echo $data['cpf']; ?></td>
-                <td><a href="#modal<?php echo $data['id_users']; ?>" class="btnRemove displayFlex"><img src="IMAGES/main/admin/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex"><img src="IMAGES/main/admin/remove1.png" alt="image-remove" class="imageRemove"></a></td>
 
-                <div id="modal<?php echo $data['id_users']; ?>" class="box-model displayFlex">
+                <div id="modal<?php echo $data['cod_cliente']; ?>" class="box-model displayFlex">
                     <div class="model-description displayFlex">
                         <p>Você tem certeza que deseja deletar esse cliente?</p>
                         <form action="php_actions/delete.php" method="POST">
                             <div class="container-form displayFlex">
-                                <input type="hidden" name="id" value="<?php echo $data['id_users']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
                                 <button type="submit" name="delete-btn" class="btn-remove-form">Deletar usuário</button>
                                 <p id="close-model">Cancelar</p>

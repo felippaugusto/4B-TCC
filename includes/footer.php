@@ -68,31 +68,6 @@
             console.log("removeu");
         })
     </script>
-    <script>
-        const modelEditPassword = $(".modelChangingPassword.modelEdit");
-        const changingUserPassword = $("#changingUserPassword");
-        const closeModelEditPassword = $("#close-model-edit-password");
-
-        changingUserPassword.click(() => {
-            modelEditPassword.addClass("active");
-        })
-
-        closeModelEditPassword.click(() => {
-            modelEditPassword.removeClass("active");
-        })
-    </script>
-    <script>
-        const modelEditUserInformations = $(".modelChangingUserInformations.modelEdit");
-        const userRegistration = $("#userRegistration");
-        const closeModelEditUserInformations = $("#close-model-edit-user-informations");
-
-        userRegistration.click(() => {
-            modelEditUserInformations.addClass("active");
-        })
-
-        closeModelEditUserInformations.click(() => {
-            modelEditUserInformations.removeClass("active");
-        })
-    </script>
+    <script src="JS/userPage.js"></script>
 </body>
 </html>
