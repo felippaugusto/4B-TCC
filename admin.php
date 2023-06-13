@@ -38,7 +38,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
             while($data = mysqli_fetch_array($result)):
             ?>
             <tr>
-                <td><?php echo $data['primeiro_nome']; ?></td>
+                <td><?php echo $data['nome_cliente']; ?></td>
                 <td><?php echo $data['sobrenome']; ?></td>
                 <td><?php echo $data['email_cliente']; ?></td>
                 <td><?php echo $data['cpf']; ?></td>

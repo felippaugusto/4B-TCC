@@ -29,7 +29,7 @@ if(isset($_POST['btn_submit_edit_user-informations'])) {
     $arrayTelephone = array("(", ")", "-", " ");
     $telephone = str_replace($arrayTelephone, "", $telephone);
 
-    $sql = "UPDATE tb_usuarios SET primeiro_nome = '$firstName', sobrenome = '$lastName', cpf = '$cpf', data_nasc = '$date', telefone_cliente = '$telephone', email_cliente = '$email' WHERE cod_cliente = '$id'";
+    $sql = "UPDATE tb_usuarios SET nome_cliente = '$firstName', sobrenome = '$lastName', cpf = '$cpf', data_nasc = '$date', telefone_cliente = '$telephone', email_cliente = '$email' WHERE cod_cliente = '$id'";
 
     if(mysqli_query($connect, $sql)) {
         $_SESSION['messagesVerify'] = true;

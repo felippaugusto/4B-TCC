@@ -11,7 +11,7 @@ if(isset($_POST['btn_submit_edit_password'])) {
     $newPassword = cleaningData($_POST['newPassword']);
     $id = cleaningData($_POST['id']);;
 
-    $sql = "SELECT senha FROM tb_usuarios WHERE senha = '$currentPassword' AND id_usuarios = '$id'";
+    $sql = "SELECT senha FROM tb_usuarios WHERE senha = '$currentPassword' AND cod_cliente = '$id'";
     $result = mysqli_query($connect, $sql);
     
     if(mysqli_num_rows($result) == 1) {

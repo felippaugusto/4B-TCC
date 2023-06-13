@@ -62,7 +62,7 @@ if(isset($_GET['id'])) {
                 <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
                 <div class="displayFlex inputs">
-                    <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome" value="<?php echo $data['primeiro_nome']; ?>">
+                    <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome" value="<?php echo $data['nome_cliente']; ?>">
                     <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Sobrenome" required title="Seu nome" value="<?php echo $data['sobrenome']; ?>">
                 </div>
 
@@ -94,12 +94,12 @@ if(isset($_GET['id'])) {
                 <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
                 <div class="displayFlex">
-                    <input type="text" name="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep">
+                    <input type="text" name="cep" class="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep">
                     <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua">
                 </div>
 
                 <div class="displayFlex">
-                    <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua">
+                    <input type="text" name="neighborhood" required placeholder="Informe o bairro" id="neighborhood" minlength="3" title="Nome do bairro">
                     <input type="text" name="complement" id="complement" placeholder="Informe o complemento" required title="Complemento atual"> 
                 </div>
 
