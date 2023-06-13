@@ -15,6 +15,8 @@ if(isset($_POST['btn_submit'])) {
     $email = cleaningData($_POST['email']);
     $password = cleaningData($_POST['password']);
     $confirmPassword = cleaningData($_POST['confirm_password']);
+    $active = 'S';
+    $registrationType = 'C';
 
     // formatted date
     $date = date("Y-d-m", strtotime($date));
@@ -28,7 +30,7 @@ if(isset($_POST['btn_submit'])) {
     $arrayTelephone = array("(", ")", "-", " ");
     $telephone = str_replace($arrayTelephone, "", $telephone);
 
-    $sql = "INSERT INTO tb_usuarios (primeiro_nome, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password')";
+    $sql = "INSERT INTO tb_usuarios (nome_cliente, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha, ativo, tipo_cadastro) VALUES ('$firstName', '$lastName', '$cpf', '$date', '$telephone', '$email', '$password', '$active', '$registrationType')";
 
     if(mysqli_query($connect, $sql)) {
         $_SESSION['messagesVerify'] = true;
