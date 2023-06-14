@@ -1,7 +1,7 @@
 CREATE TABLE tb_cidades (
   codcid INT PRIMARY KEY,
   nomecid VARCHAR(50) NOT NULL,
-  estadocid VARCHAR(2) CHECK (estado IN ('PR','RS','SC'))
+  estadocid VARCHAR(2) CHECK (estadocid IN ('PR','RS','SC'))
 );
 
 CREATE TABLE tb_usuarios (
@@ -9,7 +9,7 @@ CREATE TABLE tb_usuarios (
   nome_cliente VARCHAR(70) NOT NULL,
   sobrenome VARCHAR(70) NOT NULL,
   cpf BIGINT NOT NULL UNIQUE,
-  datanasc DATE CHECK ((date_part('year',current_date) - date_part('year',datanasc) <= 100) AND (date_part('year',current_date) - date_part('year',datanasc) > 17)),
+  data_nasc DATE CHECK ((date_part('year',current_date) - date_part('year',datanasc) <= 100) AND (date_part('year',current_date) - date_part('year',datanasc) > 17)),
   telefone_cliente BIGINT NOT NULL,
   email_cliente VARCHAR(80) NOT NULL UNIQUE,
   senha VARCHAR(50) NOT NULL,
@@ -1219,15 +1219,15 @@ INSERT INTO tb_cidades (codcid, nomecid, estadocid) VALUES
 (4704, 'Xaxim', 'SC'),
 (4705, 'Zortéa', 'SC');
 
-INSERT INTO tb_usuarios (cod_cliente, nome_cliente, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha, ativo, cep, complemento, rua, bairro, numero_casa, tipo_cadastro) VALUES 
-(1, 'Felipp', 'pepepe', 31256484982, 1990-03-04, 45900045638, 'felipp@teste.com', 'bananacommaca', 'S', 54673023, 'casa', 'lacerda', 'alagoinha', 654, 'C'),
-(2, 'Roberto', 'carlinhos', 31253484982, 1992-03-04, 45993212338, 'felipp1@teste.com', 'felipe12345', 'S', 54113023, 'casa', 'globooo', 'pindaiba', 534, 'C'),
-(3, 'José', 'petista', 312563124982, 2000-03-04, 45909345638, 'felipp2@teste.com', 'felipp12345', 'S', 54600023, 'casa', 'jessica alvez', 'rio azul', 1032, 'C'),
-(4, 'Cleusa', 'graos', 31256491282, 2003-03-04, 45993241028, 'felipp3@teste.com', 'nhe542312', 'S', 54611023, 'casa', 'teodoro e sapaio', 'frederico', 7775, 'C'),
-(5, 'Maria', 'kloh', 31256484982, 1980-03-04, 45954245638, 'felipp4@teste.com', 'naofacoideia', 'S', 54113023, 'casa', 'conrado e chororo', 'alagado', 342, 'C'),
-(6, 'Josefina', 'alagada', 32568401982, 1997-03-04, 45993243218, 'felipp5@teste.com', 'bonitone23', 'S', 54854023, 'casa', 'parque rosa', 'amberto', 002, 'C'),
-(7, 'Chitãozinho', 'brabo', 31251114982, 2002-03-04, 45900045638, 'felipp6@teste.com', 'felipp54432', 'S', 54670013, 'casa', 'parque branco', 'alagoinha', 4123, 'C'),
-(8, 'Luis', 'carlitos', 31222484982, 1990-03-10, 45991115638, 'felipp7@teste.com', 'rapaz432', 'S', 59993023, 'casa', 'presidente rio preto', 'sapo com rucula', 9483, 'C'),
-(9, 'Laísa', 'rogeria', 33336484982, 1990-11-04, 45993255638, 'felipp8@teste.com', 'felipp12345', 'S', 56663023, 'casa', 'agudo', 'gatos pretos', 434, 'C'),
-(10, 'Rafael', 'pipa', 31288884982, 1990-12-04, 45999915638, 'felipp9@teste.com', 'felippinho12', 'casa', 'S', 54691123, 'cruzeiro rosa', 'pastinha', 658, 'C');
+INSERT INTO tb_usuarios (cod_cliente, nome_cliente, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha, ativo, cep, complemento, rua, bairro, numero_casa, tipo_cadastro, codcid_fk) VALUES 
+(1, 'Felipp', 'pepepe', 31256484982, 1990-03-04, 45900045638, 'felipp@teste.com', 'bananacommaca', 'S', 54673023, 'casa', 'lacerda', 'alagoinha', 654, 'C', 2999),
+(2, 'Roberto', 'carlinhos', 31254444982, 1992-03-04, 45993212338, 'felipp1@teste.com', 'felipe12345', 'S', 54113023, 'casa', 'globooo', 'pindaiba', 534, 'C', 3000),
+(3, 'José', 'petista', 312533224982, 2000-03-04, 45909345638, 'felipp2@teste.com', 'felipp12345', 'S', 54600023, 'casa', 'jessica alvez', 'rio azul', 1032, 'C', 3010),
+(4, 'Cleusa', 'graos', 31250021282, 2003-03-04, 45993241028, 'felipp3@teste.com', 'nhe542312', 'S', 54611023, 'casa', 'teodoro e sapaio', 'frederico', 7775, 'C', 3050),
+(5, 'Maria', 'kloh', 31556484982, 1980-03-04, 45954245638, 'felipp4@teste.com', 'naofacoideia', 'S', 54113023, 'casa', 'conrado e chororo', 'alagado', 342, 'C', 2994),
+(6, 'Josefina', 'alagada', 32568401982, 1997-03-04, 45993243218, 'felipp5@teste.com', 'bonitone23', 'S', 54854023, 'casa', 'parque rosa', 'amberto', 002, 'C', 2980),
+(7, 'Chitãozinho', 'brabo', 31251114982, 2002-03-04, 45900045638, 'felipp6@teste.com', 'felipp54432', 'S', 54670013, 'casa', 'parque branco', 'alagoinha', 4123, 'C', 3003),
+(8, 'Luis', 'carlitos', 31222484982, 1990-03-10, 45991115638, 'felipp7@teste.com', 'rapaz432', 'S', 59993023, 'casa', 'presidente rio preto', 'sapo com rucula', 9483, 'C', 3040),
+(9, 'Laísa', 'rogeria', 33336484982, 1990-11-04, 45993255638, 'felipp8@teste.com', 'felipp12345', 'S', 56663023, 'casa', 'agudo', 'gatos pretos', 434, 'C', 3060),
+(10, 'Rafael', 'pipa', 31288884982, 1990-12-04, 45999915638, 'felipp9@teste.com', 'felippinho12', 'S', 'casa', 54691123, 'cruzeiro rosa', 'pastinha', 658, 'C', 3065);
 COMMIT;
