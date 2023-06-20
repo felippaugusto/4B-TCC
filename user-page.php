@@ -9,11 +9,14 @@ if(!isset($_SESSION['logged'])) {
 }
 
 if(isset($_GET['id'])) {
-    $id = mysqli_escape_string($connect, $_GET['id']);
+    $id = $_GET['id'];
 
     $sql = "SELECT * FROM tb_usuarios WHERE cod_cliente = '$id'";
-    $result = mysqli_query($connect, $sql);
-    $data = mysqli_fetch_array($result);
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $datas = $stmt->fetchALL();;
+
+    foreach($datas as $data) {
     $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));
 }
 
@@ -150,4 +153,4 @@ if(isset($_GET['id'])) {
 <?php
 // Footer
 include_once 'includes/footer.php';
-?>
+} ?>

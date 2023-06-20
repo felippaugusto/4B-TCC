@@ -1,6 +1,7 @@
 <?php
 // Connection with database
 require_once 'php_actions/db_connect.php';
+$pdo = connect();
 // Start sessions 
 session_start();
 ?>

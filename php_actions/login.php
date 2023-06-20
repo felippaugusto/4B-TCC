@@ -1,14 +1,13 @@
 <?php
 // Connection with database
-require_once 'db_connect.php';
+require_once '../php_actions/db_connect.php';
+$pdo = connect();
 // Start sessions
 session_start();
-// function to clear data
-include_once '../includes/cleaningData.php';
 
 if(isset($_POST['btn_submit'])) {
-    $email = cleaningData($_POST['email']);
-    $password = cleaningData($_POST['password']);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     if(empty($email) || empty($password)) {
         echo "Está vazio algum dos campos";
@@ -20,14 +19,16 @@ if(isset($_POST['btn_submit'])) {
         }
         else {
             $sql = "SELECT email_cliente FROM tb_usuarios WHERE email_cliente = '$email'";
-            $result = mysqli_query($connect, $sql);
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
     
-            if(mysqli_num_rows($result) > 0) {
+            if($stmt->rowCount() > 0) {
                 $sql = "SELECT * FROM tb_usuarios WHERE email_cliente = '$email' AND senha = '$password'";
-                $result = mysqli_query($connect, $sql);
-    
-                if(mysqli_num_rows($result) == 1) {
-                    $datas = mysqli_fetch_array($result);
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+        
+                if($stmt->rowCount() == 1) {
+                    $datas = $stmt->fetch();
                     $_SESSION['logged'] = true;
                     $_SESSION['id_user'] = $datas['cod_cliente'];
                     header('Location: ../index.php');

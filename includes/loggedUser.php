@@ -11,18 +11,19 @@
         // datas
         $id = $_SESSION['id_user'];
         $sql = "SELECT * FROM tb_usuarios WHERE cod_cliente = '$id'";
-        $result = mysqli_query($connect, $sql);
-        $datas = mysqli_fetch_array($result);
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $datas =  $stmt->fetchAll();
+
+        foreach($datas as $data) { ?>
         ?>
             <div id="containerLoggedUser" class="displayFlex">
                 <img src="IMAGES/header/user.png" alt="user-header" id="user-header">
-                <p id="userName"><?php echo $datas['nome_cliente']; ?></p>
+                <p id="userName"><?php echo $data['nome_cliente']; ?></p>
 
                 <div class="modelLoggedUser">
-                    <a href="user-page.php?id=<?php echo $datas['cod_cliente']; ?>" id="userPage">Meu perfil</a>
+                    <a href="user-page.php?id=<?php echo $data['cod_cliente']; ?>" id="userPage">Meu perfil</a>
                     <a href="php_actions/logout.php" id="exitUser">Sair</a>
                 </div>
             </div>
-        <?php
-    }
-    ?>
+        <?php }} ?>
