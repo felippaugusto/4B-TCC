@@ -18,20 +18,30 @@ if(isset($_POST['btn_submit'])) {
             header('Location: ../admin.php');
         }
         else {
-            $sql = "SELECT email_cliente FROM tb_usuarios WHERE email_cliente = '$email'";
+            $sql = "SELECT email_cliente, senha FROM tb_usuarios WHERE email_cliente = '$email'";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
     
             if($stmt->rowCount() > 0) {
-                $sql = "SELECT * FROM tb_usuarios WHERE email_cliente = '$email' AND senha = '$password'";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-        
-                if($stmt->rowCount() == 1) {
-                    $datas = $stmt->fetch();
-                    $_SESSION['logged'] = true;
-                    $_SESSION['id_user'] = $datas['cod_cliente'];
-                    header('Location: ../index.php');
+                $data = $stmt->fetch();
+                $password_db = $data['senha'];
+
+                if(password_verify($password, $password_db)) {
+                    $sql = "SELECT * FROM tb_usuarios WHERE email_cliente = '$email' AND senha = '$password_db'";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+            
+                    if($stmt->rowCount() == 1) {
+                        $datas = $stmt->fetch();
+                        $_SESSION['logged'] = true;
+                        $_SESSION['id_user'] = $datas['cod_cliente'];
+                        header('Location: ../index.php');
+                    }
+                    else {
+                        $_SESSION['messagesVerify'] = true;
+                        $_SESSION['messages'] = "Não foi possível fazer login!";
+                        header('Location: ../login.php');
+                    }
                 }
                 else {
                     $_SESSION['messagesVerify'] = true;

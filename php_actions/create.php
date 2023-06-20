@@ -17,12 +17,7 @@ if(isset($_POST['btn_submit'])) {
     $active = 'S';
     $registrationType = 'C';
 
-    if(!$password == $confirmPassword) {
-        $_SESSION['messagesVerify'] = true;
-        $_SESSION['messages'] = "As senhas não são iguais!";
-        header('Location: ../register.php');
-    }
-    else {
+    if($password == $confirmPassword) {
         // formatted date
         $date = date("Y-d-m", strtotime($date));
         $date = str_replace("/", "-", $date);
@@ -34,6 +29,9 @@ if(isset($_POST['btn_submit'])) {
         // formatted telephone
         $arrayTelephone = array("(", ")", "-", " ");
         $telephone = str_replace($arrayTelephone, "", $telephone);
+
+        // encripted password
+        $encriptedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         if(empty($firstName) || empty($lastName) || empty($cpf) || empty($date) || empty($telephone) || empty($email)) {
             $_SESSION['messagesVerify'] = true;
@@ -56,7 +54,7 @@ if(isset($_POST['btn_submit'])) {
                 $stmt->bindParam(':cpf', $cpf);
                 $stmt->bindParam(':date', $date);
                 $stmt->bindParam(':telephone', $telephone);
-                $stmt->bindParam(':password', $password);
+                $stmt->bindParam(':password', $encriptedPassword);
                 $stmt->bindParam(':active', $active);
                 $stmt->bindParam(':registrationType', $registrationType);
     
@@ -72,6 +70,11 @@ if(isset($_POST['btn_submit'])) {
                 }
             }
         }
+    }
+    else {
+        $_SESSION['messagesVerify'] = true;
+        $_SESSION['messages'] = "As senhas não são iguais!";
+        header('Location: ../register.php');
     }
 }
 else {
