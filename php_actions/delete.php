@@ -1,13 +1,16 @@
 <?php
 // Connection with database
 require_once 'db_connect.php';
+$pdo = connect();
 
 if(isset($_POST['delete-btn'])) {
-    $id = cleaningData($_POST['id']);
+    $id = $_POST['id'];
 
-    $sql = "DELETE FROM tb_usuarios WHERE cod_cliente = '$id'";
+    $sql = "DELETE FROM tb_usuarios WHERE cod_cliente = ':id'";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $id);
 
-    if(mysqli_query($connect, $sql)) {
+    if($stmt->execute()) {
         header('Location: ../admin.php?Deletado');
     }
     else {

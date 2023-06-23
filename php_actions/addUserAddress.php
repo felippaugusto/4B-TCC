@@ -3,21 +3,30 @@
 session_start();
 // Connection with database
 require_once 'db_connect.php';
-// function to clear data
-include_once '../includes/cleaningData.php';
+$pdo = connect();
 
+// form submit
 if(isset($_POST['btn_submit_user-address'])) {
-    $cep = cleaningData($_POST['cep']);
-    $street = cleaningData($_POST['street']);
-    $neighborhood = cleaningData($_POST['neighborhood']);
-    $complement = cleaningData($_POST['complement']);
-    $selectState = cleaningData($_POST['selectState']);
-    $houseNumber = cleaningData($_POST['houseNumber']);
-    $id = cleaningData($_POST['id']);
+    // get inputs
+    $cep = $_POST['cep'];
+    $street = $_POST['street'];
+    $neighborhood = $_POST['neighborhood'];
+    $complement = $_POST['complement'];
+    $selectState = $_POST['selectState'];
+    $houseNumber = $_POST['houseNumber'];
+    $id = $_POST['id'];
 
-    $sql = "UPDATE tb_usuarios SET cep = '$cep', rua = '$street', complemento = '$complement', bairro = '$neighborhood', numero_casa = '$houseNumber' WHERE cod_cliente = '$id'";
+    // add user address informations
+    $sql = "UPDATE tb_usuarios SET cep = :cep, rua = :street, complemento = :complement, bairro = :neighborhood, numero_casa = :houseNumber WHERE cod_cliente = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':cep', $cep);
+    $stmt->bindParam(':street', $street);
+    $stmt->bindParam(':complement', $complement);
+    $stmt->bindParam(':neighborhood', $neighborhood);
+    $stmt->bindParam(':houseNumber', $houseNumber);
+    $stmt->bindParam(':id', $id);
 
-    if(mysqli_query($connect, $sql)) {
+    if($stmt->execute()) {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Atualizado com sucesso!";
         header("Location: ../user-page.php?id=$id");

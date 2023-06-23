@@ -3,6 +3,7 @@
 require_once 'php_actions/db_connect.php';
 // start sessions
 session_start();
+$pdo = connect();
 
 if(!isset($_SESSION['adminLogged']) == true) {
     header('Location: login.php');
@@ -34,8 +35,10 @@ if(!isset($_SESSION['adminLogged']) == true) {
         <tbody>
             <?php
             $sql = "SELECT * FROM tb_usuarios";
-            $result = mysqli_query($connect, $sql);
-            while($data = mysqli_fetch_array($result)):
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $datas = $stmt->fetchAll();
+            foreach($datas as $data) {
             ?>
             <tr>
                 <td><?php echo $data['nome_cliente']; ?></td>
@@ -58,7 +61,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
                     </div>
                 </div>
             </tr>
-            <?php endwhile; ?>
+            <?php }; ?>
         </tbody>
     </table>
 

@@ -97,17 +97,17 @@ if(isset($_GET['id'])) {
                 <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
                 <div class="displayFlex">
-                    <input type="text" name="cep" class="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep">
-                    <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua">
+                    <input type="text" name="cep" class="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep" value="<?php echo $data['cep']; ?>">
+                    <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua" value="<?php echo $data['rua']; ?>">
                 </div>
 
                 <div class="displayFlex">
-                    <input type="text" name="neighborhood" required placeholder="Informe o bairro" id="neighborhood" minlength="3" title="Nome do bairro">
-                    <input type="text" name="complement" id="complement" placeholder="Informe o complemento" required title="Complemento atual"> 
+                    <input type="text" name="neighborhood" required placeholder="Informe o bairro" id="neighborhood" minlength="3" title="Nome do bairro" value="<?php echo $data['bairro']; ?>">
+                    <input type="text" name="complement" id="complement" placeholder="Informe o complemento" required title="Complemento atual" value="<?php echo $data['complemento']; ?>"> 
                 </div>
 
                 <div class="displayFlex"> 
-                    <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência">
+                    <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência" value="<?php echo $data['numero_casa']; ?>">
 
                     <div class="select">
                         <select name="selectState" class="selectCategory">

@@ -35,12 +35,12 @@ include_once 'includes/messages.php';
 
                 <div class="container-email displayFlex">
                     <label for="email"><img src="IMAGES/form-login/email.png" alt="" id="img-email"></label>
-                    <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11" title="Seu email por favor">
+                    <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" minlength="11" title="Seu email por favor">
                 </div>
 
                 <div class="container-password displayFlex">
                     <label for="password"><img src="IMAGES/form-login/padlock.png" alt="" id="img-password"></label>
-                    <input type="password" name="password" id="password" autocomplete="off" placeholder="Senha" required minlength="8" title="Sua senha por favor">
+                    <input type="password" name="password" id="password" autocomplete="off" placeholder="Senha" minlength="8" title="Sua senha por favor">
                 </div>
                 <button type="submit" name="btn_submit">Entrar</button>
             </form>
