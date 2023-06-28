@@ -95,6 +95,34 @@ input[type="file"] {
     height: 5rem;
     cursor: pointer;
 }
+
+/* start model forms */
+.modelEdit {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    height: 107.5vh;
+    width: 100vw;
+    align-items: start;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modelEdit.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modelForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    min-height: 25%;
+    margin-top: 7rem;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* end model forms */
 /* end utils */
 
 body {

@@ -34,6 +34,7 @@
     <script src="JS/index.js"></script>
     <script src="JS/shopping-cart.js"></script>
     <script src="JS/building-computer.js"></script>
+    <script src="JS/admin.js"></script>
     <script>
         function typeWriter() {
             const title = document.querySelector(".paragraph-team");

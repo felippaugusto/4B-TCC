@@ -1,3 +1,4 @@
+// global variables
 const exit = $(".exit");
 const boxModelChooseHardwares = $(".box-model-choose-hardwares");
 const btnChooseHardware = $(".btn-choose-hardwares");

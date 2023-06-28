@@ -5,6 +5,7 @@ $pdo = connect();
 // Start sessions
 session_start();
 
+// btn form submit
 if(isset($_POST['btn_submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];

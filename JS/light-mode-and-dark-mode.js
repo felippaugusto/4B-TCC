@@ -1,4 +1,4 @@
-// variables globals
+// global variables
 const body = $("body");
 const header = $(".header");
 const loginOrSignUpText = $("#loginOrSignUp p")

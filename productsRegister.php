@@ -74,7 +74,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
         </div>
     </div>
 
-    <a href="login.php" class="backToThePreviousPage">Voltar</a>
+    <a href="admin.php" class="backToThePreviousPage">Voltar</a>
 
     <!-- button to navegate to header -->
     <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>

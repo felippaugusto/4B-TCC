@@ -5,7 +5,7 @@ session_start();
 require_once 'db_connect.php';
 $pdo = connect();
 
-// submit form
+// btn form submit
 if(isset($_POST['btn_submit_edit_user-informations'])) {
     // get inputs
     $firstName = $_POST['firstName'];

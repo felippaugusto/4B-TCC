@@ -25,6 +25,16 @@ CREATE TABLE tb_usuarios (
   CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES tb_cidades(codcid)
 );
 
+CREATE TABLE tb_categorias (
+	cod_categoria INT PRIMARY KEY AUTO_INCREMENT,
+    nome_categoria VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE tb_subcategorias (
+	cod_categoria INT PRIMARY KEY AUTO_INCREMENT,
+    nome_categoria VARCHAR(50) NOT NULL
+);
+
 INSERT INTO tb_cidades (codcid, nomecid, estadocid) VALUES
 (2784, 'Abatiá', 'PR'),
 (2785, 'Adrianópolis', 'PR'),

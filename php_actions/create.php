@@ -5,6 +5,7 @@ $pdo = connect();
 // sessions start
 session_start();
 
+// btn form submit
 if(isset($_POST['btn_submit'])) {
     $firstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_SPECIAL_CHARS);
     $lastName = filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_SPECIAL_CHARS);

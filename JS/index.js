@@ -1,3 +1,4 @@
+// global variables
 const containerIntel = $(".containerIntel");
 const containerAmd = $(".containerAmd");
 const selectIntel = $(".btnSelectIntel");

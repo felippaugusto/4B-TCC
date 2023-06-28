@@ -18,7 +18,7 @@ html {
 /* end globals */
 
 /* start body */
-body {
+#bodyAdmin {
     justify-content: start;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
@@ -129,8 +129,8 @@ body {
 }
 /* end users remove model */
 
-/* start backToPage */
-#backToMainPage {
+/* start links */
+.links {
     background-color: rgb(255, 68, 0);
     padding: 1rem 1.5rem;
     border-radius: 0.4rem;
@@ -139,27 +139,49 @@ body {
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
-    bottom: 5%;
-    right: 3%;
 }
 
-#backToMainPage:hover, #productRegister:hover {
+.links:hover {
     background-color: rgb(206, 55, 0);
     padding: 1.2rem 1.7rem;
 }
 
-/* start products register */
-#productRegister {
-    background-color: rgb(255, 68, 0);
-    padding: 1rem 1.5rem;
-    border-radius: 0.4rem;
-    text-decoration: none;
-    color: #000;
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
+#backToMainPage {
     bottom: 5%;
-    right: 9%;
+    right: 3%;
 }
-/* end products register */
-/* end backToPage */
+
+#registerCategoriesAndProducts {
+    bottom: 5%;
+    right: 8%;
+}
+/* end links */
+/* start page of products and categories */
+.modelEdit {
+    align-items: start;
+}
+
+input {
+    border: none;
+}
+
+.modelForm#formProductRegister div {
+    width: 100%;
+}
+
+.modelForm#formProductRegister #labelTextarea {
+    margin: 0;
+}
+
+#containerCategoriesSubCategories, #formProductRegister #containerinput {
+    gap: 1rem;
+}
+
+#formCategoriesProduct input {
+    width: 100%;
+}
+
+.divChilds#subCategoryRegister {
+    width: 45rem !important;
+}
+/* end page of products and categories */

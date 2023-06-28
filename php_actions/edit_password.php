@@ -5,7 +5,7 @@ session_start();
 require_once 'db_connect.php';
 $pdo = connect();
 
-// form submit
+// btn form submit
 if(isset($_POST['btn_submit_edit_password'])) {
     // inputs and user id
     $currentPassword = $_POST['currentPassword'];

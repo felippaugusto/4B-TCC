@@ -81,7 +81,7 @@ if(isset($_GET['id'])) {
 
                 <div id="container-btns-edit" class="displayFlex">
                     <button type="submit" name="btn_submit_edit_user-informations">Confirmar as alterações</button>
-                    <p id="close-model-edit-user-informations">Cancelar</p>
+                    <p class="close-models">Cancelar</p>
                 </div>
             </form>
         </div>
@@ -121,7 +121,7 @@ if(isset($_GET['id'])) {
 
                 <div id="container-btns-edit" class="displayFlex">
                     <button type="submit" name="btn_submit_user-address">Adicionar endereço</button>
-                    <p id="close-model-user-address">Cancelar</p>
+                    <p class="close-models">Cancelar</p>
                 </div>
             </form>
         </div>
@@ -142,7 +142,7 @@ if(isset($_GET['id'])) {
 
                 <div id="container-btns-edit" class="displayFlex">
                     <button type="submit" name="btn_submit_edit_password">Alterar a senha</button>
-                    <p id="close-model-edit-password">Cancelar</p>
+                    <p class="close-models">Cancelar</p>
                 </div>
             </form>
         </div>
