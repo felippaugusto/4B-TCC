@@ -1,0 +1,75 @@
+CREATE TABLE tb_cidades (
+  codcid INT PRIMARY KEY,
+  nomecid VARCHAR(50) NOT NULL,
+  estadocid VARCHAR(2) CHECK (estadocid IN ('PR','RS','SC'))
+);
+
+CREATE TABLE tb_usuarios (
+  cod_cliente INT PRIMARY KEY,
+  nome_cliente VARCHAR(70) NOT NULL,
+  sobrenome VARCHAR(70) NOT NULL,
+  cpf BIGINT NOT NULL UNIQUE,
+  data_nasc DATE CHECK ((date_part('year',current_date) - date_part('year',datanasc) <= 100) AND (date_part('year',current_date) - date_part('year',datanasc) > 17)),
+  telefone_cliente BIGINT NOT NULL,
+  email_cliente VARCHAR(80) NOT NULL UNIQUE,
+  senha VARCHAR(50) NOT NULL,
+  ativo CHAR(1) CHECK(ativo IN ("S", "N")),
+  cep INT,
+  complemento VARCHAR(20) NOT NULL,
+  rua VARCHAR(50) NOT NULL,
+  bairro VARCHAR(50) NOT NULL,
+  numero_casa INT NOT NULL,
+  tipo_cadastro CHAR(1) CHECK(tipo_cadastro IN ("C", "A")),
+  codcid_fk INT,
+  CONSTRAINT u_person UNIQUE(cpf, email_cliente),
+  CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES tb_cidades(codcid)
+);
+
+CREATE TABLE tb_categorias (
+	cod_categoria INT PRIMARY KEY AUTO_INCREMENT,
+    nome_categoria VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE tb_subcategorias (
+	cod_subcategoria INT PRIMARY KEY AUTO_INCREMENT,
+    nome_categoria VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE tb_compras (
+	cod_compra INT PRIMARY KEY,
+    cod_transportadora INT NOT NULL,
+    codcliente INT,
+    tipo_frete CHAR(1) NOT NULL CHECK(tipo_frete IN ('R', 'P', 'C', 'T')),
+    data DATE NOT NULL,
+    valor_entrega FLOAT(6, 2) NOT NULL,
+    tipo_pagamento CHAR(1) CHECK(tipo_pagamento IN('D', 'P')),
+    CONSTRAINT fk_codcliente FOREIGN KEY (codcliente) REFERENCES tb_usuarios (cod_cliente)
+);
+
+CREATE TABLE tb_produtos (
+	cod_produto INT PRIMARY KEY,
+    descricao_produto VARCHAR(100) NOT NULL,
+    ativo CHAR(1) NOT NULL CHECK (ativo IN ('S', 'N')),
+    preco_atual_produto FLOAT(6, 2) NOT NULL,
+    id_categorias INT,
+    id_subcategorias INT,
+    imagem VARCHAR(50) NOT NULL,
+    CONSTRAINT fk_idcategorias FOREIGN KEY (id_categorias) REFERENCES tb_categorias (cod_categoria),
+    CONSTRAINT fk_idsubcategorias FOREIGN KEY (id_subcategorias) REFERENCES tb_subcategorias (cod_subcategoria)
+);
+
+CREATE TABLE tb_compras_prod (
+	cod_carrinho_itens INT PRIMARY KEY,
+    codprodutos_fk INT,
+    quantidade INT NOT NULL DEFAULT 1,
+    valor_compra_produto FLOAT(6,2) NOT NULL,
+    CONSTRAINT codprodutos_fk FOREIGN KEY (codprodutos_fk) REFERENCES tb_produtos (cod_produto)
+);
+
+CREATE TABLE tb_kits_produtos (
+	cod_kits_produtos INT PRIMARY KEY,
+    nome_categoria VARCHAR(50) NOT NULL,
+    fk_codprodutos INT,
+    quantidade INT NOT NULL,
+    CONSTRAINT fk_codprodutos FOREIGN KEY (fk_codprodutos) REFERENCES tb_produtos (cod_produto)
+);
