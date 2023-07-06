@@ -4,9 +4,9 @@
         
         <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/footer/instagram.png" alt="instagram" id="instagram"></a>
 
-        <a href="www.facebook.com/" target="_blank"><img src="IMAGES/footer/facebook.png" alt="facebook" id="facebook"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="IMAGES/footer/facebook.png" alt="facebook" id="facebook"></a>
 
-        <a href="twitter.com/" target="_blank"><img src="IMAGES/footer/twitter.png" alt="twitter" id="twitter"></a>
+        <a href="https://www.twitter.com/" target="_blank"><img src="IMAGES/footer/twitter.png" alt="twitter" id="twitter"></a>
 
         <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
     </div>

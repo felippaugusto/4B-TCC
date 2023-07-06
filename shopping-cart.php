@@ -132,7 +132,7 @@ include_once 'includes/header.php';
 
                 <div class="container-buttons displayFlex">
                     <!-- if don't have a user, redirect through php -->
-                    <button id="finaly-cart">Finalizar carrinho</button>
+                    <a href="paymentPage.php" id="finaly-cart">Finalizar carrinho</a>
                     <a href="index.php" id="keep-shopping">Continuar comprando</a>
                 </div>
             </container>

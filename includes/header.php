@@ -14,6 +14,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
     <link rel="stylesheet" href="CSS/globals.css">
+    <link rel="stylesheet" href="CSS/paymentPage.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/productPage.css">
     <link rel="stylesheet" href="CSS/index.css">
