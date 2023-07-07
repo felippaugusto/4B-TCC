@@ -1,3 +1,19 @@
+/* start light mode */
+body[data-theme="t-light"] {
+    --bg-color-container-payments: rgb(129, 129, 129);
+    --bg-color-label-inputs: #a82700;
+    --bg-color-label-inputs-hover: #ff3c00;
+    --bg-color-container-values: rgb(0, 141, 0);
+}
+
+body[data-theme="t-dark"] {
+    --bg-color-container-payments: linear-gradient(to bottom right, rgb(97, 0, 29), rgb(37, 0, 11));
+    --bg-color-label-inputs: rgb(0, 90, 102);
+    --bg-color-container-values: rgba(0, 255, 0, 0.5);
+    --bg-color-label-inputs-hover: rgb(0, 68, 77);
+}
+/* end light mode */
+
 /* start main */
 #mainPaymentPage {
     flex-direction: column;
@@ -8,12 +24,15 @@
 }
 
 #containerPaymentPage {
-    background: linear-gradient(rgb(0, 5, 80), rgb(0, 1, 46));
+    background: var(--bg-color-container-payments);
     border-radius: 0.4rem;
     height: 35vh;
     width: 80vw;
     padding: 2rem;
-    color: #fff;
+}
+
+#containerPaymentPage #containerPaymentParagraph h1 {
+    color: var(--color-text-reverse);
 }
 
 #containerPaymentParagraph {
@@ -40,23 +59,25 @@
 }
 
 .labelInputsPayment {
-    background-color: rgb(199, 53, 0);
+    background-color: var(--bg-color-label-inputs);
     width: 100%;
     padding: 0.8rem 0.5rem;
     border-radius: 0.4rem;
     cursor: pointer;
     justify-content: start;
-    gap: 0.5rem;
+    gap: 1rem;
     font-size: 2rem;
     text-transform: uppercase;
+    height: 7.5rem;
+    color: var(--color-text-reverse);
 }
 
 .labelInputsPayment:hover {
-    background-color: rgb(170, 11, 0); 
+    background-color: var(--bg-color-label-inputs-hover); 
 }
 
 .labelInputsPayment img {
-    height: 7rem;
+    height: 5rem;
 }
 
 #containerMoney input, #containerPix input {
@@ -73,17 +94,20 @@
 
 #ParagraphPaymentMethod {
     margin-bottom: 2rem;
-    font-size: 2rem;
+    margin-top: 1rem;
+    font-size: 2.5rem;
     font-family: poppins-semiBold;
+    color: var(--color-text-reverse);
 }
 
 .containerValues .containerAmount {
     width: 100%;
     text-align: center;
-    background-color: rgba(0, 255, 0, 0.5);
+    background-color: var(--bg-color-container-values);
     padding: 1.5rem;
     border-radius: 0.4rem;
     font-size: 2rem;
+    color: var(--color-text-reverse);
 }
 
 #paragraphPurchaseValue {
@@ -115,7 +139,6 @@
 
 #mainPaymentPage #containerBtns a:hover {
     background-color: rgb(204, 41, 0);
-    padding: 2rem 2.2rem;
 }
 
 #mainPaymentPage #containerBtns button {
@@ -124,6 +147,5 @@
 
 #mainPaymentPage #containerBtns button:hover {
     background-color: rgb(0, 133, 0);
-    padding: 1.7rem 2.2rem;
 }
 /* end container buttons */

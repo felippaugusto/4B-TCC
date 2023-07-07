@@ -34,16 +34,16 @@ include_once 'includes/header.php';
 
             <div class="containerPaymentsMethods">
                 <div id="containerMoney">
-                    <label for="inputMoney" class="displayFlex labelInputsPayment">
+                    <label for="inputMoney" class="displayFlex labelInputsPayment" id="labelInputMoney">
                         <img src="IMAGES/paymentsPage/money.png" alt="money">
-                        <span>Dinheiro</span>
+                        <span>Pagamento à vista</span>
                     </label>
                     <input type="radio" name="money" id="inputMoney">
                 </div>
 
                 <div id="containerPix">
-                    <label for="inputPix" class="displayFlex labelInputsPayment">
-                        <img src="IMAGES/paymentsPage/pix.png" alt="pix">
+                    <label for="inputPix" class="displayFlex labelInputsPayment" id="labelInputPix">
+                        <img src="IMAGES/paymentsPage/pix-dark.png" alt="pix" id="image-pix">
                         <span>Pix</span>
                     </label>
                     <input type="radio" name="pix" id="inputPix">

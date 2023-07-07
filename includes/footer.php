@@ -35,40 +35,7 @@
     <script src="JS/shopping-cart.js"></script>
     <script src="JS/building-computer.js"></script>
     <script src="JS/admin.js"></script>
-    <script>
-        function typeWriter() {
-            const title = document.querySelector(".paragraph-team");
-
-            let counter = 95;
-            const textoArray = title.innerHTML.split('');
-            title.innerHTML = "";
-            textoArray.forEach((letra, i) => {
-                counter += 75;
-                setTimeout(function() {
-                    title.innerHTML += letra; 
-                }, counter);
-            })   
-        }
-
-        setTimeout(typeWriter, 2000)
-
-
-    </script>
-    <script>
-        const containerLoggedUser = $("#containerLoggedUser");
-        const modelLoggedUser = $(".modelLoggedUser");
-
-        containerLoggedUser.mouseover(() => {
-            modelLoggedUser.addClass("active");
-
-            console.log("adicionou");
-        })
-
-        containerLoggedUser.mouseout(() => {
-            modelLoggedUser.removeClass("active");
-            console.log("removeu");
-        })
-    </script>
+    <script src="JS/utils.js"></script>
     <script src="JS/userPage.js"></script>
 </body>
 </html>
