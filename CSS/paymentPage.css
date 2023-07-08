@@ -74,6 +74,8 @@ body[data-theme="t-dark"] {
 
 .labelInputsPayment:hover {
     background-color: var(--bg-color-label-inputs-hover); 
+    height: 8.5rem;
+    width: 105%;
 }
 
 .labelInputsPayment img {

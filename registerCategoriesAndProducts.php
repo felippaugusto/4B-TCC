@@ -10,6 +10,18 @@ include_once 'includes/messages.php';
 if(!isset($_SESSION['adminLogged']) == true) {
     header('Location: login.php');
 }
+
+// get the categories
+$sql = "SELECT * FROM tb_categorias";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$datasCategories = $stmt->fetchAll();
+
+// get the subcategories
+$sql = "SELECT * FROM tb_subcategorias";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$datasSubcategories = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -69,20 +81,16 @@ if(!isset($_SESSION['adminLogged']) == true) {
                         <div id="container-categories" class="select">
                             <select name="selectCategory" class="selectCategory">
                                 <option selected disabled>Escolha uma categoria</option>
-                                <option value="INTEL">INTEL</option>
-                                <option value="AMD">AMD</option>
-                                <option value="NVIDIA">NVIDIA</option>
-                                <option value="RADEON">RADEON</option>
+                                <?php foreach($datasCategories as $data) { ?>
+                                <option value="<?php echo $data['cod_categoria'] ?>"><?php echo $data['nome_categoria']; }; ?></option>
                             </select>
                         </div>
 
                         <div id="container-SubCategories" class="select">
                             <select name="selectSubCategory" class="selectCategory">
                                 <option selected disabled>Escolha uma sub categoria</option>
-                                <option value="INTEL">LGA 1155</option>
-                                <option value="AMD">AM4</option>
-                                <option value="NVIDIA">DDR4</option>
-                                <option value="RADEON">NVME</option>   
+                                <?php foreach($datasSubcategories as $data) { ?>
+                                <option value="<?php echo $data['cod_subcategoria']; ?>"><?php echo $data['nome_subcategoria']; }; ?></option>  
                             </select>
                         </div>
                     </div>

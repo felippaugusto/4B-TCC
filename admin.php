@@ -19,8 +19,9 @@ if(!isset($_SESSION['adminLogged']) == true) {
     <link rel="stylesheet" href="CSS/admin.css">
     <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
 </head>
-<body class="displayFlex" id="bodyAdmin">
-    <h1>Clientes</h1>
+<body>
+    <div class="displayFlex" id="bodyAdmin">
+        <h1>Clientes</h1>
 
     <table id="tableAdmin">
         <thead>
@@ -67,6 +68,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
 
     <a href="registerCategoriesAndProducts.php" id="registerCategoriesAndProducts" class="links">Registro de produtos e categorias</a>
     <a href="php_actions/logout.php" id="backToMainPage" class="links">Voltar</a>
+    </div>
 
     <script>
         const btnRemove = document.querySelectorAll(".btnRemove");
