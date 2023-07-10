@@ -16,16 +16,16 @@ include_once 'includes/header.php';
 
             <div id="theme-white-or-dark" class="displayFlex">
                 <div id="ball" class="displayFlex">
-                    <img src="IMAGES/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
+                    <img src="IMAGES/includes/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
                 </div>
             </div>
 
             <a href="shopping-cart.php" id="carrinho" class="displayFlex">
-                <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
+                <img src="IMAGES/includes/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
                     <div class="displayFlex container-img-down-arrow">
                         <p>Carrinho</p>
-                        <img src="IMAGES/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
+                        <img src="IMAGES/includes/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
                     </div>
                     <p>Produtos: 0</p>
                 </div>
@@ -58,7 +58,7 @@ include_once 'includes/header.php';
 
                 <div class="choose-hardwares displayFlex">
                     <div class="container-img">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
+                        <img src="IMAGES/pageBuildingComputer/processor.png" alt="" class="img-demonstration">
                     </div>
                     <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                     <div class="hardwares-value-choose displayFlex">
@@ -75,7 +75,7 @@ include_once 'includes/header.php';
     
                     <div class="choose-hardwares displayFlex">
                         <div class="container-img">
-                            <img src="IMAGES/main/hardwares-puschase/air-cooler.png" alt="" class="img-demonstration">
+                            <img src="IMAGES/pageBuildingComputer/air-cooler.png" alt="" class="img-demonstration">
                         </div>
                         <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <div class="hardwares-value-choose displayFlex">
@@ -92,7 +92,7 @@ include_once 'includes/header.php';
     
                     <div class="choose-hardwares displayFlex">
                         <div class="container-img">
-                            <img src="IMAGES/main/hardwares-puschase/motherboard.png" alt="" class="img-demonstration">
+                            <img src="IMAGES/pageBuildingComputer/motherboard.png" alt="" class="img-demonstration">
                         </div>
                         <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <div class="hardwares-value-choose displayFlex">
@@ -109,7 +109,7 @@ include_once 'includes/header.php';
     
                     <div class="choose-hardwares displayFlex">
                         <div class="container-img">
-                            <img src="IMAGES/main/hardwares-puschase/video-card.png" alt="" class="img-demonstration">
+                            <img src="IMAGES/pageBuildingComputer/video-card.png" alt="" class="img-demonstration">
                         </div>
                         <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                         <div class="hardwares-value-choose displayFlex">
@@ -134,7 +134,7 @@ include_once 'includes/header.php';
                 <p class="paragraph-hardwares">Processador</p>
 
                 <div class="choose-hardwares displayFlex">
-                    <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="img-demonstration">
+                    <img src="IMAGES/pageBuildingComputer/processor.png" alt="" class="img-demonstration">
                     <p class="hardwares-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                     <div class="hardwares-value-choose displayFlex">
                         <p class="hardwares-value">R$ 1500,00</p>

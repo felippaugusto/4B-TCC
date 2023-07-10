@@ -16,12 +16,13 @@ if(!isset($_SESSION['adminLogged']) == true) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
+    <link rel="stylesheet" href="CSS/globals.css">
     <link rel="stylesheet" href="CSS/admin.css">
     <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
     <div class="displayFlex" id="bodyAdmin">
-        <h1>Clientes</h1>
+        <h1>Clientes cadastrados</h1>
 
     <table id="tableAdmin">
         <thead>
@@ -30,6 +31,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
                 <th>Sobrenome:</th>
                 <th>Email:</th>
                 <th>CPF:</th>
+                <th></th>
             </tr>
         </thead>
 
@@ -40,6 +42,10 @@ if(!isset($_SESSION['adminLogged']) == true) {
             $stmt->execute();
             $datas = $stmt->fetchAll();
             foreach($datas as $data) {
+                if($data['email_cliente'] == "admin@admin.com" && $data['tipo_cadastro'] == 'A') {
+                    // administrador
+                }
+                else {
             ?>
             <tr>
                 <td><?php echo $data['nome_cliente']; ?></td>
@@ -62,7 +68,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
                     </div>
                 </div>
             </tr>
-            <?php }; ?>
+            <?php }; }; ?>
         </tbody>
     </table>
 

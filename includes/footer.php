@@ -1,20 +1,20 @@
 <!-- social medias -->
 <div class="social-medias displayFlex">
-        <a href="https://www.youtube.com" target="_blank"><img src="IMAGES/footer/youtube.png" alt="youtube" id="youtube"></a>
+        <a href="https://www.youtube.com" target="_blank"><img src="IMAGES/includes/footer/youtube.png" alt="youtube" id="youtube"></a>
         
-        <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/footer/instagram.png" alt="instagram" id="instagram"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/includes/footer/instagram.png" alt="instagram" id="instagram"></a>
 
-        <a href="https://www.facebook.com/" target="_blank"><img src="IMAGES/footer/facebook.png" alt="facebook" id="facebook"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="IMAGES/includes/footer/facebook.png" alt="facebook" id="facebook"></a>
 
-        <a href="https://www.twitter.com/" target="_blank"><img src="IMAGES/footer/twitter.png" alt="twitter" id="twitter"></a>
+        <a href="https://www.twitter.com/" target="_blank"><img src="IMAGES/includes/footer/twitter.png" alt="twitter" id="twitter"></a>
 
-        <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
+        <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/includes/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
     </div>
 
     <!-- footer -->
     <footer class="displayFlex footer">
         <div class="container-logo-footer displayFlex">
-            <img src="IMAGES/header/video-card-image/graphic-card-4.png" alt="" class="footerImg">
+            <img src="IMAGES/includes/header/video-card-image/graphic-card-4.png" alt="" class="footerImg">
             <p class="logo-footer">Assembly Tech</p>
         </div>
 

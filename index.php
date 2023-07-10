@@ -1,6 +1,11 @@
 <?php
 // Header
 include_once 'includes/header.php';
+
+$sql = "SELECT * FROM tb_produtos";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$productDatas = $stmt->fetchAll();
 ?>
 <!-- header structure -->
     <!-- header left -->
@@ -17,16 +22,16 @@ include_once 'includes/header.php';
 
             <div id="theme-white-or-dark" class="displayFlex">
                 <div id="ball" class="displayFlex">
-                    <img src="IMAGES/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
+                    <img src="IMAGES/includes/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
                 </div>
             </div>
 
             <a href="shopping-cart.php" id="carrinho" class="displayFlex">
-                <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
+                <img src="IMAGES/includes/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
                     <div class="displayFlex container-img-down-arrow">
                         <p>Carrinho</p>
-                        <img src="IMAGES/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
+                        <img src="IMAGES/includes/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
                     </div>
                     <p>Produtos: 0</p>
                 </div>
@@ -43,7 +48,7 @@ include_once 'includes/header.php';
             </a>
     
             <a href="building-computer.php" class="containerAmd displayFlex red" onmouseover="toggleBtnIntelAmd.amdActive()" onmouseout="toggleBtnIntelAmd.amdDesactive()">
-                <img src="IMAGES/main/logo-amd/ryzen-amd-logo.png" alt="image-logo-ryzen" class="imgLogoRyzen">
+                <img src="IMAGES\pageIndex\logo-amd/ryzen-amd-logo.png" alt="image-logo-ryzen" class="imgLogoRyzen">
             </a>
         </div>
 
@@ -52,89 +57,27 @@ include_once 'includes/header.php';
             <a href="building-computer.php" class="btnSelectAmd">Selecionar</a>
         </div>
 
-
         <!-- product showcase -->
         <table class="hardware-showcase">
             <tr class="row-products displayFlex">
+                <!-- foreach products -->
+                <?php foreach($productDatas as $productData) { ?>
 
                 <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
+                    <a href="productPage.php?productId=<?php echo $productData['cod_produto']; ?>" class="column-products displayFlex">
+                        <img src="IMAGES/product_images/<?php echo $productData['imagem']; ?>" alt="" class="hardware-image">
+                        <p class="product-especification"><?php echo $productData['descricao_produto']; ?></p>
+                        <p class="product-value">R$ <?php echo $productData['preco_atual_produto']; ?> reais</p>
                     </a>
                     <button id="product-1" class="add-cart">Adicionar ao carrinho</button>
                 </td>
-
-                <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
-                    </a>
-                    <button id="product-2" class="add-cart">Adicionar ao carrinho</button>
-                </td>
-                
-                <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
-                    </a>
-                    <button id="product-3" class="add-cart">Adicionar ao carrinho</button>
-                </td>
-                
-                <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
-                    </a>
-                    <button class="add-cart">Adicionar ao carrinho</button>
-                </td>
-
-                <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
-                    </a>
-                    <button id="product-1" class="add-cart">Adicionar ao carrinho</button>
-                </td>
-
-                <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
-                    </a>
-                    <button id="product-2" class="add-cart">Adicionar ao carrinho</button>
-                </td>
-                
-                <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
-                    </a>
-                    <button id="product-3" class="add-cart">Adicionar ao carrinho</button>
-                </td>
-                
-                <td class="container-product">
-                    <a href="productPage.php" class="column-products displayFlex">
-                        <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
-                        <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                        <p class="product-value">R$ 1200,00 reais</p>
-                    </a>
-                    <button class="add-cart">Adicionar ao carrinho</button>
-                </td>
-
+                <?php }; ?>
             </tr>
         </table>
     </main>
 
     <!-- button to navegate to header -->
-    <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>
+    <a href="#header" class="goToHeader"><img src="IMAGES/includes/down-arrow-navegation-website.png" alt=""></a>
 
     <!-- <p id="paragraphMessages">Sucesso ao cadastrar</p> -->
 

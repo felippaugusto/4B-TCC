@@ -46,7 +46,7 @@ include_once 'includes/header.php';
                     <tr>
                         <td class="displayFlex" id="cart-product">
                             <div class="container-left-td displayFlex">
-                                <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
+                                <img src="IMAGES/pageBuildingComputer/processor.png" alt="">
                                 <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                                 <span class="displayFlex">
                                     <p class="addMore">+</p>
@@ -63,7 +63,7 @@ include_once 'includes/header.php';
                         
                         <td class="displayFlex" id="cart-product">
                             <div class="container-left-td displayFlex">
-                                <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
+                                <img src="IMAGES/pageBuildingComputer/processor.png" alt="">
                                 <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                                 <span class="displayFlex">
                                     <p class="addMore">+</p>
@@ -80,7 +80,7 @@ include_once 'includes/header.php';
 
                         <td class="displayFlex" id="cart-product">
                             <div class="container-left-td displayFlex">
-                                <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="">
+                                <img src="IMAGES/pageBuildingComputer/processor.png" alt="">
                                 <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                                 <span class="displayFlex">
                                     <p class="addMore">+</p>

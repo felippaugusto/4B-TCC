@@ -2,7 +2,7 @@
     if(!isset($_SESSION['logged'])) {
         ?>
         <div id="loginOrSignUp" class="displayFlex">
-            <img src="IMAGES/header/user.png" alt="" id="user-header">
+            <img src="../IMAGES/includes/header/user.png" alt="" id="user-header">
             <a href="login.php" class="loginOrSignUpText">Entrar/Cadastrar</a>
         </div>
         <?php
@@ -18,7 +18,7 @@
         foreach($datas as $data) { ?>
         ?>
             <div id="containerLoggedUser" class="displayFlex">
-                <img src="IMAGES/header/user.png" alt="user-header" id="user-header">
+                <img src="IMAGES/includes/header/user.png" alt="user-header" id="user-header">
                 <p id="userName"><?php echo $data['nome_cliente']; ?></p>
 
                 <div class="modelLoggedUser">

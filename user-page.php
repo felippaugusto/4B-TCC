@@ -36,16 +36,16 @@ if(isset($_GET['id'])) {
 
             <div id="theme-white-or-dark" class="displayFlex">
                 <div id="ball" class="displayFlex">
-                    <img src="IMAGES/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
+                    <img src="IMAGES/includes/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
                 </div>
             </div>
 
             <a href="shopping-cart.php" id="carrinho" class="displayFlex">
-                <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
+                <img src="IMAGES/includes/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
                     <div class="displayFlex container-img-down-arrow">
                         <p>Carrinho</p>
-                        <img src="IMAGES/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
+                        <img src="IMAGES/includes/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
                     </div>
                     <p>Produtos: 0</p>
                 </div>

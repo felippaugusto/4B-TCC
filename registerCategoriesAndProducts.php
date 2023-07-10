@@ -71,7 +71,7 @@ $datasSubcategories = $stmt->fetchAll();
         <div class="modelEdit displayFlex" id="containerProductRegister">
             <form action="php_actions/createProducts.php" class="displayFlex modelForm" id="formProductRegister" method="POST" enctype="multipart/form-data">
                 <div class="displayFlex" id="containerinput">
-                    <input type="text" name="productName" autocomplete="off" placeholder="Nome do produto" required>
+                    <input type="text" name="productName" autocomplete="off" placeholder="Nome do produto">
                     <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="valueProduct" autocomplete="off" placeholder="Valor do produto">
                 </div>
 

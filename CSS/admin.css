@@ -24,8 +24,17 @@ html {
     justify-content: start;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom right ,rgb(0, 0, 24), rgb(0, 0, 70));
 }
 /* end body */
+
+/* start title register users */
+#bodyAdmin h1 {
+    font-family: poppins-light;
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+}
+/* end title register users */
 
 /* start users table */
 #tableAdmin {
@@ -34,15 +43,22 @@ html {
     font-size: 2rem;
     text-align: center;
     border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 0.7rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.096);
 }
 
 #tableAdmin thead tr th {
     padding: 1rem;
 }
 
-#tableAdmin tbody tr {
-    background-color: rgb(199, 199, 199);
-    border: 1px solid #000;
+#tableAdmin tbody tr, #tableAdmin thead tr th {
+    border-bottom: 1px solid #fff;
+}
+
+#tableAdmin tbody tr:hover {
+    background: #ffffff6e;
 }
 
 #tableAdmin tbody tr td {

@@ -24,6 +24,6 @@ session_start();
     <link rel="stylesheet" href="CSS/shopping-cart.css">
     <link rel="stylesheet" href="CSS/register.css">
     <link rel="stylesheet" href="CSS/building-computer.css">
-    <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES/includes/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>

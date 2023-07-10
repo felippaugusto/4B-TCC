@@ -85,10 +85,12 @@ p.intel {
     flex-direction: column;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 2rem 4rem;
     gap: 2rem;
     cursor: pointer;
     border-radius: 0.4rem;
+    width: 38rem;
+    height: 45rem;
+    justify-content: space-between;
 }
 
 .column-products:hover {
@@ -96,19 +98,22 @@ p.intel {
 }
 
 .hardware-image {
+    margin-top: 1rem;
     height: 25rem;
 }
 
 .product-especification {
     color: #fff;
-    width: 30rem;
+    width: 90%;
     font-family: poppins-semiBold;
+    text-align: center;
 }
 
 .product-value {
     font-size: 2.5rem;
     font-weight: 700;
     color: #01e63a;
+    margin-bottom: 2rem;
 }
 
 .container-product .add-cart {

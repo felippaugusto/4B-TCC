@@ -41,7 +41,7 @@ if(themeWhiteDark) {
         localStorage.setItem("theme", changingThemes);
         
         if(changingThemes == 't-dark') {
-            moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/moon-black.png");
+            moonOrSun.attr("src", "IMAGES/includes/header/theme-white-and-dark/moon-black.png");
             imgEmail.attr("src", "IMAGES/form-login/email.png");
             imgPassword.attr("src", "IMAGES/form-login/padlock.png");
             imagePix.attr("src", "IMAGES/paymentsPage/pix-dark.png");
@@ -65,7 +65,7 @@ if(themeWhiteDark) {
             }
         }
         else {
-            moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/sun.png");
+            moonOrSun.attr("src", "IMAGES/includes/header/theme-white-and-dark/sun.png");
             imgEmail.attr("src", "IMAGES/form-login/email-dark.png");
             imgPassword.attr("src", "IMAGES/form-login/padlock-dark.png");
             imagePix.attr("src", "IMAGES/paymentsPage/pix-light.png");
@@ -91,14 +91,14 @@ if(themeWhiteDark) {
 }
 
 if(localStorage.getItem("theme") == "t-dark") {
-    moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/moon-black.png");
+    moonOrSun.attr("src", "IMAGES/includes/header/theme-white-and-dark/moon-black.png");
     imgEmail.attr("src", "IMAGES/form-login/email.png");
     imgPassword.attr("src", "IMAGES/form-login/padlock.png");
     colorLabels = "rgb(0, 68, 77)";
     colorLabelsHover = "rgb(0, 90, 102)";
 }
 else if(localStorage.getItem("theme") == "t-light") {
-    moonOrSun.attr("src", "IMAGES/header/theme-white-and-dark/sun.png");
+    moonOrSun.attr("src", "IMAGES/includes/header/theme-white-and-dark/sun.png");
     imgEmail.attr("src", "IMAGES/form-login/email-dark.png");
     imgPassword.attr("src", "IMAGES/form-login/padlock-dark.png");
     colorLabels = "#a82700";
