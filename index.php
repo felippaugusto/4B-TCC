@@ -2,6 +2,7 @@
 // Header
 include_once 'includes/header.php';
 
+// sql getting the data from the tb_produtos
 $sql = "SELECT * FROM tb_produtos";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -26,6 +27,7 @@ $productDatas = $stmt->fetchAll();
                 </div>
             </div>
 
+            <!-- button shopping cart -->
             <a href="shopping-cart.php" id="carrinho" class="displayFlex">
                 <img src="IMAGES/includes/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
@@ -63,6 +65,7 @@ $productDatas = $stmt->fetchAll();
                 <!-- foreach products -->
                 <?php foreach($productDatas as $productData) { ?>
 
+                <!-- product demo table -->
                 <td class="container-product">
                     <a href="productPage.php?productId=<?php echo $productData['cod_produto']; ?>" class="column-products displayFlex">
                         <img src="IMAGES/product_images/<?php echo $productData['imagem']; ?>" alt="" class="hardware-image">

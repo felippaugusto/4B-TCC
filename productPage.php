@@ -21,6 +21,7 @@ include_once 'includes/header.php';
                 </div>
             </div>
 
+            <!-- button shopping cart -->
             <a href="shopping-cart.php" id="carrinho" class="displayFlex">
                 <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
@@ -34,6 +35,7 @@ include_once 'includes/header.php';
         </div>
     </header>
 
+    <!-- container of product to buy -->
     <main id="productPageMain" class="displayFlex">
         <!-- product container -->
         <div class="container-product productPage displayFlex">

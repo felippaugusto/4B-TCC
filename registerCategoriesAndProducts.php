@@ -61,6 +61,7 @@ $datasSubcategories = $stmt->fetchAll();
         </div>
     </header>
 
+    <!-- admin screen for registering products and categories -->
     <div id="containerUserPage" class="displayFlex">
         <!-- add products -->
         <div class="divChilds" id="productRegister">

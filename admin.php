@@ -21,6 +21,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
     <link rel="shortcut icon" href="IMAGES/includes/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
+    <!-- users registered -->
     <div class="displayFlex" id="bodyAdmin">
         <h1>Clientes cadastrados</h1>
 
@@ -37,6 +38,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
 
         <tbody>
             <?php
+            // sql getting the data from the tb_usuarios
             $sql = "SELECT * FROM tb_usuarios";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
@@ -48,6 +50,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
                 else {
             ?>
             <tr>
+                <!-- foreach user information -->
                 <td><?php echo $data['nome_cliente']; ?></td>
                 <td><?php echo $data['sobrenome']; ?></td>
                 <td><?php echo $data['email_cliente']; ?></td>
@@ -61,7 +64,9 @@ if(!isset($_SESSION['adminLogged']) == true) {
                             <div class="container-form displayFlex">
                                 <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
+                                <!-- button to delete the user -->
                                 <button type="submit" name="delete-btn" class="btn-remove-form">Deletar usuário</button>
+                                <!-- close the modal -->
                                 <p id="close-model">Cancelar</p>
                             </div>
                         </form>
@@ -72,10 +77,13 @@ if(!isset($_SESSION['adminLogged']) == true) {
         </tbody>
     </table>
 
+    <!-- button for registration of product and categoties -->
     <a href="registerCategoriesAndProducts.php" id="registerCategoriesAndProducts" class="links">Registro de produtos e categorias</a>
+    <!-- button back to the page -->
     <a href="php_actions/logout.php" id="backToMainPage" class="links">Voltar</a>
     </div>
 
+    <!-- script to open the modal -->
     <script>
         const btnRemove = document.querySelectorAll(".btnRemove");
         const btnClose = document.querySelector("#close-model");

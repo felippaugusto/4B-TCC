@@ -23,6 +23,7 @@ include_once 'includes/header.php';
     </div>
 </header>
 
+<!-- choose payment method -->
 <form action="#" method="" class="displayFlex" id="mainPaymentPage">
     <div id="containerPaymentPage" class="displayflex">
         <div class="displayFlex" id="containerPaymentParagraph">
@@ -32,6 +33,7 @@ include_once 'includes/header.php';
 
         <div class="displayFlex" id="paymentMethodAndValues">
 
+            <!-- method money -->
             <div class="containerPaymentsMethods">
                 <div id="containerMoney">
                     <label for="inputMoney" class="displayFlex labelInputsPayment" id="labelInputMoney">
@@ -41,6 +43,7 @@ include_once 'includes/header.php';
                     <input type="radio" name="money" id="inputMoney">
                 </div>
 
+                <!-- method pix -->
                 <div id="containerPix">
                     <label for="inputPix" class="displayFlex labelInputsPayment" id="labelInputPix">
                         <img src="IMAGES/paymentsPage/pix-dark.png" alt="pix" id="image-pix">
@@ -50,6 +53,7 @@ include_once 'includes/header.php';
                 </div>
             </div>
 
+            <!-- amout to pay -->
             <div class="containerValues">
                 <p id="ParagraphPaymentMethod">Dinheiro</p>
                 <div class="containerAmount">
@@ -60,8 +64,11 @@ include_once 'includes/header.php';
         </div>
     </div>
 
+    <!-- container btns -->
     <div id="containerBtns">
+        <!-- button back to the page -->
         <a href="shopping-cart.php">Voltar</a>
+        <!-- button to pay -->
         <button>Pagar com dinheiro</button>
     </div>
 </form>

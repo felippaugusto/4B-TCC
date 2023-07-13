@@ -20,6 +20,7 @@ include_once 'includes/header.php';
                 </div>
             </div>
 
+            <!-- button shopping cart -->
             <a href="shopping-cart.php" id="carrinho" class="displayFlex">
                 <img src="IMAGES/includes/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
@@ -33,25 +34,28 @@ include_once 'includes/header.php';
         </div>
     </header>
 
+    <!-- container main -->
     <main>
         <!-- change the team according to the choice of brand -->
         <div class="blueOrRedTeam displayFlex">
             <p class="paragraph-team">Você escolheu o time vermelho da força</p>
         </div>
 
+        <!-- assemble at home -->
         <div class="container-total-values displayFlex">
             <div class="building-at-home displayFlex">
                 <img src="IMAGES/main/money.png" alt="" class="img-money">
                 <p id="paragraph-building-pc">Montando em casa: <span id="amount-pay-home">R$ 500,00</span></p>
             </div>
 
+            <!-- ready assembly  -->
             <div class="building-ready displayFlex">
                 <img src="IMAGES/main/money.png" alt="" class="img-money">
                 <p id="paragraph-building-pc">Montagem pronta: <span id="amount-pay-assembly-ready">R$ 1500,00</span></p>
             </div>
         </div>
 
-        <!-- switch to products kits -->
+        <!-- choice of product kits  -->
         <div class="container-choose-hardwares">
             <div class="container-hardwares">
                 <p class="paragraph-hardwares">Processador</p>

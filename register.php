@@ -30,6 +30,7 @@ include_once 'includes/messages.php';
             <h1>Cadastre sua conta</h1>
         </div>
 
+        <!-- form register -->
         <div class="container-form displayFlex" id="container-form-register">
             <form action="php_actions/create.php" class="displayFlex" method="POST">
                 <div class="displayFlex">
@@ -56,6 +57,7 @@ include_once 'includes/messages.php';
         </div>
     </div>
 
+    <!-- back to the page login -->
     <a href="login.php" class="backToThePreviousPage">Voltar</a>
 
     <!-- button to navegate to header -->
