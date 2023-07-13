@@ -192,6 +192,7 @@ body {
 /* end messages */
 
 /* start animations */
+/* start btnNavegatiomWebsite */
 @keyframes btnNavegationWebsite {
     0% {
         height: 6rem;
@@ -201,7 +202,9 @@ body {
         height: 6.5rem;
     }
 }
+/* end btnNavegatiomWebsite */
 
+/* start messages */
 @keyframes messages {
     0% {
         top: 0%;
@@ -232,5 +235,18 @@ body {
         visibility: hidden;
     }
 }
+/* end messages */
+
+/* start arrowOpenModal */
+@keyframes arrowOpenModal {
+    0% {
+        height: 5rem;
+    }
+
+    50% {
+        height: 5.5rem;
+    }
+}
+/* end arrowOpenModal */
 /* end animations */
 /* end globals */

@@ -3,6 +3,9 @@ const productRegister = $("#productRegister");
 const categoryRegister = $("#categoryRegister");
 const subCategoryRegister = $("#subCategoryRegister");
 const closeModels = document.querySelectorAll(".close-models");
+const arrowOpenModal = $("#formProductRegister .arrow-light#arrow-light-open-modal");
+const arrowCloseModal = $("#modelImageName .arrow-light");
+const modelImageName = $("#modelImageName");
 
 // open form to add products
 productRegister.click(() => {
@@ -28,6 +31,20 @@ closeModels.forEach(closeModel => {
         const modelsEdit = document.querySelectorAll(".modelEdit");
         modelsEdit.forEach(modelEdit => {
             modelEdit.classList.remove("active");
+            modelImageName.removeClass("active");
+            arrowOpenModal.removeClass("active");
         })
     })
+})
+
+// open modal image name
+arrowOpenModal.click(() => {
+    arrowOpenModal.addClass("active");
+    modelImageName.addClass("active");
+})
+
+// close modal image name
+arrowCloseModal.click(() => {
+    modelImageName.removeClass("active");
+    arrowOpenModal.removeClass("active");
 })

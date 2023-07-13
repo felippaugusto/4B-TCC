@@ -18,7 +18,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
     <link rel="stylesheet" href="CSS/globals.css">
     <link rel="stylesheet" href="CSS/admin.css">
-    <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES/includes/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
     <div class="displayFlex" id="bodyAdmin">
@@ -52,7 +52,7 @@ if(!isset($_SESSION['adminLogged']) == true) {
                 <td><?php echo $data['sobrenome']; ?></td>
                 <td><?php echo $data['email_cliente']; ?></td>
                 <td><?php echo $data['cpf']; ?></td>
-                <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex"><img src="IMAGES/main/admin/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
 
                 <div id="modal<?php echo $data['cod_cliente']; ?>" class="box-model displayFlex">
                     <div class="model-description displayFlex">

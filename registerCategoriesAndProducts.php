@@ -37,7 +37,7 @@ $datasSubcategories = $stmt->fetchAll();
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/user-page.css">
     <link rel="stylesheet" href="CSS/register.css">
-    <link rel="shortcut icon" href="IMAGES/header/favicon/computer-96.png" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES/includes/header/favicon/computer-96.png" type="image/x-icon">
 </head>
 <body>
 
@@ -75,27 +75,27 @@ $datasSubcategories = $stmt->fetchAll();
                     <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="valueProduct" autocomplete="off" placeholder="Valor do produto">
                 </div>
 
-                <div class="displayFlex">
-                    <div id="containerCategoriesSubCategories" class="displayFlex">
+        
+                <div id="containerCategoriesSubCategories" class="displayFlex">
+                    <div id="container-categories" class="select">
+                        <select name="selectCategory" class="selectCategory">
+                            <option selected disabled>Escolha uma categoria</option>
+                            <?php foreach($datasCategories as $data) { ?>
+                            <option value="<?php echo $data['cod_categoria'] ?>"><?php echo $data['nome_categoria']; }; ?></option>
+                        </select>
+                    </div>
 
-                        <div id="container-categories" class="select">
-                            <select name="selectCategory" class="selectCategory">
-                                <option selected disabled>Escolha uma categoria</option>
-                                <?php foreach($datasCategories as $data) { ?>
-                                <option value="<?php echo $data['cod_categoria'] ?>"><?php echo $data['nome_categoria']; }; ?></option>
-                            </select>
-                        </div>
-
-                        <div id="container-SubCategories" class="select">
-                            <select name="selectSubCategory" class="selectCategory">
-                                <option selected disabled>Escolha uma sub categoria</option>
-                                <?php foreach($datasSubcategories as $data) { ?>
-                                <option value="<?php echo $data['cod_subcategoria']; ?>"><?php echo $data['nome_subcategoria']; }; ?></option>  
-                            </select>
-                        </div>
+                    <div id="container-SubCategories" class="select">
+                        <select name="selectSubCategory" class="selectCategory">
+                            <option selected disabled>Escolha uma sub categoria</option>
+                            <?php foreach($datasSubcategories as $data) { ?>
+                            <option value="<?php echo $data['cod_subcategoria']; ?>"><?php echo $data['nome_subcategoria']; }; ?></option>  
+                        </select>
                     </div>
                 </div>
+                
                 <label for="file" class="inputFile">Adicionar a imagem do produto</label>
+                <img src="IMAGES/admin/arrow-light.png" alt="arrow" id="arrow-light-open-modal" class="arrow-light">
                 <input type="file" name="productImage" id="file">
 
                 <label for="productDescription" id="labelTextarea">Adicione a descrição do produto</label>
@@ -103,6 +103,12 @@ $datasSubcategories = $stmt->fetchAll();
                 <div id="container-btns-edit" class="displayFlex btnsAdmin">
                     <button type="submit" name="btn_submit_products">Adicionar Produto</button>
                     <p class="close-models">Cancelar</p>
+                </div>
+
+                <div class="displayFlex" id="modelImageName">
+                    <img src="IMAGES/admin/arrow-light.png" alt="arrow" class="arrow-light">
+                    <label for="imageName">Nome da imagem:</label>
+                    <input type="text" name="imageName" id="imageName">
                 </div>
             </form>
         </div>

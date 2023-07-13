@@ -12,6 +12,7 @@ if(isset($_POST['btn_submit_products'])) {
     $productCategory = $_POST['selectCategory'];
     $productSubcategory = $_POST['selectSubCategory'];
     $productDescription = $_POST['productDescription'];
+    $imageName = $_POST['imageName'];
     $active = 'S';
 
    // verify file extension
@@ -29,32 +30,45 @@ if(isset($_POST['btn_submit_products'])) {
         header('Location: ../registerCategoriesAndProducts.php');
     }
     else {
-        // file upload
+        // get path the folder
         $folder = "../IMAGES/product_images/";
         $temporary = $_FILES['productImage']['tmp_name'];
-        $newFileName = uniqid().".$fileExtension";
-        move_uploaded_file($temporary, $folder.$newFileName);
-
-        $sql = "INSERT INTO tb_produtos (nome_produto, descricao_produto, ativo, preco_atual_produto, id_categorias, id_subcategorias, imagem) VALUES (:productName, :productDescription, :active, :valueProduct, :productCategory, :productSubcategory, :productImage)";
+        // verify image name
+        $sql = "SELECT imagem FROM tb_produtos WHERE imagem = '$imageName".'.'."$fileExtension'";
         $stmt = $pdo->prepare($sql);
+        $stmt->execute();
 
-        $stmt->bindParam(':productName', $productName);
-        $stmt->bindParam(':active', $active);
-        $stmt->bindParam(':valueProduct', $valueProduct);
-        $stmt->bindParam(':productCategory', $productCategory);
-        $stmt->bindParam(':productSubcategory', $productSubcategory);
-        $stmt->bindParam(':productImage', $newFileName);
-        $stmt->bindParam('productDescription', $productDescription);
-
-        if($stmt->execute()) {
+        if($stmt->rowCount() > 0) {
             $_SESSION['messagesVerify'] = true;
-            $_SESSION['messages'] = "Produto cadastrado com sucesso!";
+            $_SESSION['messages'] = "O nome da imagem já existe!";
             header('Location: ../registerCategoriesAndProducts.php');
         }
         else {
-            $_SESSION['messagesVerify'] = true;
-            $_SESSION['messages'] = "Não foi possível cadastrar o produto!";
-            header('Location: ../registerCategoriesAndProducts.php');
+            // file upload
+            $newFileName = $imageName.".$fileExtension";
+            move_uploaded_file($temporary, $folder.$newFileName);
+
+            $sql = "INSERT INTO tb_produtos (nome_produto, descricao_produto, ativo, preco_atual_produto, id_categorias, id_subcategorias, imagem) VALUES (:productName, :productDescription, :active, :valueProduct, :productCategory, :productSubcategory, :productImage)";
+            $stmt = $pdo->prepare($sql);
+
+            $stmt->bindParam(':productName', $productName);
+            $stmt->bindParam(':active', $active);
+            $stmt->bindParam(':valueProduct', $valueProduct);
+            $stmt->bindParam(':productCategory', $productCategory);
+            $stmt->bindParam(':productSubcategory', $productSubcategory);
+            $stmt->bindParam(':productImage', $newFileName);
+            $stmt->bindParam('productDescription', $productDescription);
+
+            if($stmt->execute()) {
+                $_SESSION['messagesVerify'] = true;
+                $_SESSION['messages'] = "Produto cadastrado com sucesso!";
+                header('Location: ../registerCategoriesAndProducts.php');
+            }
+            else {
+                $_SESSION['messagesVerify'] = true;
+                $_SESSION['messages'] = "Não foi possível cadastrar o produto!";
+                header('Location: ../registerCategoriesAndProducts.php');
+            }
         }
     }
 }
