@@ -1,6 +1,27 @@
 <?php
 // Header
 include_once 'includes/header.php';
+
+// get product code
+$productId = filter_input(INPUT_GET, 'productId', FILTER_SANITIZE_NUMBER_INT);
+$sql = "SELECT * FROM tb_produtos WHERE cod_produto = '$productId'";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$productDatas = $stmt->fetch();
+
+// get product category
+$sql = "SELECT nome_categoria FROM tb_categorias WHERE cod_categoria = :idCategory_foreignKey";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':idCategory_foreignKey', $productDatas['id_categorias']);
+$stmt->execute();
+$productCategory = $stmt->fetch();
+
+// get product sub category
+$sql = "SELECT nome_subcategoria FROM tb_subcategorias WHERE cod_subcategoria = :idSubCategory_foreignKey";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':idSubCategory_foreignKey', $productDatas['id_subcategorias']);
+$stmt->execute();
+$productSubCategory = $stmt->fetch();
 ?>
 <!-- header structure -->
     <!-- header left -->
@@ -23,11 +44,11 @@ include_once 'includes/header.php';
 
             <!-- button shopping cart -->
             <a href="shopping-cart.php" id="carrinho" class="displayFlex">
-                <img src="IMAGES/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
+                <img src="IMAGES/includes/header/shopping-cart.png" alt="shopping-cart" id="shopping-cart-img">
                 <div class="shopping-cart-text">
                     <div class="displayFlex container-img-down-arrow">
                         <p>Carrinho</p>
-                        <img src="IMAGES/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
+                        <img src="IMAGES/includes/header/down-arrow.png" alt="down-arrow" id="down-arrow-shopping-cart">
                     </div>
                     <p>Produtos: 0</p>
                 </div>
@@ -39,13 +60,13 @@ include_once 'includes/header.php';
     <main id="productPageMain" class="displayFlex">
         <!-- product container -->
         <div class="container-product productPage displayFlex">
-            <img src="IMAGES/main/hardware-demonstration/ryzen-5600x-1.png" alt="" class="hardware-image">
+            <img src="IMAGES/product_images/<?php echo $productDatas['imagem']; ?>" alt="" class="hardware-image">
             <div class="product-description">
-                <p class="product-especification">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
-                <p class="product-especification">Marca: AMD</p>
-                <p class="product-especification">Modelo: AM4</p>
+                <p class="product-especification">Descrição: <?php echo $productDatas['descricao_produto']; ?></p>
+                <p class="product-especification">Marca: <?php echo $productCategory['nome_categoria']; ?></p>
+                <p class="product-especification">Modelo: <?php echo $productSubCategory['nome_subcategoria']; ?></p>
                 <p id="available">Produto disponível</p>
-                <p class="product-value">R$ 1200,00 reais</p>
+                <p class="product-value">R$ <?php echo $productDatas['preco_atual_produto'] ?> reais</p>
                 <button id="btn-product-add">Adicionar ao carrinho</button>
             </div>
         </div>

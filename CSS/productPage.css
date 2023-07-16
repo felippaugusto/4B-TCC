@@ -41,6 +41,7 @@ body[data-theme="t-dark"] {
     font-size: 2rem;
     width: 40rem;
     color: var(--color-text-reverse);
+    text-align: left;
 }
 
 .productPage #available {

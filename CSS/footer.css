@@ -20,7 +20,7 @@ body[data-theme="t-dark"] {
     padding: 3rem;
 }
 
-.social-medias {
+.social-medias#admin {
     background: var(--color-bg-medias);
     height: 8vh;
     gap: 2rem;

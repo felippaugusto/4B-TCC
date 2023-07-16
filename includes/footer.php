@@ -1,5 +1,5 @@
-<!-- social medias -->
-<div class="social-medias displayFlex">
+    <!-- social medias -->
+    <nav class="social-medias displayFlex" id="socialMediasAdmin">
         <a href="https://www.youtube.com" target="_blank"><img src="IMAGES/includes/footer/youtube.png" alt="youtube" id="youtube"></a>
         
         <a href="https://www.instagram.com/" target="_blank"><img src="IMAGES/includes/footer/instagram.png" alt="instagram" id="instagram"></a>
@@ -9,7 +9,7 @@
         <a href="https://www.twitter.com/" target="_blank"><img src="IMAGES/includes/footer/twitter.png" alt="twitter" id="twitter"></a>
 
         <a href="https://www.whatsapp.com/" target="_blank"><img src="IMAGES/includes/footer/whatsApp.png" alt="watsApp" id="watsApp"></a>
-    </div>
+    </nav>
 
     <!-- footer -->
     <footer class="displayFlex footer">

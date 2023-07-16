@@ -18,17 +18,62 @@ html {
 /* end globals */
 
 /* start body */
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "social-medias social-medias"
+        "footer footer";
+
+    grid-template-rows: 12rem 1fr 7rem 30rem;
+    grid-template-columns: 20rem 1fr;
+}
+/* end body */
+
+/* start header */
+header {
+    grid-area: header;
+}
+/* end header */
+
+/* start links */
+nav#linksAdmin {
+    grid-area: nav;
+    background-color: brown;
+    flex-direction: column;
+    justify-content: start;
+    padding: 1rem;
+    gap: 1rem;
+    font-family: poppins-intermediare;
+}
+
+nav#linksAdmin .links {
+    background-color: rgb(255, 68, 0);
+    padding: 1rem 1.5rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+nav#linksAdmin .links:hover {
+    background-color: rgb(206, 55, 0);
+    padding: 1.2rem 1.5rem;
+}
+/* end links */
+
+/* start title register users */
 #bodyAdmin {
-    height: 100vh;
-    width: 100vw;
+    grid-area: main;
     justify-content: start;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to bottom right ,rgb(0, 0, 24), rgb(0, 0, 70));
 }
-/* end body */
 
-/* start title register users */
 #bodyAdmin h1 {
     font-family: poppins-light;
     color: rgb(255, 255, 255);
@@ -37,8 +82,7 @@ html {
 /* end title register users */
 
 /* start users table */
-#tableAdmin {
-    width: 90vw;
+.tableAdmin {
     padding: 10rem;
     font-size: 2rem;
     text-align: center;
@@ -47,25 +91,26 @@ html {
     border-radius: 0.7rem;
     color: #fff;
     background: rgba(255, 255, 255, 0.096);
+    width: 90vw;
 }
 
-#tableAdmin thead tr th {
+.tableAdmin thead tr th {
     padding: 1rem;
 }
 
-#tableAdmin tbody tr, #tableAdmin thead tr th {
+.tableAdmin tbody tr, .tableAdmin thead tr th {
     border-bottom: 1px solid #fff;
 }
 
-#tableAdmin tbody tr:hover {
+.tableAdmin tbody tr:hover {
     background: #ffffff6e;
 }
 
-#tableAdmin tbody tr td {
+.tableAdmin tbody tr td {
     padding: 0.5rem;
 }
 
-#tableAdmin .btnRemove {
+.tableAdmin .btnRemove {
     font-size: 1.6rem;
     background-color: rgb(255, 0, 0);
     width: 6rem;
@@ -74,7 +119,7 @@ html {
     cursor: pointer;
 }
 
-#tableAdmin .btnRemove:hover {
+.tableAdmin .btnRemove:hover {
     background-color: rgb(224, 0, 0);
 }
 
@@ -147,33 +192,6 @@ html {
 }
 /* end users remove model */
 
-/* start links */
-.links {
-    background-color: rgb(255, 68, 0);
-    padding: 1rem 1.5rem;
-    border-radius: 0.4rem;
-    text-decoration: none;
-    color: #000;
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-}
-
-.links:hover {
-    background-color: rgb(206, 55, 0);
-    padding: 1.2rem 1.7rem;
-}
-
-#backToMainPage {
-    bottom: 5%;
-    right: 3%;
-}
-
-#registerCategoriesAndProducts {
-    bottom: 5%;
-    right: 8%;
-}
-/* end links */
 /* start page of products and categories */
 .modelEdit {
     align-items: start;
@@ -262,3 +280,14 @@ input {
     width: 45rem !important;
 }
 /* end page of products and categories */
+
+/* start footer */
+.social-medias#socialMediasAdmin {
+    grid-area: social-medias;
+    height: auto;
+}
+
+.footer {
+    grid-area: footer;
+}
+/* end footer */
