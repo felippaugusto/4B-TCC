@@ -20,18 +20,18 @@ body[data-theme="t-dark"] {
     padding: 3rem;
 }
 
-.social-medias#admin {
+.social-medias#socialMediasAdmin {
     background: var(--color-bg-medias);
     height: 8vh;
     gap: 2rem;
 }
 
-.social-medias img {
+.social-medias#socialMediasAdmin img {
     height: 5rem;
     cursor: pointer;
 }
 
-.social-medias img:hover {
+.social-medias#socialMediasAdmin img:hover {
     height: 6rem;
 }
 

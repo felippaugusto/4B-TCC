@@ -125,11 +125,6 @@ input[type="file"] {
 /* end model forms */
 /* end utils */
 
-body {
-    width: 100vw;
-    height: 100vh;
-}
-
 /* start site navegation */
 .goToHeader {
     position: fixed;

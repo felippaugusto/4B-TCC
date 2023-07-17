@@ -56,9 +56,11 @@ body[data-theme="t-dark"] {
 .productPage #btn-product-add {
     margin-top: 3rem;
     background-color: rgb(0, 128, 0);
+    padding: 0.8rem 1.8rem;
 }
 
 .productPage #btn-product-add:hover {
     background-color: rgb(0, 150, 0);
+    padding: 0.8rem 1.8rem;
 }
 /* end product page */

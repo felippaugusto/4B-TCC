@@ -72,7 +72,6 @@ p.intel {
     width: 100vw;
     margin-bottom: 1rem;
     margin-top: 2rem;
-    background: var(--color-bg-harware-showcase);
 }
 
 .row-products {
@@ -116,7 +115,8 @@ p.intel {
     margin-bottom: 2rem;
 }
 
-.container-product .add-cart {
+.container-product a.add-cart {
+    display: block;
     width: 100%;
     padding: 0.8rem;
     font-size: 2.5rem;
@@ -127,9 +127,10 @@ p.intel {
     font-family: poppins-semiBold;
     visibility: hidden;
     opacity: 0;
+    text-align: center;
 }
 
-.container-product:hover .add-cart {
+.container-product:hover a.add-cart {
     visibility: visible;
     opacity: 1;
 }

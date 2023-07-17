@@ -6,11 +6,47 @@ const closeModels = document.querySelectorAll(".close-models");
 const arrowOpenModal = $("#formProductRegister .arrow-light#arrow-light-open-modal");
 const arrowCloseModal = $("#modelImageName .arrow-light");
 const modelImageName = $("#modelImageName");
+const linkProductChange = $(".links.linkChangingProductsCategories.product");
+const linkCategoryChange = $(".links.linkChangingProductsCategories.category");
+const linkSubCategoryChange = $(".links.linkChangingProductsCategories.subCategory");
+const formProduct = $("#formProduct");
+const formCategory = $("#formCategory");
+const formSubCategory = $("#formSubCategory");
+const btnExitFormProduct = $("#exitProduct");
+const btnExitFormCategory = $("#exitCategory")
+const btnExitFormSubCategory = $("#exitSubCategory");
 
 // open form to add products
 productRegister.click(() => {
     const containerProductRegister = $("#containerProductRegister");
     containerProductRegister.addClass("active");
+})
+
+// open form to add product code
+linkProductChange.click(() => {
+    formProduct.addClass("active");
+    formCategory.removeClass("active")
+    formSubCategory.removeClass("active");
+})
+
+// open form to add category code
+linkCategoryChange.click(() => {
+    formCategory.addClass("active");
+    formProduct.removeClass("active");
+    formSubCategory.removeClass("active");
+})
+
+// open form to add subcategory code
+linkSubCategoryChange.click(() => {
+    formSubCategory.addClass("active");
+    formProduct.removeClass("active");
+    formCategory.removeClass("active");
+})
+
+// close forms for changing products and categories
+btnExitFormProduct.click(() => {
+    console.log(formProduct.removeClass("active"))
+    console.log(formCategory)
 })
 
 // open form to add categories

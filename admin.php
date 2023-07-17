@@ -32,6 +32,54 @@ if (!isset($_SESSION['adminLogged']) == true) {
         <!-- button for registration of product and categoties -->
         <a href="registerCategoriesAndProducts.php" id="registerCategoriesAndProducts" class="links">Registro de produtos e categorias</a>
 
+        <!-- product change button -->
+        <a href="#" class="links linkChangingProductsCategories product">
+            <p>Alterar produtos</p>
+            <div class="displayFlex modalChangingProductsCategories active" id="formProduct">
+                <form action="changingProductsAndCategories.php" method="GET">
+                    <div class="exit" id="exitProduct">
+                        <p class="xOne"></p>
+                        <p class="xTwo"></p>
+                    </div>
+                    <label for="productCode">Código do produto:</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="productCode" id="productCode" placeholder="Digite o código do produto">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </a>
+
+        <!-- category change button -->
+        <a href="#" class="links linkChangingProductsCategories category">
+            <p>Alterar Categorias</p>
+            <div class="displayFlex modalChangingProductsCategories" id="formCategory">
+                <form action="changingProductsAndCategories.php" method="GET">
+                    <div class="exit" id="exitCategory">
+                        <p class="xOne"></p>
+                        <p class="xTwo"></p>
+                    </div>
+                    <label for="productCode">Código da categoria:</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="categoryCode" id="productCode" placeholder="Digite o código da categoria">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </a>
+
+        <!-- subcategory change button -->
+        <a href="#" class="links linkChangingProductsCategories subCategory">
+            <p>Alterar Sub-categorias</p>
+            <div class="displayFlex modalChangingProductsCategories" id="formSubCategory">
+                <form action="changingProductsAndCategories.php" method="GET">
+                    <div class="exit" id="exitSubCategory">
+                        <p class="xOne"></p>
+                        <p class="xTwo"></p>
+                    </div>
+                    <label for="productCode">Código da sub-categoria:</label>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="subCategoryCode" id="productCode" placeholder="Digite o código da sub-categoria">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </a>
+
         <!-- button back to the page -->
         <a href="php_actions/logout.php" id="backToMainPage" class="links">Voltar</a>
     </nav>
@@ -113,4 +161,5 @@ if (!isset($_SESSION['adminLogged']) == true) {
         })
     </script>
 </body>
+
 </html>

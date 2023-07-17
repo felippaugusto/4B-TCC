@@ -72,7 +72,7 @@ $productDatas = $stmt->fetchAll();
                         <p class="product-especification"><?php echo $productData['descricao_produto']; ?></p>
                         <p class="product-value">R$ <?php echo $productData['preco_atual_produto']; ?> reais</p>
                     </a>
-                    <button id="product-1" class="add-cart">Adicionar ao carrinho</button>
+                    <a href="productPage.php?productId=<?php echo $productData['cod_produto']; ?>" class="add-cart">Adicionar ao carrinho</a>
                 </td>
                 <?php }; ?>
             </tr>

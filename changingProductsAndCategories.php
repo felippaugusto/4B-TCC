@@ -64,7 +64,7 @@ $datasSubcategories = $stmt->fetchAll();
     <div id="containerUserPage" class="displayFlex">
         <!-- add products -->
         <div class="divChilds" id="productRegister">
-            <p>Registro de Produtos</p>
+            <p>Alteração de produtos</p>
         </div>
 
         <!-- form model products register -->
@@ -115,7 +115,7 @@ $datasSubcategories = $stmt->fetchAll();
 
         <!-- add categories -->
         <div class="divChilds" id="categoryRegister">
-            <p>Registro de categorias</p>
+            <p>Alteração de categorias</p>
         </div>
 
         <!-- form model categories register -->
@@ -133,7 +133,7 @@ $datasSubcategories = $stmt->fetchAll();
 
         <!-- add sub categories -->
         <div class="divChilds" id="subCategoryRegister">
-            <p>Registro de sub-categorias</p>
+            <p>Alteração de sub-categorias</p>
         </div>
 
         <!-- form model categories register -->
