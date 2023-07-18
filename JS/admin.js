@@ -12,9 +12,7 @@ const linkSubCategoryChange = $(".links.linkChangingProductsCategories.subCatego
 const formProduct = $("#formProduct");
 const formCategory = $("#formCategory");
 const formSubCategory = $("#formSubCategory");
-const btnExitFormProduct = $("#exitProduct");
-const btnExitFormCategory = $("#exitCategory")
-const btnExitFormSubCategory = $("#exitSubCategory");
+const exitAdmin = document.querySelectorAll(".exitAdmin");
 
 // open form to add products
 productRegister.click(() => {
@@ -44,9 +42,11 @@ linkSubCategoryChange.click(() => {
 })
 
 // close forms for changing products and categories
-btnExitFormProduct.click(() => {
-    console.log(formProduct.removeClass("active"))
-    console.log(formCategory)
+exitAdmin.forEach(exitAdmin => {
+    exitAdmin.addEventListener("click", () => {
+        containerForm = exitAdmin.parentElement.parentNode;
+        containerForm.classList.remove("active");
+    })
 })
 
 // open form to add categories

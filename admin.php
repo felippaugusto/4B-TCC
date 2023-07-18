@@ -35,50 +35,57 @@ if (!isset($_SESSION['adminLogged']) == true) {
         <!-- product change button -->
         <a href="#" class="links linkChangingProductsCategories product">
             <p>Alterar produtos</p>
-            <div class="displayFlex modalChangingProductsCategories active" id="formProduct">
-                <form action="changingProductsAndCategories.php" method="GET">
-                    <div class="exit" id="exitProduct">
-                        <p class="xOne"></p>
-                        <p class="xTwo"></p>
-                    </div>
-                    <label for="productCode">Código do produto:</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="productCode" id="productCode" placeholder="Digite o código do produto">
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
+
         </a>
+
+        <div class="displayFlex modalChangingProductsCategories" id="formProduct">
+            <form action="changingProductsAndCategories.php" method="GET">
+                <input type="hidden" name="whatForm" value="productChange">
+                <div class="exit exitAdmin">
+                    <p class="xOne"></p>
+                    <p class="xTwo"></p>
+                </div>
+                <label for="productCode">Código do produto:</label>
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="productCode" id="productCode" placeholder="Digite o código do produto">
+                <button type="submit" name="submitChangingProductsOrCategories">Enviar</button>
+            </form>
+        </div>
 
         <!-- category change button -->
         <a href="#" class="links linkChangingProductsCategories category">
             <p>Alterar Categorias</p>
-            <div class="displayFlex modalChangingProductsCategories" id="formCategory">
-                <form action="changingProductsAndCategories.php" method="GET">
-                    <div class="exit" id="exitCategory">
-                        <p class="xOne"></p>
-                        <p class="xTwo"></p>
-                    </div>
-                    <label for="productCode">Código da categoria:</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="categoryCode" id="productCode" placeholder="Digite o código da categoria">
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
         </a>
+
+        <div class="displayFlex modalChangingProductsCategories" id="formCategory">
+            <form action="changingProductsAndCategories.php" method="GET">
+                <input type="hidden" name="whatForm" value="categoryChange">
+                <div class="exit exitAdmin">
+                    <p class="xOne"></p>
+                    <p class="xTwo"></p>
+                </div>
+                <label for="productCode">Código da categoria:</label>
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="categoryCode" id="productCode" placeholder="Digite o código da categoria">
+                <button type="submit" name="submitChangingProductsOrCategories">Enviar</button>
+            </form>
+        </div>
 
         <!-- subcategory change button -->
         <a href="#" class="links linkChangingProductsCategories subCategory">
             <p>Alterar Sub-categorias</p>
-            <div class="displayFlex modalChangingProductsCategories" id="formSubCategory">
-                <form action="changingProductsAndCategories.php" method="GET">
-                    <div class="exit" id="exitSubCategory">
-                        <p class="xOne"></p>
-                        <p class="xTwo"></p>
-                    </div>
-                    <label for="productCode">Código da sub-categoria:</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="subCategoryCode" id="productCode" placeholder="Digite o código da sub-categoria">
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
         </a>
+
+        <div class="displayFlex modalChangingProductsCategories" id="formSubCategory">
+            <form action="changingProductsAndCategories.php" method="GET">
+                <input type="hidden" name="whatForm" value="subCategoryChange">
+                <div class="exit exitAdmin">
+                    <p class="xOne"></p>
+                    <p class="xTwo"></p>
+                </div>
+                <label for="productCode">Código da sub-categoria:</label>
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="subCategoryCode" id="productCode" placeholder="Digite o código da sub-categoria">
+                <button type="submit" name="submitChangingProductsOrCategories">Enviar</button>
+            </form>
+        </div>
 
         <!-- button back to the page -->
         <a href="php_actions/logout.php" id="backToMainPage" class="links">Voltar</a>

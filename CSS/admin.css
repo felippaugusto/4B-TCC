@@ -87,11 +87,24 @@ nav#linksAdmin .links:hover {
     padding: 1rem;
     border-radius: 0.5rem;
     position: absolute;
-    top: 0%;
-    left: 120%;
     font-size: 1.6rem;
     visibility: hidden;
     opacity: 0;
+}
+
+.modalChangingProductsCategories#formProduct {
+    top: 20rem;
+    left: 21rem;
+}
+
+.modalChangingProductsCategories#formCategory {
+    top: 27rem;
+    left: 21rem;
+}
+
+.modalChangingProductsCategories#formSubCategory {
+    top: 35rem;
+    left: 21rem;
 }
 
 .modalChangingProductsCategories.active {
@@ -119,6 +132,10 @@ nav#linksAdmin .links:hover {
     outline: 1px solid #000;
 }
 
+.modalChangingProductsCategories#formSubCategory input {
+    width: 25rem;
+}
+
 .modalChangingProductsCategories button {
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -130,6 +147,12 @@ nav#linksAdmin .links:hover {
     font-size: 1.4rem;
     color: #fff;
     cursor: pointer;
+    display: block;
+    margin-left: 5rem;
+}
+
+.modalChangingProductsCategories#formSubCategory button {
+    margin-left: 7rem;
 }
 
 .modalChangingProductsCategories button:hover {
@@ -148,7 +171,7 @@ nav#linksAdmin .links#backToMainPage:hover {
     position: absolute;
     top: -20%;
     right: 20%;
-    z-index: 9;
+    z-index: 999;
 }
 
 
@@ -211,10 +234,6 @@ nav#linksAdmin .links#backToMainPage:hover {
 
 .tableAdmin tbody tr, .tableAdmin thead tr th {
     border-bottom: 1px solid #fff;
-}
-
-.tableAdmin tbody {
-    /* visibility: collapse; */
 }
 
 .tableAdmin tbody tr:hover {
