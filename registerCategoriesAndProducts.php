@@ -42,7 +42,7 @@ $datasSubcategories = $stmt->fetchAll();
 <body>
     <!-- header structure -->
     <!-- header left -->
-    <header class="displayFlex header" id="header">
+    <header class="displayFlex header headerAdmin" id="headerRegistrationAdminPage">
         <a href="index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>

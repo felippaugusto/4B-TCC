@@ -46,7 +46,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                     <p class="xTwo"></p>
                 </div>
                 <label for="productCode">Código do produto:</label>
-                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="productCode" id="productCode" placeholder="Digite o código do produto">
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="codeProductOrCategory" id="productCode" placeholder="Digite o código do produto" autocomplete="off">
                 <button type="submit" name="submitChangingProductsOrCategories">Enviar</button>
             </form>
         </div>
@@ -64,7 +64,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                     <p class="xTwo"></p>
                 </div>
                 <label for="productCode">Código da categoria:</label>
-                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="categoryCode" id="productCode" placeholder="Digite o código da categoria">
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="codeProductOrCategory" id="productCode" placeholder="Digite o código da categoria" autocomplete="off">
                 <button type="submit" name="submitChangingProductsOrCategories">Enviar</button>
             </form>
         </div>
@@ -82,7 +82,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                     <p class="xTwo"></p>
                 </div>
                 <label for="productCode">Código da sub-categoria:</label>
-                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="subCategoryCode" id="productCode" placeholder="Digite o código da sub-categoria">
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" name="codeProductOrCategory" id="productCode" placeholder="Digite o código da sub-categoria" autocomplete="off">
                 <button type="submit" name="submitChangingProductsOrCategories">Enviar</button>
             </form>
         </div>

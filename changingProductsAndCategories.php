@@ -7,11 +7,24 @@ session_start();
 // Messages
 include_once 'includes/messages.php';
 
-if (isset($_GET['submitChangingProductsOrCategories']) && isset($_SESSION['adminLogged']) == true) {
-    $whatForm = $_GET['whatForm'];
+if (isset($_GET['submitChangingProductsOrCategories']) || isset($_SESSION['adminLogged']) == true) {
+    $whatForm = filter_input(INPUT_GET, 'whatForm', FILTER_SANITIZE_SPECIAL_CHARS);
+    $codeProductOrCategory = filter_input(INPUT_GET, 'codeProductOrCategory', FILTER_SANITIZE_NUMBER_INT);
 } else {
     header('Location: login.php');
 }
+
+// get the categories
+$sql = "SELECT * FROM tb_categorias";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$datasCategories = $stmt->fetchAll();
+
+// get the subcategories
+$sql = "SELECT * FROM tb_subcategorias";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$datasSubcategories = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,7 +45,7 @@ if (isset($_GET['submitChangingProductsOrCategories']) && isset($_SESSION['admin
 <body>
     <!-- header structure -->
     <!-- header left -->
-    <header class="displayFlex header" id="header">
+    <header class="displayFlex header headerAdmin" id="headerChangesPage">
         <a href="index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>
@@ -52,54 +65,69 @@ if (isset($_GET['submitChangingProductsOrCategories']) && isset($_SESSION['admin
 
     <!-- admin screen for registering products and categories -->
     <div id="containerUserPage" class="displayFlex">
-        <?php if ($whatForm == "productChange") { ?>
-            <div class="displayFlex" id="containerProductRegister">
-                <form action="php_actions/createProducts.php" class="displayFlex modelForm" id="formProductRegister" method="POST" enctype="multipart/form-data">
+        <?php if ($whatForm == "productChange") { 
+            // get the product
+            $sql = "SELECT * FROM tb_produtos WHERE cod_produto = :productCode";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam('productCode', $codeProductOrCategory);
+            $stmt->execute();
+            $productDatas = $stmt->fetchAll();
+            foreach($productDatas as $productData) {
+            ?>
+            <div class="displayFlex" id="containerProductChanging">
+                <form action="php_actions/changeProducts.php" class="displayFlex modelForm" id="formProductRegister" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="productCode" value="<?php echo $productData['cod_produto']; ?>">
                     <div class="displayFlex" id="containerinput">
-                        <input type="text" name="productName" autocomplete="off" placeholder="Nome do produto">
-                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="valueProduct" autocomplete="off" placeholder="Valor do produto">
+                        <input type="text" name="productName" autocomplete="off" placeholder="Nome do produto" value="<?php echo $productData['nome_produto'] ?>">
+                        <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="productValue" autocomplete="off" placeholder="Valor do produto" value="<?php echo $productData['preco_atual_produto'] ?>">
                     </div>
 
 
                     <div id="containerCategoriesSubCategories" class="displayFlex">
                         <div id="container-categories" class="select">
                             <select name="selectCategory" class="selectCategory">
-                                <option selected disabled>Escolha uma categoria</option>
-                                <?php foreach ($datasCategories as $data) { ?>
-                                    <option value="<?php echo $data['cod_categoria'] ?>"><?php echo $data['nome_categoria'];
-                                                                                        }; ?></option>
+                                <?php foreach ($datasCategories as $data) { 
+                                    if($data['cod_categoria'] == $productData['id_categorias']) { ?>
+                                    <option selected value="<?php echo $data['cod_categoria']; ?>"><?php echo $data['nome_categoria']; ?></option>
+                                    <?php }
+                                    else {
+                                    ?>
+                                    <option value="<?php echo $data['cod_categoria'] ?>"><?php echo $data['nome_categoria']; }; }; ?></option>
                             </select>
                         </div>
 
                         <div id="container-SubCategories" class="select">
                             <select name="selectSubCategory" class="selectCategory">
-                                <option selected disabled>Escolha uma sub categoria</option>
-                                <?php foreach ($datasSubcategories as $data) { ?>
-                                    <option value="<?php echo $data['cod_subcategoria']; ?>"><?php echo $data['nome_subcategoria'];
-                                                                                            }; ?></option>
+                                <?php foreach ($datasSubcategories as $data) { 
+                                    if($data['cod_subcategoria'] == $productData['id_subcategorias']) { ?>
+                                    <option selected value="<?php echo $data['cod_subcategoria']; ?>"><?php echo $data['nome_subcategoria']; ?></option>
+                                    <?php }
+                                    else {
+                                    ?>
+                                    <option value="<?php echo $data['cod_subcategoria']; ?>"><?php echo $data['nome_subcategoria']; }; }; ?></option>
                             </select>
                         </div>
                     </div>
 
                     <label for="file" class="inputFile">Adicionar a imagem do produto</label>
-                    <img src="IMAGES/admin/arrow-light.png" alt="arrow" id="arrow-light-open-modal" class="arrow-light">
+                    <img src="IMAGES/admin/arrow-light.png" alt="arrow" id="arrow-light-open-modal" class="arrow-light active">
                     <input type="file" name="productImage" id="file">
 
                     <label for="productDescription" id="labelTextarea">Adicione a descrição do produto</label>
-                    <textarea name="productDescription" id="productDescription"></textarea>
+                    <textarea name="productDescription" id="productDescription"><?php echo $productData['descricao_produto']; ?></textarea>
                     <div id="container-btns-edit" class="displayFlex btnsAdmin">
-                        <button type="submit" name="btn_submit_products">Adicionar Produto</button>
+                        <button type="submit" name="btn_submit_changing_products">Adicionar Produto</button>
                         <p class="close-models">Cancelar</p>
                     </div>
 
-                    <div class="displayFlex" id="modelImageName">
+                    <div class="displayFlex active" id="modelImageName">
                         <img src="IMAGES/admin/arrow-light.png" alt="arrow" class="arrow-light">
                         <label for="imageName">Nome da imagem:</label>
-                        <input type="text" name="imageName" id="imageName">
+                        <input type="text" name="imageName" id="imageName" value="<?php echo $productData['imagem']; ?>">
                     </div>
                 </form>
             </div>
-        <?php }; ?>
+        <?php }; }; ?>
 
         <?php if ($whatForm == "categoryChange") { ?>
             <div class="displayFlex" id="containerCategoriesRegister">

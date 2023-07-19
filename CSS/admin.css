@@ -1,3 +1,15 @@
+body[data-theme="t-light"] {
+    --color-bg-form-admin: #2c2c2c;
+    --color-bg-select-admin: #f3f3f3;
+    --color-bg-select-after-admin: #f30049;
+}
+
+body[data-theme="t-dark"] {
+    --color-bg-form-admin: rgba(255, 255, 255, 0.8);
+    --color-bg-select-admin: #5c6664;
+    --color-bg-select-after-admin: #2b2e2e;
+}
+/* end light mode */
 /* start globals */
 * {
     padding: 0;
@@ -46,6 +58,10 @@ header h1 {
     text-align: center;
     font-family: poppins-intermediare;
     text-transform: uppercase;
+}
+
+#headerChangesPage.headerAdmin, #headerRegistrationAdminPage.headerAdmin {
+    height: 18vh;
 }
 /* end header */
 
@@ -329,7 +345,7 @@ nav#linksAdmin .links#backToMainPage:hover {
 }
 /* end users remove model */
 
-/* start page of products and categories */
+/* start product and category registration page */
 .modelEdit {
     align-items: start;
 }
@@ -346,12 +362,13 @@ input {
     width: 100%;
 }
 
-#containerProductRegister input {
+#containerProductRegister input, #containerProductChanging input {
     width: 100%;
 }
 
 .modelForm#formProductRegister #labelTextarea {
     margin: 0;
+    color: var(--color-text-messages);
 }
 
 #modelImageName {
@@ -416,7 +433,41 @@ input {
 .divChilds#subCategoryRegister {
     width: 45rem !important;
 }
-/* end page of products and categories */
+/* end product and category registration page */
+
+/* start product and category changes page */
+#containerProductChanging form {
+    height: 42vh;
+    background-color: var(--color-bg-form-admin);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#containerProductChanging form input {
+    background-color: var(--color-bg-input);
+}
+
+#containerProductChanging select {
+    background-color: var(--color-bg-select-admin);
+    color: var(--color-text-reverse);
+}
+
+#containerProductChanging .select::after {
+    background-color: var(--color-bg-select-after-admin);
+}
+
+#containerProductChanging form .arrow-light {
+    top: 28%;
+}
+
+#containerProductChanging form #modelImageName {
+    background-color: var(--color-bg-form-admin);
+}
+
+#containerProductChanging form #modelImageName label {
+    color: var(--color-text-messages);
+}
+/* end product and category changes page */
 
 /* start footer */
 .social-medias#socialMediasAdmin {
