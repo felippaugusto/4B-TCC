@@ -76,7 +76,9 @@ $datasSubcategories = $stmt->fetchAll();
             ?>
             <div class="displayFlex" id="containerProductChanging">
                 <form action="php_actions/changeProducts.php" class="displayFlex modelForm" id="formProductRegister" method="POST" enctype="multipart/form-data">
+                    <!-- get product old datas  -->
                     <input type="hidden" name="productCode" value="<?php echo $productData['cod_produto']; ?>">
+                    <input type="hidden" name="oldImageName" value="<?php echo $productData['imagem'] ?>">
                     <div class="displayFlex" id="containerinput">
                         <input type="text" name="productName" autocomplete="off" placeholder="Nome do produto" value="<?php echo $productData['nome_produto'] ?>">
                         <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="productValue" autocomplete="off" placeholder="Valor do produto" value="<?php echo $productData['preco_atual_produto'] ?>">
@@ -109,7 +111,7 @@ $datasSubcategories = $stmt->fetchAll();
                         </div>
                     </div>
 
-                    <label for="file" class="inputFile">Adicionar a imagem do produto</label>
+                    <label for="file" class="inputFile" title="Selecione a imagem">Adicionar a imagem do produto</label>
                     <img src="IMAGES/admin/arrow-light.png" alt="arrow" id="arrow-light-open-modal" class="arrow-light active">
                     <input type="file" name="productImage" id="file">
 

@@ -9,11 +9,25 @@ if(isset($_POST['btn_submit_changing_products'])) {
     // inputs
     $productCode = filter_input(INPUT_POST, 'productCode', FILTER_SANITIZE_NUMBER_INT);
     $productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_SPECIAL_CHARS);
-    $productValue = filter_input(INPUT_POST, 'productValue', FILTER_SANITIZE_NUMBER_FLOAT);
+    $productValue = $_POST['productValue'];
     $productCategory = filter_input(INPUT_POST, 'selectCategory', FILTER_SANITIZE_SPECIAL_CHARS);
     $productSubCategory = filter_input(INPUT_POST, 'selectSubCategory', FILTER_SANITIZE_SPECIAL_CHARS);
     $productImage = $_POST['imageName'];
+    $productOldImage = $_POST['oldImageName'];
     $productDescription = $_POST['productDescription'];
+
+    // deleting image in directory
+    $folder = "../IMAGES/product_images/";
+    $temporary = $_FILES['productImage']['tmp_name'];
+    
+    if(!$productName == $productOldImage) {
+        move_uploaded_file($temporary, $folder.$productImage);
+        unlink($folder.$productOldImage);
+    }
+    
+    $directoryImage = $folder.$productOldImage;
+    var_dump($productImage);
+    var_dump($_FILES['productImage']);
 
     // update product informations
     $sql = "UPDATE tb_produtos SET nome_produto = :productName, ativo = 'S', preco_atual_produto = :productValue, id_categorias = :productCategory, id_subcategorias = :productSubCategory, imagem = :productImage, descricao_produto = :productDescription WHERE cod_produto = '$productCode'";

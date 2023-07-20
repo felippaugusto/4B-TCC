@@ -106,6 +106,7 @@ input[type="file"] {
     align-items: start;
     visibility: hidden;
     opacity: 0;
+    z-index: 999;
 }
 
 .modelEdit.active {
