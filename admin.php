@@ -93,8 +93,9 @@ if (!isset($_SESSION['adminLogged']) == true) {
 
     <!-- users registered -->
     <main class="displayFlex" id="bodyAdmin">
-        <h1>Clientes cadastrados</h1>
 
+    <!-- register users -->
+        <h1>Clientes cadastrados</h1>
         <table class="tableAdmin">
             <thead>
                 <tr>
@@ -145,6 +146,110 @@ if (!isset($_SESSION['adminLogged']) == true) {
 
                 <?php };
                 }; ?>
+            </tbody>
+        </table>
+
+        <!-- register products -->
+        <h1>Produtos Cadastrados</h1>
+        <table class="tableAdmin">
+            <thead>
+                <tr>
+                    <th>Código:</th>
+                    <th>Nome:</th>
+                    <th>Descrição:</th>
+                    <th>Preço:</th>
+                    <th>Ativo</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+                // sql getting the data from the tb_usuarios
+                $sql = "SELECT * FROM tb_produtos";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $productsDatas = $stmt->fetchAll();
+                foreach ($productsDatas as $data) {
+                ?>
+                        <tr>
+                            <!-- foreach user information -->
+                            <td><?php echo $data['cod_produto']; ?></td>
+                            <td><?php echo $data['nome_produto']; ?></td>
+                            <td><?php echo $data['descricao_produto']; ?></td>
+                            <td>R$ <?php echo $data['preco_atual_produto']; ?> reais</td>
+                            <td>Sim</td>
+                            <td><a href="#modal<?php echo $data['cod_produto']; ?>" class="btnRemove displayFlex"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+
+                            <div id="modal<?php echo $data['cod_produto']; ?>" class="box-model displayFlex">
+                                <div class="model-description displayFlex">
+                                    <p>Você tem certeza que deseja deletar esse produto?</p>
+                                    <form action="php_actions/delete.php" method="POST">
+                                        <div class="container-form displayFlex">
+                                            <input type="hidden" name="id" value="<?php echo $data['cod_produto']; ?>">
+
+                                            <!-- button to delete the user -->
+                                            <button type="submit" name="delete-btn" class="btn-remove-form">Deletar produto</button>
+                                            <!-- close the modal -->
+                                            <p id="close-model">Cancelar</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </tr>
+
+                <?php }; ?>
+            </tbody>
+        </table>
+
+        <!-- register categories and subcategories -->
+        <h1>Categorias e sub categorias cadastradas</h1>
+        <table class="tableAdmin">
+            <thead>
+                <tr>
+                    <th>Código categoria:</th>
+                    <th>Nome categoria:</th>
+                    <th></th>
+                    <th>Código sub-categoria</th>
+                    <th>Nome sub-categoria</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+                // sql getting the data from the tb_usuarios
+                $sql = "SELECT * FROM tb_categorias";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $categoriesDatas = $stmt->fetchAll();
+                foreach ($categoriesDatas as $data) {
+                ?>
+                        <tr>
+                            <!-- foreach user information -->
+                            <td><?php echo $data['cod_categoria']; ?></td>
+                            <td><?php echo $data['nome_categoria']; ?></td>
+                            <td><a href="#modal<?php echo $data['cod_categoria']; ?>" class="btnRemove displayFlex"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+
+                            <div id="modal<?php echo $data['cod_categoria']; ?>" class="box-model displayFlex">
+                                <div class="model-description displayFlex">
+                                    <p>Você tem certeza que deseja deletar esse produto?</p>
+                                    <form action="php_actions/delete.php" method="POST">
+                                        <div class="container-form displayFlex">
+                                            <input type="hidden" name="id" value="<?php echo $data['cod_categoria']; ?>">
+
+                                            <!-- button to delete the user -->
+                                            <button type="submit" name="delete-btn" class="btn-remove-form">Deletar produto</button>
+                                            <!-- close the modal -->
+                                            <p id="close-model">Cancelar</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <?php }; ?>
+                            ?>
+                        </tr>
+
             </tbody>
         </table>
     </main>

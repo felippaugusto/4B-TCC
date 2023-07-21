@@ -5,6 +5,7 @@ const selectIntel = $(".btnSelectIntel");
 const selectAmd = $(".btnSelectAmd");
 const intel = $(".blue");
 const amd = $(".red");
+const productValueIndex = $(".product-value");
 
 intel.click(() => {
     sessionStorage.setItem('blueOrRed', 1);
@@ -64,4 +65,10 @@ window.addEventListener("scroll", () => {
     else {
         goToHeader.removeClass("active");
     }
+})
+
+// formated products values
+productValueIndex.each(function() {
+    const numsStr = parseFloat($(this).text().replace(/[^0-9.]/g,''));
+    Number.isInteger(numsStr) ? $(this).text(`R$ ${numsStr},00 reais`) : $(this).text(`R$ ${numsStr.toString().replace(".", ",")} reais`);
 })

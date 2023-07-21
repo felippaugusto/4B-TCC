@@ -131,11 +131,20 @@ $datasSubcategories = $stmt->fetchAll();
             </div>
         <?php }; }; ?>
 
-        <?php if ($whatForm == "categoryChange") { ?>
+        <?php if ($whatForm == "categoryChange") {
+            // get the category
+            $sql = "SELECT * FROM tb_categorias WHERE cod_categoria = :categoryCode";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':categoryCode', $codeProductOrCategory);
+            $stmt->execute();
+            $categoryDatas = $stmt->fetchAll();
+            foreach($categoryDatas as $categoryData) {
+            ?>
             <div class="displayFlex" id="containerCategoriesRegister">
-                <form action="php_actions/createCategories.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
+                <form action="php_actions/changeCategory.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
                     <label for="descriptionCategory">Nome da categoria:</label>
-                    <input type="text" name="descriptionCategory" id="descriptionCategory" placeholder="Informe o nome da categoria">
+                    <input type="hidden" name="categoryCode" value="<?php echo $categoryData['cod_categoria']; ?>">
+                    <input type="text" name="categoryDescription" id="descriptionCategory" placeholder="Informe o nome da categoria" value="<?php echo $categoryData['nome_categoria']; ?>">
 
                     <div id="container-btns-edit" class="displayFlex btnsAdmin">
                         <button type="submit" name="btn_submit_categories">Adicionar categoria</button>
@@ -143,13 +152,22 @@ $datasSubcategories = $stmt->fetchAll();
                     </div>
                 </form>
             </div>
-        <?php }; ?>
+        <?php }; }; ?>
 
-        <?php if ($whatForm == "subCategoryChange") { ?>
+        <?php if ($whatForm == "subCategoryChange") { 
+            // get the subcategory
+            $sql = "SELECT * FROM tb_subcategorias WHERE cod_subcategoria = :subCategoryCode";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':subCategoryCode', $codeProductOrCategory);
+            $stmt->execute();
+            $subCategoryDatas = $stmt->fetchAll();
+            foreach($subCategoryDatas as $subCategoryData) {
+            ?>
             <div class="displayFlex" id="containerSubCategoriesRegister">
-                <form action="php_actions/createSubcategories.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
+                <form action="php_actions/changeSubCategories.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
                     <label for="descriptionSubCategory">Nome da sub-categoria:</label>
-                    <input type="text" name="descriptionSubCategory" id="descriptionSubCategory" placeholder="Informe o nome da sub-categoria">
+                    <input type="hidden" name="subCategoryCode" value="<?php echo $subCategoryData['cod_subcategoria']; ?>">
+                    <input type="text" name="descriptionSubCategory" id="descriptionSubCategory" placeholder="Informe o nome da sub-categoria" value="<?php echo $subCategoryData['nome_subcategoria']; ?>">
 
                     <div id="container-btns-edit" class="displayFlex btnsAdmin">
                         <button type="submit" name="btn_submit_subcategories">Adicionar sub-categoria</button>
@@ -157,7 +175,7 @@ $datasSubcategories = $stmt->fetchAll();
                     </div>
                 </form>
             </div>
-        <?php }; ?>
+        <?php }; }; ?>
     </div>
 
     <!-- back To Page Admin -->

@@ -15,7 +15,7 @@
         $stmt->execute();
         $datas =  $stmt->fetchAll();
 
-        foreach($datas as $data) { ?>
+        foreach($datas as $data) { 
         ?>
             <div id="containerLoggedUser" class="displayFlex">
                 <img src="IMAGES/includes/header/user.png" alt="user-header" id="user-header">

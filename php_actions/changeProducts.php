@@ -16,7 +16,7 @@ if(isset($_POST['btn_submit_changing_products'])) {
     $productOldImage = $_POST['oldImageName'];
     $productDescription = $_POST['productDescription'];
 
-    // deleting image in directory
+    // deleting image in directory and add new image in directory
     $folder = "../IMAGES/product_images/";
     $temporary = $_FILES['productImage']['tmp_name'];
     
@@ -24,11 +24,8 @@ if(isset($_POST['btn_submit_changing_products'])) {
         move_uploaded_file($temporary, $folder.$productImage);
         unlink($folder.$productOldImage);
     }
-    
-    $directoryImage = $folder.$productOldImage;
-    var_dump($productImage);
-    var_dump($_FILES['productImage']);
 
+    
     // update product informations
     $sql = "UPDATE tb_produtos SET nome_produto = :productName, ativo = 'S', preco_atual_produto = :productValue, id_categorias = :productCategory, id_subcategorias = :productSubCategory, imagem = :productImage, descricao_produto = :productDescription WHERE cod_produto = '$productCode'";
     $stmt = $pdo->prepare($sql);
@@ -52,4 +49,5 @@ if(isset($_POST['btn_submit_changing_products'])) {
         header("Location: ../changingProductsAndCategories.php?whatForm=productChange&codeProductOrCategory=$productCode");
     }
 }
+
 ?>

@@ -467,6 +467,18 @@ input {
 #containerProductChanging form #modelImageName label {
     color: var(--color-text-messages);
 }
+
+#containerCategoriesRegister form, #containerSubCategoriesRegister form {
+    background-color: var(--color-bg-form-admin);
+}
+
+#containerCategoriesRegister input, #containerSubCategoriesRegister input {
+    background-color: var(--color-bg-input);
+}
+
+#containerCategoriesRegister label, #containerSubCategoriesRegister label {
+    color: var(--color-text-messages);
+}
 /* end product and category changes page */
 
 /* start footer */
