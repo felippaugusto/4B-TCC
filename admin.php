@@ -11,7 +11,6 @@ if (!isset($_SESSION['adminLogged']) == true) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +21,6 @@ if (!isset($_SESSION['adminLogged']) == true) {
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="shortcut icon" href="IMAGES/includes/header/favicon/computer-96.png" type="image/x-icon">
 </head>
-
 <body>
     <header>
         <h1>Tela do administrador</h1>
@@ -94,7 +92,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
     <!-- users registered -->
     <main class="displayFlex" id="bodyAdmin">
 
-    <!-- register users -->
+        <!-- register users -->
         <h1>Clientes cadastrados</h1>
         <table class="tableAdmin">
             <thead>
@@ -125,25 +123,8 @@ if (!isset($_SESSION['adminLogged']) == true) {
                             <td><?php echo $data['sobrenome']; ?></td>
                             <td><?php echo $data['email_cliente']; ?></td>
                             <td><?php echo $data['cpf']; ?></td>
-                            <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
-
-                            <div id="modal<?php echo $data['cod_cliente']; ?>" class="box-model displayFlex">
-                                <div class="model-description displayFlex">
-                                    <p>Você tem certeza que deseja deletar esse cliente?</p>
-                                    <form action="php_actions/delete.php" method="POST">
-                                        <div class="container-form displayFlex">
-                                            <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
-
-                                            <!-- button to delete the user -->
-                                            <button type="submit" name="delete-btn" class="btn-remove-form">Deletar usuário</button>
-                                            <!-- close the modal -->
-                                            <p id="close-model">Cancelar</p>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                            <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex" id="users"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
                         </tr>
-
                 <?php };
                 }; ?>
             </tbody>
@@ -172,106 +153,86 @@ if (!isset($_SESSION['adminLogged']) == true) {
                 $productsDatas = $stmt->fetchAll();
                 foreach ($productsDatas as $data) {
                 ?>
-                        <tr>
-                            <!-- foreach user information -->
-                            <td><?php echo $data['cod_produto']; ?></td>
-                            <td><?php echo $data['nome_produto']; ?></td>
-                            <td><?php echo $data['descricao_produto']; ?></td>
-                            <td>R$ <?php echo $data['preco_atual_produto']; ?> reais</td>
-                            <td>Sim</td>
-                            <td><a href="#modal<?php echo $data['cod_produto']; ?>" class="btnRemove displayFlex"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
-
-                            <div id="modal<?php echo $data['cod_produto']; ?>" class="box-model displayFlex">
-                                <div class="model-description displayFlex">
-                                    <p>Você tem certeza que deseja deletar esse produto?</p>
-                                    <form action="php_actions/delete.php" method="POST">
-                                        <div class="container-form displayFlex">
-                                            <input type="hidden" name="id" value="<?php echo $data['cod_produto']; ?>">
-
-                                            <!-- button to delete the user -->
-                                            <button type="submit" name="delete-btn" class="btn-remove-form">Deletar produto</button>
-                                            <!-- close the modal -->
-                                            <p id="close-model">Cancelar</p>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </tr>
+                    <tr>
+                        <!-- foreach user information -->
+                        <td><?php echo $data['cod_produto']; ?></td>
+                        <td><?php echo $data['nome_produto']; ?></td>
+                        <td><?php echo $data['descricao_produto']; ?></td>
+                        <td>R$ <?php echo $data['preco_atual_produto']; ?> reais</td>
+                        <td>Sim</td>
+                        <td><a href="#modal<?php echo $data['cod_produto']; ?>" class="btnRemove displayFlex" id="products"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                    </tr>
 
                 <?php }; ?>
             </tbody>
         </table>
 
-        <!-- register categories and subcategories -->
-        <h1>Categorias e sub categorias cadastradas</h1>
-        <table class="tableAdmin">
-            <thead>
-                <tr>
-                    <th>Código categoria:</th>
-                    <th>Nome categoria:</th>
-                    <th></th>
-                    <th>Código sub-categoria</th>
-                    <th>Nome sub-categoria</th>
-                    <th></th>
-                </tr>
-            </thead>
+        <!-- register categories and sub-categories -->
+        <h1>Categorias e sub-categorias cadastradas</h1>
+        <div id="containerCategoriesSubCategories" class="displayFlex">
+            <table class="tableAdmin">
+                <thead>
+                    <tr>
+                        <th>Código:</th>
+                        <th>Nome:</th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <?php
-                // sql getting the data from the tb_usuarios
-                $sql = "SELECT * FROM tb_categorias";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $categoriesDatas = $stmt->fetchAll();
-                foreach ($categoriesDatas as $data) {
-                ?>
+                <tbody>
+                    <?php
+                    // sql getting the data from the tb_usuarios
+                    $sql = "SELECT * FROM tb_categorias";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+                    $categoriesDatas = $stmt->fetchAll();
+                    foreach ($categoriesDatas as $data) {
+                    ?>
                         <tr>
                             <!-- foreach user information -->
                             <td><?php echo $data['cod_categoria']; ?></td>
                             <td><?php echo $data['nome_categoria']; ?></td>
-                            <td><a href="#modal<?php echo $data['cod_categoria']; ?>" class="btnRemove displayFlex"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
-
-                            <div id="modal<?php echo $data['cod_categoria']; ?>" class="box-model displayFlex">
-                                <div class="model-description displayFlex">
-                                    <p>Você tem certeza que deseja deletar esse produto?</p>
-                                    <form action="php_actions/delete.php" method="POST">
-                                        <div class="container-form displayFlex">
-                                            <input type="hidden" name="id" value="<?php echo $data['cod_categoria']; ?>">
-
-                                            <!-- button to delete the user -->
-                                            <button type="submit" name="delete-btn" class="btn-remove-form">Deletar produto</button>
-                                            <!-- close the modal -->
-                                            <p id="close-model">Cancelar</p>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <?php }; ?>
-                            ?>
+                            <td><a href="#modal<?php echo $data['cod_categoria']; ?>" class="btnRemove displayFlex" id="categories"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
                         </tr>
 
-            </tbody>
-        </table>
+                    <?php }; ?>
+                </tbody>
+            </table>
+
+            <table class="tableAdmin">
+                <thead>
+                    <tr>
+                        <th>Código:</th>
+                        <th>Nome:</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+                    // sql getting the data from the tb_usuarios
+                    $sql = "SELECT * FROM tb_subcategorias";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+                    $subCategoriesDatas = $stmt->fetchAll();
+                    foreach ($subCategoriesDatas as $data) {
+                    ?>
+                        <tr>
+                            <!-- foreach user information -->
+                            <td><?php echo $data['cod_subcategoria']; ?></td>
+                            <td><?php echo $data['nome_subcategoria']; ?></td>
+                            <td><a href="#modal<?php echo $data['cod_subcategoria']; ?>" class="btnRemove displayFlex" id="subCategories"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                        </tr>
+
+                    <?php }; ?>
+                </tbody>
+            </table>
+        </div>
     </main>
+    <div id="" class="box-model displayFlex">
+    </div>
 
     <?php include_once 'includes/footer.php'; ?>
-
-    <!-- script to open the modal -->
-    <script>
-        const btnRemove = document.querySelectorAll(".btnRemove");
-        const btnClose = document.querySelector("#close-model");
-        const boxModel = document.querySelector(".box-model");
-
-        btnRemove.forEach(btn => {
-            btn.addEventListener("click", () => {
-                boxModel.classList.add("active");
-            })
-        })
-
-        btnClose.addEventListener("click", () => {
-            boxModel.classList.remove("active");
-        })
-    </script>
 </body>
 
 </html>
