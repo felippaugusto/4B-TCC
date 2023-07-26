@@ -1,42 +1,42 @@
 CREATE TABLE tb_cidades (
-  codcid INT PRIMARY KEY,
-  nomecid VARCHAR(50) NOT NULL,
-  estadocid VARCHAR(2) CHECK (estadocid IN ('PR','RS','SC'))
+   codcid INT PRIMARY KEY AUTO_INCREMENT,
+   nomecid VARCHAR(50) NOT NULL,
+   estadocid VARCHAR(2) CHECK (estadocid IN ('PR','RS','SC'))
 );
 
 CREATE TABLE tb_usuarios (
-  cod_cliente INT PRIMARY KEY,
-  nome_cliente VARCHAR(70) NOT NULL,
-  sobrenome VARCHAR(70) NOT NULL,
-  cpf BIGINT NOT NULL UNIQUE,
-  data_nasc DATE CHECK ((date_part('year',current_date) - date_part('year',datanasc) <= 100) AND (date_part('year',current_date) - date_part('year',datanasc) > 17)),
-  telefone_cliente BIGINT NOT NULL,
-  email_cliente VARCHAR(80) NOT NULL UNIQUE,
-  senha VARCHAR(50) NOT NULL,
-  ativo CHAR(1) CHECK(ativo IN ("S", "N")),
-  cep INT,
-  complemento VARCHAR(20) NOT NULL,
-  rua VARCHAR(50) NOT NULL,
-  bairro VARCHAR(50) NOT NULL,
-  numero_casa INT NOT NULL,
-  tipo_cadastro CHAR(1) CHECK(tipo_cadastro IN ("C", "A")),
-  codcid_fk INT,
-  CONSTRAINT u_person UNIQUE(cpf, email_cliente),
-  CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES tb_cidades(codcid)
+   cod_cliente INT PRIMARY KEY AUTO_INCREMENT,
+   nome_cliente VARCHAR(70) NOT NULL,
+   sobrenome VARCHAR(70) NOT NULL,
+   cpf BIGINT NOT NULL UNIQUE,
+   data_nasc DATE,
+   telefone_cliente BIGINT NOT NULL,
+   email_cliente VARCHAR(80) NOT NULL UNIQUE,
+   senha VARCHAR(50) NOT NULL,
+   ativo CHAR(1) CHECK(ativo IN ("S", "N")),
+   cep INT,
+   complemento VARCHAR(20) NOT NULL,
+   rua VARCHAR(50) NOT NULL,
+   bairro VARCHAR(50) NOT NULL,
+   numero_casa INT NOT NULL,
+   tipo_cadastro CHAR(1) CHECK(tipo_cadastro IN ("C", "A")),
+   codcid_fk INT,
+   CONSTRAINT u_person UNIQUE(cpf, email_cliente),
+   CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES      tb_cidades(codcid)
 );
 
 CREATE TABLE tb_categorias (
-	cod_categoria INT PRIMARY KEY AUTO_INCREMENT,
-    nome_categoria VARCHAR(50) NOT NULL
+   cod_categoria INT PRIMARY KEY AUTO_INCREMENT,
+   nome_categoria VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE tb_subcategorias (
-	cod_subcategoria INT PRIMARY KEY AUTO_INCREMENT,
-    nome_categoria VARCHAR(50) NOT NULL
+   cod_subcategoria INT PRIMARY KEY AUTO_INCREMENT,
+   nome_subcategoria VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE tb_compras (
-	cod_compra INT PRIMARY KEY,
+    cod_compra INT PRIMARY KEY AUTO_INCREMENT,
     cod_transportadora INT NOT NULL,
     codcliente INT,
     tipo_frete CHAR(1) NOT NULL CHECK(tipo_frete IN ('R', 'P', 'C', 'T')),
@@ -47,7 +47,7 @@ CREATE TABLE tb_compras (
 );
 
 CREATE TABLE tb_produtos (
-	cod_produto INT PRIMARY KEY,
+    cod_produto INT PRIMARY KEY AUTO_INCREMENT,
     descricao_produto VARCHAR(100) NOT NULL,
     ativo CHAR(1) NOT NULL CHECK (ativo IN ('S', 'N')),
     preco_atual_produto FLOAT(6, 2) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE tb_produtos (
 );
 
 CREATE TABLE tb_compras_prod (
-	cod_carrinho_itens INT PRIMARY KEY,
+    cod_carrinho_itens INT PRIMARY KEY AUTO_INCREMENT,
     codprodutos_fk INT,
     quantidade INT NOT NULL DEFAULT 1,
     valor_compra_produto FLOAT(6,2) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE tb_compras_prod (
 );
 
 CREATE TABLE tb_kits_produtos (
-	cod_kits_produtos INT PRIMARY KEY,
+    cod_kits_produtos INT PRIMARY KEY AUTO_INCREMENT,
     nome_categoria VARCHAR(50) NOT NULL,
     fk_codprodutos INT,
     quantidade INT NOT NULL,
