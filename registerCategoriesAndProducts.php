@@ -2,6 +2,8 @@
 // Connection with database
 require_once 'php_actions/db_connect.php';
 $pdo = connect();
+// Useful functions
+include_once 'includes/utils.php';
 // Start sessions 
 session_start();
 // Messages
@@ -12,16 +14,9 @@ if(!isset($_SESSION['adminLogged']) == true) {
 }
 
 // get the categories
-$sql = "SELECT * FROM tb_categorias";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$datasCategories = $stmt->fetchAll();
-
+$datasCategories = selectAllFromTable("tb_categorias");
 // get the subcategories
-$sql = "SELECT * FROM tb_subcategorias";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$datasSubcategories = $stmt->fetchAll();
+$datasSubcategories = selectAllFromTable("tb_subcategorias");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

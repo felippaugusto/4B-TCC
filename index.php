@@ -1,12 +1,10 @@
 <?php
 // Header
 include_once 'includes/header.php';
-
+// Useful functions
+include_once 'includes/utils.php';
 // sql getting the data from the tb_produtos
-$sql = "SELECT * FROM tb_produtos";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$productDatas = $stmt->fetchAll();
+$productDatas = selectAllFromTable("tb_produtos");
 ?>
 <!-- header structure -->
     <!-- header left -->

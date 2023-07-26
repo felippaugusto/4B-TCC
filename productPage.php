@@ -1,13 +1,12 @@
 <?php
 // Header
 include_once 'includes/header.php';
+// Useful functions
+include_once 'includes/utils.php';
 
 // get product code
 $productId = filter_input(INPUT_GET, 'productId', FILTER_SANITIZE_NUMBER_INT);
-$sql = "SELECT * FROM tb_produtos WHERE cod_produto = '$productId'";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$productDatas = $stmt->fetch();
+$productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $productId);
 
 // get product category
 $sql = "SELECT nome_categoria FROM tb_categorias WHERE cod_categoria = :idCategory_foreignKey";

@@ -6,6 +6,8 @@ $pdo = connect();
 session_start();
 // Messages
 include_once 'includes/messages.php';
+// Useful functions
+include_once 'includes/utils.php';
 
 if (isset($_GET['submitChangingProductsOrCategories']) || isset($_SESSION['adminLogged']) == true) {
     $whatForm = filter_input(INPUT_GET, 'whatForm', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -13,18 +15,6 @@ if (isset($_GET['submitChangingProductsOrCategories']) || isset($_SESSION['admin
 } else {
     header('Location: login.php');
 }
-
-// get the categories
-$sql = "SELECT * FROM tb_categorias";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$datasCategories = $stmt->fetchAll();
-
-// get the subcategories
-$sql = "SELECT * FROM tb_subcategorias";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$datasSubcategories = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -67,11 +57,11 @@ $datasSubcategories = $stmt->fetchAll();
     <div id="containerUserPage" class="displayFlex">
         <?php if ($whatForm == "productChange") { 
             // get the product
-            $sql = "SELECT * FROM tb_produtos WHERE cod_produto = :productCode";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam('productCode', $codeProductOrCategory);
-            $stmt->execute();
-            $productDatas = $stmt->fetchAll();
+            $productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $codeProductOrCategory);
+            // get the categories for product
+            $datasCategories = selectAllFromTable("tb_categorias");
+            // get the subcategories for product
+            $datasSubcategories = selectAllFromTable("tb_subcategorias");
             foreach($productDatas as $productData) {
             ?>
             <div class="displayFlex" id="containerProductChanging">
@@ -133,11 +123,7 @@ $datasSubcategories = $stmt->fetchAll();
 
         <?php if ($whatForm == "categoryChange") {
             // get the category
-            $sql = "SELECT * FROM tb_categorias WHERE cod_categoria = :categoryCode";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':categoryCode', $codeProductOrCategory);
-            $stmt->execute();
-            $categoryDatas = $stmt->fetchAll();
+            $categoryDatas = selectAllFromTableWhere("tb_categorias", "cod_categoria", $codeProductOrCategory);
             foreach($categoryDatas as $categoryData) {
             ?>
             <div class="displayFlex" id="containerCategoriesRegister">
@@ -156,11 +142,7 @@ $datasSubcategories = $stmt->fetchAll();
 
         <?php if ($whatForm == "subCategoryChange") { 
             // get the subcategory
-            $sql = "SELECT * FROM tb_subcategorias WHERE cod_subcategoria = :subCategoryCode";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':subCategoryCode', $codeProductOrCategory);
-            $stmt->execute();
-            $subCategoryDatas = $stmt->fetchAll();
+            $subCategoryDatas = selectAllFromTableWhere("tb_subcategorias", "cod_subcategoria", $codeProductOrCategory);
             foreach($subCategoryDatas as $subCategoryData) {
             ?>
             <div class="displayFlex" id="containerSubCategoriesRegister">

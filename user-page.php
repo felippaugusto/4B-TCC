@@ -3,6 +3,8 @@
 include_once 'includes/header.php';
 // Messages
 include_once 'includes/messages.php';
+// Useful functions
+include_once 'includes/utils.php';
 
 if(!isset($_SESSION['logged'])) {
     header('Location: index.php');
@@ -11,15 +13,11 @@ if(!isset($_SESSION['logged'])) {
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM tb_usuarios WHERE cod_cliente = '$id'";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $datas = $stmt->fetchALL();;
+    $datas = selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id);
 
     foreach($datas as $data) {
     $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));
 }
-
 ?>
 <!-- header structure -->
     <!-- header left -->

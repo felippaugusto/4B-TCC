@@ -1,6 +1,8 @@
 <?php
 // Connection with database
 require_once 'php_actions/db_connect.php';
+// Useful functions
+include_once 'includes/utils.php';
 // start sessions
 session_start();
 $pdo = connect();
@@ -108,10 +110,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
             <tbody>
                 <?php
                 // sql getting the data from the tb_usuarios
-                $sql = "SELECT * FROM tb_usuarios";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $datas = $stmt->fetchAll();
+                $datas = selectAllFromTable("tb_usuarios");
                 foreach ($datas as $data) {
                     if ($data['email_cliente'] == "admin@admin.com" && $data['tipo_cadastro'] == 'A') {
                         // administrador
@@ -147,10 +146,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
             <tbody>
                 <?php
                 // sql getting the data from the tb_usuarios
-                $sql = "SELECT * FROM tb_produtos";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $productsDatas = $stmt->fetchAll();
+                $productsDatas = selectAllFromTable("tb_produtos");
                 foreach ($productsDatas as $data) {
                 ?>
                     <tr>
@@ -182,10 +178,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                 <tbody>
                     <?php
                     // sql getting the data from the tb_usuarios
-                    $sql = "SELECT * FROM tb_categorias";
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->execute();
-                    $categoriesDatas = $stmt->fetchAll();
+                    $categoriesDatas = selectAllFromTable("tb_categorias");
                     foreach ($categoriesDatas as $data) {
                     ?>
                         <tr>
@@ -211,10 +204,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                 <tbody>
                     <?php
                     // sql getting the data from the tb_usuarios
-                    $sql = "SELECT * FROM tb_subcategorias";
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->execute();
-                    $subCategoriesDatas = $stmt->fetchAll();
+                    $subCategoriesDatas = selectAllFromTable("tb_subcategorias");
                     foreach ($subCategoriesDatas as $data) {
                     ?>
                         <tr>
