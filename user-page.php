@@ -6,20 +6,20 @@ include_once 'includes/messages.php';
 // Useful functions
 include_once 'includes/utils.php';
 
-if(!isset($_SESSION['logged'])) {
+if (!isset($_SESSION['logged'])) {
     header('Location: index.php');
 }
 
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $datas = selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id);
+    $datas = selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id, "fetchAll");
 
-    foreach($datas as $data) {
-    $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));
-}
+    foreach ($datas as $data) {
+        $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));
+    }
 ?>
-<!-- header structure -->
+    <!-- header structure -->
     <!-- header left -->
     <header class="displayFlex header" id="header">
         <a href="index.php" class="text-logo-header displayFlex">
@@ -51,7 +51,7 @@ if(isset($_GET['id'])) {
         </div>
     </header>
 
-    <div id="containerUserPage" class="displayFlex">
+    <main id="containerUserPage" class="displayFlex">
         <!-- add users information and edit button -->
         <div id="userRegistration" class="divChilds">
             <p>Informações pessoais</p>
@@ -63,19 +63,37 @@ if(isset($_GET['id'])) {
                 <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
                 <div class="displayFlex inputs">
-                    <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome" value="<?php echo $data['nome_cliente']; ?>">
-                    <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Sobrenome" required title="Seu nome" value="<?php echo $data['sobrenome']; ?>">
+                    <div>
+                        <label for="firstName">Nome</label>
+                        <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome" value="<?php echo $data['nome_cliente']; ?>">
+                    </div>
+                    <div>
+                        <label for="lastName">Sobrenome</label>
+                        <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Sobrenome" required title="Seu nome" value="<?php echo $data['sobrenome']; ?>">
+                    </div>
                 </div>
 
                 <div class="displayFlex inputs">
-                    <input type="text" name="cpf" id="cpf" class="cpf" autocomplete="off" placeholder="CPF" required title="Seu CPF" minlength="11" maxlength="11" value="<?php echo $data['cpf']; ?>">
-                    <input type="text" name="date" id="date" class="date" placeholder="Data de nascimento" required title="Sua data de nascimento" value="<?php echo $dataNasc; ?>">
+                    <div>
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf" class="cpf" autocomplete="off" placeholder="CPF" required title="Seu CPF" minlength="11" maxlength="11" value="<?php echo $data['cpf']; ?>">
+                    </div>
+                    <div>
+                        <label for="date">Data de nascimento</label>
+                        <input type="text" name="date" id="date" class="date" placeholder="Data de nascimento" required title="Sua data de nascimento" value="<?php echo $dataNasc; ?>">
+                    </div>
                 </div>
 
                 <div class="displayFlex inputs">
-                    <input type="tel" name="telephone" id="telephone" class="phone_with_ddd" placeholder="Telefone" required title="Seu telefone" value="<?php echo $data['telefone_cliente']; ?>">
-                    <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11"title="Seu email por favor" value="<?php echo $data['email_cliente']; ?>">
-                </div>  
+                    <div>
+                        <label for="telephone">Telefone</label>
+                        <input type="tel" name="telephone" id="telephone" class="phone_with_ddd" placeholder="Telefone" required title="Seu telefone" value="<?php echo $data['telefone_cliente']; ?>">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11" title="Seu email por favor" value="<?php echo $data['email_cliente']; ?>">
+                    </div>
+                </div>
 
                 <div id="container-btns-edit" class="displayFlex">
                     <button type="submit" name="btn_submit_edit_user-informations">Confirmar as alterações</button>
@@ -95,17 +113,32 @@ if(isset($_GET['id'])) {
                 <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
                 <div class="displayFlex">
-                    <input type="text" name="cep" class="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep" value="<?php echo $data['cep']; ?>">
-                    <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua" value="<?php echo $data['rua']; ?>">
+                    <div>
+                        <label for="cep">CEP</label>
+                        <input type="text" name="cep" class="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep" value="<?php echo $data['cep']; ?>">
+                    </div>
+                    <div>
+                        <label for="street">Rua</label>
+                        <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua" value="<?php echo $data['rua']; ?>">
+                    </div>
                 </div>
 
                 <div class="displayFlex">
-                    <input type="text" name="neighborhood" required placeholder="Informe o bairro" id="neighborhood" minlength="3" title="Nome do bairro" value="<?php echo $data['bairro']; ?>">
-                    <input type="text" name="complement" id="complement" placeholder="Informe o complemento" required title="Complemento atual" value="<?php echo $data['complemento']; ?>"> 
+                    <div>
+                        <label for="neighborhood">Bairro</label>
+                        <input type="text" name="neighborhood" required placeholder="Informe o bairro" id="neighborhood" minlength="3" title="Nome do bairro" value="<?php echo $data['bairro']; ?>">
+                    </div>
+                    <div>
+                        <label for="complement">Complemento</label>
+                        <input type="text" name="complement" id="complement" placeholder="Informe o complemento" required title="Complemento atual" value="<?php echo $data['complemento']; ?>">
+                    </div>
                 </div>
 
-                <div class="displayFlex"> 
-                    <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência" value="<?php echo $data['numero_casa']; ?>">
+                <div class="displayFlex">
+                    <div>
+                        <label for="houseNumber">Numero da casa</label>
+                        <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência" value="<?php echo $data['numero_casa']; ?>">
+                    </div>
 
                     <div class="select">
                         <select name="selectState" class="selectCategory">
@@ -125,11 +158,13 @@ if(isset($_GET['id'])) {
         </div>
 
         <!-- Change user password -->
-        <div id="changingUserPassword" class="divChilds"><p>Mudar Senha</p></div>
+        <div id="changingUserPassword" class="divChilds">
+            <p>Mudar Senha</p>
+        </div>
 
         <!-- form model changing user Password -->
         <div class="modelChangingPassword modelEdit displayFlex ">
-            <form action="php_actions/edit_password.php" method="POST" class="modelForm displayFlex">
+            <form action="php_actions/edit_password.php" method="POST" class="modelForm displayFlex" id="changePassword">
                 <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
 
                 <label for="current-password">Senha Atual</label>
@@ -146,9 +181,11 @@ if(isset($_GET['id'])) {
         </div>
 
         <!-- Sign out of user account -->
-        <a href="php_actions/logout.php" id="signOut" class="divChilds"><p>Sair</p></a>
-    </div>
+        <a href="php_actions/logout.php" id="signOut" class="divChilds">
+            <p>Sair</p>
+        </a>
+    </main>
 <?php
-// Footer
-include_once 'includes/footer.php';
+    // Footer
+    include_once 'includes/footer.php';
 } ?>

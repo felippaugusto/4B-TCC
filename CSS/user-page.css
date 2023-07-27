@@ -46,12 +46,17 @@ body[data-theme="t-dark"] {
 .modelForm.personalInformations .inputs {
     gap: 1rem;
 }
+
+#changePassword label {
+    width: 95%;
+}
 /* end user container with personal information */
 
 /* start forms models */
 .modelForm label {
-    width: 100%;
+    width: 75%;
     color: #000;
+    display: block;
 }
 
 .modelForm input {

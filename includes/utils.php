@@ -1,7 +1,4 @@
 <?php
-require_once 'php_actions/db_connect.php';
-$pdo = connect();
-
 // useful functions
 function selectAllFromTable($tableName) {
     global $pdo;
@@ -12,13 +9,13 @@ function selectAllFromTable($tableName) {
     return $tableDatas;
 }
 
-function selectAllFromTableWhere($tableName, $columnName, $whereConditional) {
+function selectAllFromTableWhere($tableName, $columnName, $whereConditional, $fetchAllOrFetch) {
     global $pdo;
     $sql = "SELECT * FROM $tableName WHERE $columnName = :whereConditional";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':whereConditional', $whereConditional);
     $stmt->execute();
-    $tableDatas = $stmt->fetchAll();
+    $tableDatas = $stmt->$fetchAllOrFetch();
     return $tableDatas;
 }
 ?>

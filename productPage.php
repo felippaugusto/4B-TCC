@@ -6,21 +6,13 @@ include_once 'includes/utils.php';
 
 // get product code
 $productId = filter_input(INPUT_GET, 'productId', FILTER_SANITIZE_NUMBER_INT);
-$productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $productId);
+$productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $productId, "fetch");
 
 // get product category
-$sql = "SELECT nome_categoria FROM tb_categorias WHERE cod_categoria = :idCategory_foreignKey";
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':idCategory_foreignKey', $productDatas['id_categorias']);
-$stmt->execute();
-$productCategory = $stmt->fetch();
+$productCategory = selectAllFromTableWhere("tb_categorias", "cod_categoria", $productDatas['id_categorias'], "fetch");
 
 // get product sub category
-$sql = "SELECT nome_subcategoria FROM tb_subcategorias WHERE cod_subcategoria = :idSubCategory_foreignKey";
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':idSubCategory_foreignKey', $productDatas['id_subcategorias']);
-$stmt->execute();
-$productSubCategory = $stmt->fetch();
+$productSubCategory = selectAllFromTableWhere("tb_subcategorias", "cod_subcategoria", $productDatas['id_subcategorias'], "fetch");
 ?>
 <!-- header structure -->
     <!-- header left -->
@@ -61,9 +53,9 @@ $productSubCategory = $stmt->fetch();
         <div class="container-product productPage displayFlex">
             <img src="IMAGES/product_images/<?php echo $productDatas['imagem']; ?>" alt="" class="hardware-image">
             <div class="product-description">
-                <p class="product-especification">Descrição: <?php echo $productDatas['descricao_produto']; ?></p>
-                <p class="product-especification">Marca: <?php echo $productCategory['nome_categoria']; ?></p>
-                <p class="product-especification">Modelo: <?php echo $productSubCategory['nome_subcategoria']; ?></p>
+                <p class="product-especification"><span>Descrição:</span><?php echo $productDatas['descricao_produto']; ?></p>
+                <p class="product-especification"><span>Marca: </span><?php echo $productCategory['nome_categoria']; ?></p>
+                <p class="product-especification"><span>Modelo: </span><?php echo $productSubCategory['nome_subcategoria']; ?></p>
                 <p id="available">Produto disponível</p>
                 <p class="product-value">R$ <?php echo $productDatas['preco_atual_produto'] ?> reais</p>
                 <button id="btn-product-add">Adicionar ao carrinho</button>

@@ -2,11 +2,13 @@
 body[data-theme="t-light"] {
     --bg-color-image-page-products: linear-gradient(rgb(150, 150, 150), rgb(70, 70, 70));
     --bg-color-table: linear-gradient(rgb(199, 199, 199), rgb(129, 129, 129));
+    --bg-color-span-productPage: rgb(141, 0, 59);
 }
 
 body[data-theme="t-dark"] {
     --bg-color-image-page-products: linear-gradient(rgb(0, 5, 80), rgb(0, 1, 46));
     --bg-color-table: linear-gradient(rgb(0, 5, 68), rgb(0, 1, 46));
+    --bg-color-span-productPage: rgb(138, 138, 138);
 }
 
 /* end light mode */
@@ -42,6 +44,10 @@ body[data-theme="t-dark"] {
     width: 40rem;
     color: var(--color-text-reverse);
     text-align: left;
+}
+
+.container-product.productPage .product-especification span {
+    color: var(--bg-color-span-productPage);
 }
 
 .productPage #available {

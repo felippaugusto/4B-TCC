@@ -1,8 +1,8 @@
 <?php
 // Connection with database
-require_once 'php_actions/db_connect.php';
+require_once '../php_actions/db_connect.php';
 // Useful functions
-include_once 'includes/utils.php';
+include_once '../includes/utils.php';
 // start sessions
 session_start();
 $pdo = connect();
@@ -13,16 +13,18 @@ if (!isset($_SESSION['adminLogged']) == true) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assembly Tech | E-commerce de periféricos e hardware</title>
-    <link rel="stylesheet" href="CSS/globals.css">
-    <link rel="stylesheet" href="CSS/admin.css">
-    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/globals.css">
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="shortcut icon" href="IMAGES/includes/header/favicon/computer-96.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
         <h1>Tela do administrador</h1>
@@ -30,16 +32,15 @@ if (!isset($_SESSION['adminLogged']) == true) {
 
     <nav id="linksAdmin" class="displayFlex">
         <!-- button for registration of product and categoties -->
-        <a href="registerCategoriesAndProducts.php" id="registerCategoriesAndProducts" class="links">Registro de produtos e categorias</a>
+        <a href="../registerCategoriesAndProducts.php" id="registerCategoriesAndProducts" class="links">Registro de produtos e categorias</a>
 
         <!-- product change button -->
         <a href="#" class="links linkChangingProductsCategories product">
             <p>Alterar produtos</p>
-
         </a>
 
         <div class="displayFlex modalChangingProductsCategories" id="formProduct">
-            <form action="changingProductsAndCategories.php" method="GET">
+            <form action="../changingProductsAndCategories.php" method="GET">
                 <input type="hidden" name="whatForm" value="productChange">
                 <div class="exit exitAdmin">
                     <p class="xOne"></p>
@@ -57,7 +58,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
         </a>
 
         <div class="displayFlex modalChangingProductsCategories" id="formCategory">
-            <form action="changingProductsAndCategories.php" method="GET">
+            <form action="../changingProductsAndCategories.php" method="GET">
                 <input type="hidden" name="whatForm" value="categoryChange">
                 <div class="exit exitAdmin">
                     <p class="xOne"></p>
@@ -75,7 +76,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
         </a>
 
         <div class="displayFlex modalChangingProductsCategories" id="formSubCategory">
-            <form action="changingProductsAndCategories.php" method="GET">
+            <form action="../changingProductsAndCategories.php" method="GET">
                 <input type="hidden" name="whatForm" value="subCategoryChange">
                 <div class="exit exitAdmin">
                     <p class="xOne"></p>
@@ -88,7 +89,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
         </div>
 
         <!-- button back to the page -->
-        <a href="php_actions/logout.php" id="backToMainPage" class="links">Voltar</a>
+        <a href="../php_actions/logout.php" id="backToMainPage" class="links">Voltar</a>
     </nav>
 
     <!-- users registered -->
@@ -122,7 +123,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                             <td><?php echo $data['sobrenome']; ?></td>
                             <td><?php echo $data['email_cliente']; ?></td>
                             <td><?php echo $data['cpf']; ?></td>
-                            <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex" id="users"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                            <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex" id="users"><img src="../IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
                         </tr>
                 <?php };
                 }; ?>
@@ -156,7 +157,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                         <td><?php echo $data['descricao_produto']; ?></td>
                         <td>R$ <?php echo $data['preco_atual_produto']; ?> reais</td>
                         <td>Sim</td>
-                        <td><a href="#modal<?php echo $data['cod_produto']; ?>" class="btnRemove displayFlex" id="products"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                        <td><a href="#modal<?php echo $data['cod_produto']; ?>" class="btnRemove displayFlex" id="products"><img src="../IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
                     </tr>
 
                 <?php }; ?>
@@ -185,7 +186,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                             <!-- foreach user information -->
                             <td><?php echo $data['cod_categoria']; ?></td>
                             <td><?php echo $data['nome_categoria']; ?></td>
-                            <td><a href="#modal<?php echo $data['cod_categoria']; ?>" class="btnRemove displayFlex" id="categories"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                            <td><a href="#modal<?php echo $data['cod_categoria']; ?>" class="btnRemove displayFlex" id="categories"><img src="../IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
                         </tr>
 
                     <?php }; ?>
@@ -211,7 +212,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
                             <!-- foreach user information -->
                             <td><?php echo $data['cod_subcategoria']; ?></td>
                             <td><?php echo $data['nome_subcategoria']; ?></td>
-                            <td><a href="#modal<?php echo $data['cod_subcategoria']; ?>" class="btnRemove displayFlex" id="subCategories"><img src="IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                            <td><a href="#modal<?php echo $data['cod_subcategoria']; ?>" class="btnRemove displayFlex" id="subCategories"><img src="../IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
                         </tr>
 
                     <?php }; ?>
@@ -221,8 +222,7 @@ if (!isset($_SESSION['adminLogged']) == true) {
     </main>
     <div id="" class="box-model displayFlex">
     </div>
-
-    <?php include_once 'includes/footer.php'; ?>
+    
+    <?php include_once '../includes/footerAdmin.php'; ?>
 </body>
-
 </html>

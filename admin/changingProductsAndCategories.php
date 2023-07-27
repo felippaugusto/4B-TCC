@@ -57,7 +57,7 @@ if (isset($_GET['submitChangingProductsOrCategories']) || isset($_SESSION['admin
     <div id="containerUserPage" class="displayFlex">
         <?php if ($whatForm == "productChange") { 
             // get the product
-            $productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $codeProductOrCategory);
+            $productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $codeProductOrCategory, "fetchAll");
             // get the categories for product
             $datasCategories = selectAllFromTable("tb_categorias");
             // get the subcategories for product
@@ -123,7 +123,7 @@ if (isset($_GET['submitChangingProductsOrCategories']) || isset($_SESSION['admin
 
         <?php if ($whatForm == "categoryChange") {
             // get the category
-            $categoryDatas = selectAllFromTableWhere("tb_categorias", "cod_categoria", $codeProductOrCategory);
+            $categoryDatas = selectAllFromTableWhere("tb_categorias", "cod_categoria", $codeProductOrCategory, "fetchAll");
             foreach($categoryDatas as $categoryData) {
             ?>
             <div class="displayFlex" id="containerCategoriesRegister">
@@ -142,7 +142,7 @@ if (isset($_GET['submitChangingProductsOrCategories']) || isset($_SESSION['admin
 
         <?php if ($whatForm == "subCategoryChange") { 
             // get the subcategory
-            $subCategoryDatas = selectAllFromTableWhere("tb_subcategorias", "cod_subcategoria", $codeProductOrCategory);
+            $subCategoryDatas = selectAllFromTableWhere("tb_subcategorias", "cod_subcategoria", $codeProductOrCategory, "fetchAll");
             foreach($subCategoryDatas as $subCategoryData) {
             ?>
             <div class="displayFlex" id="containerSubCategoriesRegister">

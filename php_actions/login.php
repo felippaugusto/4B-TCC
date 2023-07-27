@@ -35,7 +35,7 @@ if(isset($_POST['btn_submit'])) {
 
                 if($registrationType == 'A' && $email == "admin@admin.com") {
                     $_SESSION['adminLogged'] = true;
-                    header('Location: ../admin.php');
+                    header('Location: ../admin/admin.php');
                 }
                 else {
                     $sql = "SELECT * FROM tb_usuarios WHERE email_cliente = :email AND senha = :password_db";

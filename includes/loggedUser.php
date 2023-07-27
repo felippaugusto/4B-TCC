@@ -10,10 +10,7 @@
         else {
         // datas
         $id = $_SESSION['id_user'];
-        $sql = "SELECT * FROM tb_usuarios WHERE cod_cliente = '$id'";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $datas =  $stmt->fetchAll();
+        $datas =  selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id, "fetchAll");
 
         foreach($datas as $data) { 
         ?>
