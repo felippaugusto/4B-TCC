@@ -66,12 +66,23 @@ CREATE TABLE tb_compras_prod (
     CONSTRAINT codprodutos_fk FOREIGN KEY (codprodutos_fk) REFERENCES tb_produtos (cod_produto)
 );
 
+CREATE TABLE tb_kits (
+    cod_kit INT PRIMARY KEY AUTO_INCREMENT,
+    nome_kit VARCHAR(50) NOT NULL,
+    descricao_kit VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE tb_kits_produtos (
-    cod_kits_produtos INT PRIMARY KEY AUTO_INCREMENT,
-    nome_categoria VARCHAR(50) NOT NULL,
-    fk_codprodutos INT,
+    cod_kit_produtos INT PRIMARY KEY AUTO_INCREMENT,
+    cod_categoria_fk INT,
+    cod_subcategoria_fk INT,
+    cod_kit INT,
+    cod_produto INT,
     quantidade INT NOT NULL,
-    CONSTRAINT fk_codprodutos FOREIGN KEY (fk_codprodutos) REFERENCES tb_produtos (cod_produto)
+    CONSTRAINT fk_categoria_fk FOREIGN KEY(cod_categoria_fk) REFERENCES tb_categorias(cod_categoria),
+    CONSTRAINT fk_subcategoria_fk FOREIGN KEY(cod_subcategoria_fk) REFERENCES tb_subcategorias(cod_subcategoria),
+    CONSTRAINT fk_codkit FOREIGN KEY(cod_kit) REFERENCES tb_kits(cod_kit),
+    CONSTRAINT fk_produtos FOREIGN KEY(cod_produto) REFERENCES tb_produtos(cod_produto)
 );
 
 INSERT INTO tb_cidades (codcid, nomecid, estadocid) VALUES
