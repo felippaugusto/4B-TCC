@@ -20,13 +20,13 @@ if(isset($_POST['btn_submit_subcategories'])) {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Atualizado com sucesso!";
         $_SESSION['adminLogged'] = true;
-        header("Location: ../changingProductsAndCategories.php?whatForm=subCategoryChange&codeProductOrCategory=$subCategoryCode");
+        header("Location: ../admin/changingProductsAndCategories.php?whatForm=subCategoryChange&codeProductOrCategory=$subCategoryCode");
     }
     else {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Erro ao atualizar!";
         $_SESSION['adminLogged'] = true;
-        header("Location: ../changingProductsAndCategories.php?whatForm=subCategoryChange&codeProductOrCategory=$subCategoryCode");
+        header("Location: ../admin/changingProductsAndCategories.php?whatForm=subCategoryChange&codeProductOrCategory=$subCategoryCode");
     }
 }
 ?>

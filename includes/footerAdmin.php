@@ -30,10 +30,9 @@
     <script src="../JS/jquery.js"></script>
     <script src="../JS/jquery.mask.js"></script>
     <script src="../JS/mascara.js"></script>
-    <script src="../JS/light-mode-and-dark-mode.js"></script>
+    <script src="lightModeAndDarkAdmin.js"></script>
     <script src="../JS/index.js"></script>
-    <script src="../JS/shopping-cart.js"></script>
-    <script src="../JS/building-computer.js"></script>
     <script src="../JS/admin.js"></script>
     <script src="../JS/utils.js"></script>
-    <script src="../JS/userPage.js"></script>
+</body>
+</html>

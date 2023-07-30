@@ -54,7 +54,7 @@ body[data-theme="t-dark"] {
 
 /* start forms models */
 .modelForm label {
-    width: 75%;
+    width: 100%;
     color: #000;
     display: block;
 }

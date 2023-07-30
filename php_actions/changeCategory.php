@@ -20,12 +20,12 @@ if(isset($_POST['btn_submit_categories'])) {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Atualizado com sucesso!";
         $_SESSION['adminLogged'] = true;
-        header("Location: ../changingProductsAndCategories.php?whatForm=categoryChange&codeProductOrCategory=$categoryCode");
+        header("Location: ../admin/changingProductsAndCategories.php?whatForm=categoryChange&codeProductOrCategory=$categoryCode");
     }
     else {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Erro ao atualizar!";
         $_SESSION['adminLogged'] = true;
-        header("Location: ../changingProductsAndCategories.php?whatForm=categoryChange&codeProductOrCategory=$categoryCode");
+        header("Location: ../admin/changingProductsAndCategories.php?whatForm=categoryChange&codeProductOrCategory=$categoryCode");
     }
 }

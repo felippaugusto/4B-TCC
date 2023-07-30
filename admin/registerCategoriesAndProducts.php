@@ -1,44 +1,14 @@
 <?php
-// Connection with database
-require_once 'php_actions/db_connect.php';
-$pdo = connect();
-// Useful functions
-include_once 'includes/utils.php';
-// Start sessions 
-session_start();
-// Messages
-include_once 'includes/messages.php';
-
-if(!isset($_SESSION['adminLogged']) == true) {
-    header('Location: login.php');
-}
-
+include_once '../includes/headerAdmin.php';
 // get the categories
 $datasCategories = selectAllFromTable("tb_categorias");
 // get the subcategories
 $datasSubcategories = selectAllFromTable("tb_subcategorias");
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assembly Tech | E-commerce de periféricos e hardware</title>
-    <link rel="stylesheet" href="CSS/globals.css">
-    <link rel="stylesheet" href="CSS/admin.css">
-    <link rel="stylesheet" href="CSS/header.css">
-    <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/user-page.css">
-    <link rel="stylesheet" href="CSS/register.css">
-    <link rel="shortcut icon" href="IMAGES/includes/header/favicon/computer-96.png" type="image/x-icon">
-</head>
-<body>
     <!-- header structure -->
     <!-- header left -->
     <header class="displayFlex header headerAdmin" id="headerRegistrationAdminPage">
-        <a href="index.php" class="text-logo-header displayFlex">
+        <a href="../index.php" class="text-logo-header displayFlex">
             <p>Assembly</p>
             <p>Tech</p>
         </a>
@@ -48,7 +18,7 @@ $datasSubcategories = selectAllFromTable("tb_subcategorias");
 
             <div id="theme-white-or-dark" class="displayFlex">
                 <div id="ball" class="displayFlex">
-                    <img src="IMAGES/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
+                    <img src="../IMAGES/includes/header/theme-white-and-dark/moon-black.png" alt="" id="moon-and-sun">
                 </div>
             </div>
 
@@ -89,8 +59,8 @@ $datasSubcategories = selectAllFromTable("tb_subcategorias");
                     </div>
                 </div>
                 
-                <label for="file" class="inputFile">Adicionar a imagem do produto</label>
-                <img src="IMAGES/admin/arrow-light.png" alt="arrow" id="arrow-light-open-modal" class="arrow-light">
+                <label for="file" class="inputFile" id="inputFileProductRegister">Adicionar a imagem do produto</label>
+                <img src="../IMAGES/admin/arrow-light.png" alt="arrow" id="arrow-light-open-modal" class="arrow-light">
                 <input type="file" name="productImage" id="file">
 
                 <label for="productDescription" id="labelTextarea">Adicione a descrição do produto</label>
@@ -101,7 +71,7 @@ $datasSubcategories = selectAllFromTable("tb_subcategorias");
                 </div>
 
                 <div class="displayFlex" id="modelImageName">
-                    <img src="IMAGES/admin/arrow-light.png" alt="arrow" class="arrow-light">
+                    <img src="../IMAGES/admin/arrow-light.png" alt="arrow" class="arrow-light">
                     <label for="imageName">Nome da imagem:</label>
                     <input type="text" name="imageName" id="imageName">
                 </div>
@@ -152,5 +122,5 @@ $datasSubcategories = selectAllFromTable("tb_subcategorias");
     <a href="#header" class="goToHeader"><img src="IMAGES/down-arrow-navegation-website.png" alt=""></a>
 <?php
 // Footer
-include_once 'includes/footer.php';
+include_once '../includes/footerAdmin.php';
 ?>

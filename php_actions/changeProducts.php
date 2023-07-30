@@ -40,13 +40,13 @@ if(isset($_POST['btn_submit_changing_products'])) {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Atualizado com sucesso!";
         $_SESSION['adminLogged'] = true;
-        header("Location: ../changingProductsAndCategories.php?whatForm=productChange&codeProductOrCategory=$productCode");
+        header("Location: ../admin/changingProductsAndCategories.php?whatForm=productChange&codeProductOrCategory=$productCode");
     }
     else {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Erro ao atualizar!";
         $_SESSION['adminLogged'] = true;
-        header("Location: ../changingProductsAndCategories.php?whatForm=productChange&codeProductOrCategory=$productCode");
+        header("Location: ../admin/changingProductsAndCategories.php?whatForm=productChange&codeProductOrCategory=$productCode");
     }
 }
 

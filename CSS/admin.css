@@ -378,7 +378,7 @@ input {
 }
 
 #modelImageName {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--color-bg-form-admin);
     flex-direction: column;
     position: absolute;
     top: 30%;
@@ -394,6 +394,10 @@ input {
 .active#modelImageName {
     visibility: visible;
     opacity: 1;
+}
+
+#modelImageName label {
+    color: var(--color-text-messages);
 }
 
 #formProductRegister .arrow-light {
@@ -442,14 +446,14 @@ input {
 /* end product and category registration page */
 
 /* start product and category changes page */
-#containerProductChanging form {
+#containerProductChanging form, #formProductRegister {
     height: 42vh;
     background-color: var(--color-bg-form-admin);
     padding: 1.5rem;
     margin-bottom: 1rem;
 }
 
-#containerProductChanging form input {
+#containerProductChanging form input, #formProductRegister input {
     background-color: var(--color-bg-input);
 }
 
@@ -460,6 +464,10 @@ input {
 
 #containerProductChanging .select::after {
     background-color: var(--color-bg-select-after-admin);
+}
+
+label.inputFile#inputFileProduct, label.inputFile#inputFileProductRegister {
+    width: 100%;
 }
 
 #containerProductChanging form .arrow-light {
@@ -484,6 +492,7 @@ input {
 
 #containerCategoriesRegister label, #containerSubCategoriesRegister label {
     color: var(--color-text-messages);
+    width: 100%;
 }
 
 #containerCategoriesSubCategories {

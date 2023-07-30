@@ -1,12 +1,14 @@
-<?php 
+<?php
 // database connection
 require_once 'db_connect.php';
 $pdo = connect();
 // sessions start
 session_start();
+// Useful functions
+include_once '../includes/utils.php';
 
 // btn form submit
-if(isset($_POST['btn_submit'])) {
+if (isset($_POST['btn_submit'])) {
     $firstName = filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_SPECIAL_CHARS);
     $lastName = filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_SPECIAL_CHARS);
     $cpf = $_POST['cpf'];
@@ -18,7 +20,7 @@ if(isset($_POST['btn_submit'])) {
     $active = 'S';
     $registrationType = 'C';
 
-    if($password == $confirmPassword) {
+    if ($password == $confirmPassword) {
         // formatted date
         $date = date("Y-d-m", strtotime($date));
         $date = str_replace("/", "-", $date);
@@ -34,18 +36,16 @@ if(isset($_POST['btn_submit'])) {
         // encripted password
         $encriptedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        if(empty($firstName) || empty($lastName) || empty($cpf) || empty($date) || empty($telephone) || empty($email)) {
+        if (empty($firstName) || empty($lastName) || empty($cpf) || empty($date) || empty($telephone) || empty($email)) {
             $_SESSION['messagesVerify'] = true;
             $_SESSION['messages'] = "Por favor, preencha todos os campos!";
             header('Location: ../register.php');
-        }
-        else {
-            if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        } else {
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $_SESSION['messagesVerify'] = true;
                 $_SESSION['messages'] = "Email inválido!";
                 header('Location: ../register.php');
-            }
-            else {
+            } else {
                 $sql = "INSERT INTO tb_usuarios (nome_cliente, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha, ativo, tipo_cadastro) VALUES (:firstName, :lastName, :cpf, :date, :telephone, :email, :password, :active, :registrationType)";
 
                 $stmt = $pdo->prepare($sql);
@@ -58,27 +58,23 @@ if(isset($_POST['btn_submit'])) {
                 $stmt->bindParam(':password', $encriptedPassword);
                 $stmt->bindParam(':active', $active);
                 $stmt->bindParam(':registrationType', $registrationType);
-    
-                if($stmt->execute()) {
+
+                if ($stmt->execute()) {
                     $_SESSION['messagesVerify'] = true;
                     $_SESSION['messages'] = "Cadastrado com sucesso!";
                     header('Location: ../login.php');
-                }
-                else if(!$stmt) {
+                } else if (!$stmt) {
                     $_SESSION['messagesVerify'] = true;
                     $_SESSION['messages'] = "Erro ao cadastrar!";
                     header('Location: ../register.php');
                 }
             }
         }
-    }
-    else {
+    } else {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "As senhas não são iguais!";
         header('Location: ../register.php');
     }
-}
-else {
+} else {
     header('Location: ../index.php');
 }
-?>
