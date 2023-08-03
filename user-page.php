@@ -3,8 +3,6 @@
 include_once 'includes/header.php';
 // Messages
 include_once 'includes/messages.php';
-// Useful functions
-include_once 'includes/utils.php';
 
 if (!isset($_SESSION['logged'])) {
     header('Location: index.php');
@@ -13,7 +11,7 @@ if (!isset($_SESSION['logged'])) {
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $datas = selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id, "fetchAll");
+    $datas = selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id, "fetchAll", "código do cliente inválido");
 
     foreach ($datas as $data) {
         $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));
@@ -134,19 +132,30 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
 
-                <div class="displayFlex">
+                <div class="displayFlex" id="containerSelectsAndInput">
                     <div>
                         <label for="houseNumber">Numero da casa</label>
                         <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência" value="<?php echo $data['numero_casa']; ?>">
                     </div>
 
-                    <div class="select">
-                        <select name="selectState" class="selectCategory">
-                            <option selected disabled>Selecione o estado</option>
-                            <option value="Paraná">Paraná</option>
-                            <option value="Santa Catarina">Santa Catarina</option>
-                            <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                        </select>
+                    <div class="displayFlex" id="containerSelectsUser">
+                        <div class="select">
+                            <select name="selectState" class="selectCategory">
+                                <option selected disabled>Selecione a cidade</option>
+                                <option value="Paraná">Paraná</option>
+                                <option value="Santa Catarina">Santa Catarina</option>
+                                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                            </select>
+                        </div>
+
+                        <div class="select">
+                            <select name="selectState" class="selectCategory">
+                                <option selected disabled>Selecione o estado</option>
+                                <option value="Paraná">Paraná</option>
+                                <option value="Santa Catarina">Santa Catarina</option>
+                                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 

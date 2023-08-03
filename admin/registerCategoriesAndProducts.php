@@ -34,7 +34,7 @@ $datasSubcategories = selectAllFromTable("tb_subcategorias");
 
         <!-- form model products register -->
         <div class="modelEdit displayFlex" id="containerProductRegister">
-            <form action="php_actions/createProducts.php" class="displayFlex modelForm" id="formProductRegister" method="POST" enctype="multipart/form-data">
+            <form action="../php_actions/createProducts.php" class="displayFlex modelForm" id="formProductRegister" method="POST" enctype="multipart/form-data">
                 <div class="displayFlex" id="containerinput">
                     <input type="text" name="productName" autocomplete="off" placeholder="Nome do produto">
                     <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="valueProduct" autocomplete="off" placeholder="Valor do produto">
@@ -85,7 +85,7 @@ $datasSubcategories = selectAllFromTable("tb_subcategorias");
 
         <!-- form model categories register -->
         <div class="modelEdit displayFlex" id="containerCategoriesRegister">
-            <form action="php_actions/createCategories.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
+            <form action="../php_actions/createCategories.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
                 <label for="descriptionCategory">Nome da categoria:</label>
                 <input type="text" name="descriptionCategory" id="descriptionCategory" placeholder="Informe o nome da categoria">
 
@@ -103,7 +103,7 @@ $datasSubcategories = selectAllFromTable("tb_subcategorias");
 
         <!-- form model categories register -->
         <div class="modelEdit displayFlex" id="containerSubCategoriesRegister">
-            <form action="php_actions/createSubcategories.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
+            <form action="../php_actions/createSubcategories.php" class="displayFlex modelForm" id="formCategoriesProduct" method="POST">
                 <label for="descriptionSubCategory">Nome da sub-categoria:</label>
                 <input type="text" name="descriptionSubCategory" id="descriptionSubCategory" placeholder="Informe o nome da sub-categoria">
 

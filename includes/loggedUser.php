@@ -10,7 +10,7 @@
         else {
         // datas
         $id = $_SESSION['id_user'];
-        $datas =  selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id, "fetchAll");
+        $datas =  selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id, "fetchAll", "código inválido");
 
         foreach($datas as $data) { 
         ?>

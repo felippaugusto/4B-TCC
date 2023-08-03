@@ -1,8 +1,6 @@
 <?php
 // Header
-include_once 'includes/header.php';
-// Useful functions
-include_once 'includes/utils.php';
+include_once 'includes/header.php'; 
 // sql getting the data from the tb_produtos
 $productDatas = selectAllFromTable("tb_produtos");
 ?>

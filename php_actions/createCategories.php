@@ -24,12 +24,12 @@ if(isset($_POST['btn_submit_categories'])) {
         if($stmt->execute()) {
             $_SESSION['messagesVerify'] = true;
             $_SESSION['messages'] = "Categoria cadastrada com sucesso!";
-            header('Location: ../registerCategoriesAndProducts.php');
+            header('Location: ../admin/registerCategoriesAndProducts.php');
         }
         else {
             $_SESSION['messagesVerify'] = true;
             $_SESSION['messages'] = "Não foi possível cadastrar a categoria!";
-            header('Location: ../registerCategoriesAndProducts.php');
+            header('Location: ../admin/registerCategoriesAndProducts.php');
         }
     }
 }

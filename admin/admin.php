@@ -1,4 +1,7 @@
-<?php include_once '../includes/headerAdmin.php'; ?>
+<?php 
+// Header
+include_once '../includes/headerAdmin.php'; 
+?>
     <header>
         <h1>Tela do administrador</h1>
     </header>

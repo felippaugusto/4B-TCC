@@ -50,6 +50,15 @@ body[data-theme="t-dark"] {
 #changePassword label {
     width: 95%;
 }
+
+#containerSelectsAndInput {
+    align-items: start;
+}
+
+#containerSelectsUser {
+    flex-direction: column;
+    gap: 1rem;
+}
 /* end user container with personal information */
 
 /* start forms models */

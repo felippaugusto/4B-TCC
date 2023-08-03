@@ -1,18 +1,16 @@
 <?php
 // Header
 include_once 'includes/header.php';
-// Useful functions
-include_once 'includes/utils.php';
 
 // get product code
 $productId = filter_input(INPUT_GET, 'productId', FILTER_SANITIZE_NUMBER_INT);
-$productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $productId, "fetch");
+$productDatas = selectAllFromTableWhere("tb_produtos", "cod_produto", $productId, "fetch", "código do produto inválido");
 
 // get product category
-$productCategory = selectAllFromTableWhere("tb_categorias", "cod_categoria", $productDatas['id_categorias'], "fetch");
+$productCategory = selectAllFromTableWhere("tb_categorias", "cod_categoria", $productDatas['id_categorias'], "fetch", "código da categoria inválido");
 
 // get product sub category
-$productSubCategory = selectAllFromTableWhere("tb_subcategorias", "cod_subcategoria", $productDatas['id_subcategorias'], "fetch");
+$productSubCategory = selectAllFromTableWhere("tb_subcategorias", "cod_subcategoria", $productDatas['id_subcategorias'], "fetch", "código da sub-categoria inválido");
 ?>
 <!-- header structure -->
     <!-- header left -->

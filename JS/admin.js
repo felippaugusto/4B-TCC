@@ -93,7 +93,7 @@ openModalRemove.each(function () {
     boxModel.append(`
                                 <div class="model-description displayFlex">
                                     <p id="paragraph"></p>
-                                    <form action="php_actions/deletes.php" method="POST" class="displayFlex container-form">
+                                    <form action="../php_actions/deletes.php" method="POST" class="displayFlex container-form">
                                         <input type="hidden" name="id" value="">
 
                                         <!-- button to delete the user -->

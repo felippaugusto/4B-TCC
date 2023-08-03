@@ -62,12 +62,12 @@ if(isset($_POST['btn_submit_products'])) {
             if($stmt->execute()) {
                 $_SESSION['messagesVerify'] = true;
                 $_SESSION['messages'] = "Produto cadastrado com sucesso!";
-                header('Location: ../registerCategoriesAndProducts.php');
+                header('Location: ../admin/registerCategoriesAndProducts.php');
             }
             else {
                 $_SESSION['messagesVerify'] = true;
                 $_SESSION['messages'] = "Não foi possível cadastrar o produto!";
-                header('Location: ../registerCategoriesAndProducts.php');
+                header('Location: ../admin/registerCategoriesAndProducts.php');
             }
         }
     }
