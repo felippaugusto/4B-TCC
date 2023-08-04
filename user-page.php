@@ -58,12 +58,12 @@ if (isset($_GET['id'])) {
         <!-- form model changing user personal informations -->
         <div class="modelChangingUserInformations modelEdit displayFlex">
             <form action="php_actions/edit_user_informations.php" method="POST" class="modelForm personalInformations displayFlex">
-                <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
+                <input type="hidden" name="id" value="<?php echo $data['cod_usuario']; ?>">
 
                 <div class="displayFlex inputs">
                     <div>
                         <label for="firstName">Nome</label>
-                        <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome" value="<?php echo $data['nome_cliente']; ?>">
+                        <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="Primeiro nome" required title="Seu nome" value="<?php echo $data['nome_usuario']; ?>">
                     </div>
                     <div>
                         <label for="lastName">Sobrenome</label>
@@ -85,11 +85,11 @@ if (isset($_GET['id'])) {
                 <div class="displayFlex inputs">
                     <div>
                         <label for="telephone">Telefone</label>
-                        <input type="tel" name="telephone" id="telephone" class="phone_with_ddd" placeholder="Telefone" required title="Seu telefone" value="<?php echo $data['telefone_cliente']; ?>">
+                        <input type="tel" name="telephone" id="telephone" class="phone_with_ddd" placeholder="Telefone" required title="Seu telefone" value="<?php echo $data['telefone_usuario']; ?>">
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11" title="Seu email por favor" value="<?php echo $data['email_cliente']; ?>">
+                        <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required minlength="11" title="Seu email por favor" value="<?php echo $data['email_usuario']; ?>">
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@ if (isset($_GET['id'])) {
         <!-- form model add users address -->
         <div class="modelEdit modelUserAddress displayFlex">
             <form action="php_actions/addUserAddress.php" method="POST" class="modelForm displayFlex" id="formUserAddress">
-                <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
+                <input type="hidden" name="id" value="<?php echo $data['cod_usuario']; ?>">
 
                 <div class="displayFlex">
                     <div>
@@ -174,7 +174,7 @@ if (isset($_GET['id'])) {
         <!-- form model changing user Password -->
         <div class="modelChangingPassword modelEdit displayFlex ">
             <form action="php_actions/edit_password.php" method="POST" class="modelForm displayFlex" id="changePassword">
-                <input type="hidden" name="id" value="<?php echo $data['cod_cliente']; ?>">
+                <input type="hidden" name="id" value="<?php echo $data['cod_usuario']; ?>">
 
                 <label for="current-password">Senha Atual</label>
                 <input type="text" name="currentPassword" required placeholder="Senha atual" id="current-password" title="Senha Atual">

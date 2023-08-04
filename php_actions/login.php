@@ -16,7 +16,7 @@ if(isset($_POST['btn_submit'])) {
         header('Location: ../login.php');
     }
     else {
-        $sql = "SELECT email_cliente, senha FROM tb_usuarios WHERE email_usuario = '$email'";
+        $sql = "SELECT email_usuario, senha FROM tb_usuarios WHERE email_usuario = '$email'";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
 
@@ -45,7 +45,7 @@ if(isset($_POST['btn_submit'])) {
                     $stmt->execute();
                     $data = $stmt->fetch();
                     $_SESSION['logged'] = true;
-                    $_SESSION['id_user'] = $data['cod_cliente'];
+                    $_SESSION['id_user'] = $data['cod_usuario'];
                     header('Location: ../index.php');
                 }
             }

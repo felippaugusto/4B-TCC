@@ -95,11 +95,11 @@ include_once '../includes/headerAdmin.php';
                 ?>
                         <tr>
                             <!-- foreach user information -->
-                            <td><?php echo $data['nome_cliente']; ?></td>
+                            <td><?php echo $data['nome_usuario']; ?></td>
                             <td><?php echo $data['sobrenome']; ?></td>
-                            <td><?php echo $data['email_cliente']; ?></td>
+                            <td><?php echo $data['email_usuario']; ?></td>
                             <td><?php echo $data['cpf']; ?></td>
-                            <td><a href="#modal<?php echo $data['cod_cliente']; ?>" class="btnRemove displayFlex" id="users"><img src="../IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
+                            <td><a href="#modal<?php echo $data['cod_usuario']; ?>" class="btnRemove displayFlex" id="users"><img src="../IMAGES/admin/trash-image/remove1.png" alt="image-remove" class="imageRemove"></a></td>
                         </tr>
                 <?php };
                 }; ?>
