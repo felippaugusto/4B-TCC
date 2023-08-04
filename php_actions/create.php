@@ -46,7 +46,7 @@ if (isset($_POST['btn_submit'])) {
                 $_SESSION['messages'] = "Email inválido!";
                 header('Location: ../register.php');
             } else {
-                $sql = "INSERT INTO tb_usuarios (nome_cliente, sobrenome, cpf, data_nasc, telefone_cliente, email_cliente, senha, ativo, tipo_cadastro) VALUES (:firstName, :lastName, :cpf, :date, :telephone, :email, :password, :active, :registrationType)";
+                $sql = "INSERT INTO tb_usuarios (nome_usuario, sobrenome, cpf, data_nasc, telefone_usuario, email_usuario, senha, ativo, tipo_cadastro) VALUES (:firstName, :lastName, :cpf, :date, :telephone, :email, :password, :active, :registrationType)";
 
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':email', $email);

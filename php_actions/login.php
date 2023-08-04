@@ -16,7 +16,7 @@ if(isset($_POST['btn_submit'])) {
         header('Location: ../login.php');
     }
     else {
-        $sql = "SELECT email_cliente, senha FROM tb_usuarios WHERE email_cliente = '$email'";
+        $sql = "SELECT email_cliente, senha FROM tb_usuarios WHERE email_usuario = '$email'";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
 
@@ -25,7 +25,7 @@ if(isset($_POST['btn_submit'])) {
             $password_db = $data['senha'];
 
             if(password_verify($password, $password_db)) {
-                $sql = "SELECT * FROM tb_usuarios WHERE email_cliente = :email AND senha = :password_db";
+                $sql = "SELECT * FROM tb_usuarios WHERE email_usuario = :email AND senha = :password_db";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password_db', $password_db);
@@ -38,7 +38,7 @@ if(isset($_POST['btn_submit'])) {
                     header('Location: ../admin/admin.php');
                 }
                 else {
-                    $sql = "SELECT * FROM tb_usuarios WHERE email_cliente = :email AND senha = :password_db";
+                    $sql = "SELECT * FROM tb_usuarios WHERE email_usuario = :email AND senha = :password_db";
                     $stmt = $pdo->prepare($sql);
                     $stmt->bindParam(':email', $email);
                     $stmt->bindParam(':password_db', $password_db);

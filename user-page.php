@@ -11,7 +11,7 @@ if (!isset($_SESSION['logged'])) {
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $datas = selectAllFromTableWhere("tb_usuarios", "cod_cliente", $id, "fetchAll", "código do cliente inválido");
+    $datas = selectAllFromTableWhere("tb_usuarios", "cod_usuario", $id, "fetchAll", "código do cliente inválido");
 
     foreach ($datas as $data) {
         $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));

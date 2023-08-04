@@ -7,7 +7,7 @@ $pdo = connect();
 if(isset($_POST['btnDeleteUsers'])) {
     $id = $_POST['id'];
 
-    $sql = "DELETE FROM tb_usuarios WHERE cod_cliente = :id";
+    $sql = "DELETE FROM tb_usuarios WHERE cod_usuario = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':id', $id);
 

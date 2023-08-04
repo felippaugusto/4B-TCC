@@ -31,7 +31,7 @@ if(isset($_POST['btn_submit_edit_user-informations'])) {
     $telephone = str_replace($arrayTelephone, "", $telephone);
 
     // updated user informations 
-    $sql = "UPDATE tb_usuarios SET nome_cliente = :firstName, sobrenome = :lastName, cpf = :cpf, data_nasc = :date, telefone_cliente = :telephone, email_cliente = :email WHERE cod_cliente = '$id'";
+    $sql = "UPDATE tb_usuarios SET nome_usuario = :firstName, sobrenome = :lastName, cpf = :cpf, data_nasc = :date, telefone_usuario = :telephone, email_usuario = :email WHERE cod_usuario = '$id'";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':firstName', $firstName);
     $stmt->bindParam('lastName', $lastName);

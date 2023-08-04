@@ -27,7 +27,7 @@ if(isset($_POST['btn_submit_edit_password'])) {
             $newEncryptedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
             // password update 
-            $sql = "UPDATE tb_usuarios SET senha = :newPassword WHERE cod_cliente = :id";
+            $sql = "UPDATE tb_usuarios SET senha = :newPassword WHERE cod_usuario = :id";
 
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':newPassword', $newEncryptedPassword);

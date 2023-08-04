@@ -74,13 +74,9 @@ CREATE TABLE tb_kits (
 
 CREATE TABLE tb_kits_produtos (
     cod_kit_produtos INT PRIMARY KEY AUTO_INCREMENT,
-    cod_categoria_fk INT,
-    cod_subcategoria_fk INT,
     cod_kit INT,
     cod_produto INT,
     quantidade INT NOT NULL,
-    CONSTRAINT fk_categoria_fk FOREIGN KEY(cod_categoria_fk) REFERENCES tb_categorias(cod_categoria),
-    CONSTRAINT fk_subcategoria_fk FOREIGN KEY(cod_subcategoria_fk) REFERENCES tb_subcategorias(cod_subcategoria),
     CONSTRAINT fk_codkit FOREIGN KEY(cod_kit) REFERENCES tb_kits(cod_kit),
     CONSTRAINT fk_produtos FOREIGN KEY(cod_produto) REFERENCES tb_produtos(cod_produto)
 );
