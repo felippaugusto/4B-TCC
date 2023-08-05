@@ -67,3 +67,5 @@ include_once 'includes/messages.php';
 // Footer
 include_once 'includes/footer.php';
 ?>
+</body>
+</html>

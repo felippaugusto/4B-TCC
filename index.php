@@ -84,3 +84,5 @@ $productDatas = selectAllFromTable("tb_produtos");
 // Footer
 include_once 'includes/footer.php';
 ?>
+</body>
+</html>

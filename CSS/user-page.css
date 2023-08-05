@@ -47,12 +47,12 @@ body[data-theme="t-dark"] {
     gap: 1rem;
 }
 
-#changePassword label {
-    width: 95%;
+input#cep {
+    width: 61rem;
 }
 
-#containerSelectsAndInput {
-    align-items: start;
+#changePassword label {
+    width: 95%;
 }
 
 #containerSelectsUser {

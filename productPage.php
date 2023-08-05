@@ -64,3 +64,5 @@ $productSubCategory = selectAllFromTableWhere("tb_subcategorias", "cod_subcatego
 // Footer
 include_once 'includes/footer.php';
 ?>
+</body>
+</html>

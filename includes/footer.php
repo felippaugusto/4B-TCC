@@ -37,5 +37,3 @@
     <script src="JS/admin.js"></script>
     <script src="JS/utils.js"></script>
     <script src="JS/userPage.js"></script>
-</body>
-</html>

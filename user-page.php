@@ -12,6 +12,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     $datas = selectAllFromTableWhere("tb_usuarios", "cod_usuario", $id, "fetchAll", "código do cliente inválido");
+    $datasCityAndState = selectAllFromTable("tb_cidades");
 
     foreach ($datas as $data) {
         $dataNasc = date("d/m/Y", strtotime($data['data_nasc']));
@@ -110,52 +111,48 @@ if (isset($_GET['id'])) {
             <form action="php_actions/addUserAddress.php" method="POST" class="modelForm displayFlex" id="formUserAddress">
                 <input type="hidden" name="id" value="<?php echo $data['cod_usuario']; ?>">
 
+                <div>
+                    <label for="cep">CEP</label>
+                    <input type="text" name="cep" class="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep" value="<?php echo $data['cep']; ?>">
+                </div>
+
                 <div class="displayFlex">
-                    <div>
-                        <label for="cep">CEP</label>
-                        <input type="text" name="cep" class="cep" required placeholder="Informe seu CEP" title="CEP atual" id="cep" value="<?php echo $data['cep']; ?>">
-                    </div>
                     <div>
                         <label for="street">Rua</label>
                         <input type="text" name="street" required placeholder="Informe a rua" id="street" minlength="3" title="Nome da rua" value="<?php echo $data['rua']; ?>">
                     </div>
-                </div>
 
-                <div class="displayFlex">
                     <div>
                         <label for="neighborhood">Bairro</label>
                         <input type="text" name="neighborhood" required placeholder="Informe o bairro" id="neighborhood" minlength="3" title="Nome do bairro" value="<?php echo $data['bairro']; ?>">
                     </div>
+                </div>
+
+                <div class="displayFlex">
                     <div>
                         <label for="complement">Complemento</label>
                         <input type="text" name="complement" id="complement" placeholder="Informe o complemento" required title="Complemento atual" value="<?php echo $data['complemento']; ?>">
                     </div>
-                </div>
 
-                <div class="displayFlex" id="containerSelectsAndInput">
                     <div>
                         <label for="houseNumber">Numero da casa</label>
-                        <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência" value="<?php echo $data['numero_casa']; ?>">
+                        <input type="text" name="houseNumber" id="houseNumber" placeholder="Informe o número da residência" required title="Número da residência" value="<?php echo $data['numero_casa'] === 0 ? "" : $data['numero_casa']; ?>">
+                    </div>
+                </div>
+
+                <div class="displayFlex">
+                    <div class="select">
+                        <select name="selectCity" class="selectCategory" id="selectCity" disabled>
+                            <option selected>Selecione a cidade</option>
+                            <option value="" id="optionCity"></option>
+                        </select>
                     </div>
 
-                    <div class="displayFlex" id="containerSelectsUser">
-                        <div class="select">
-                            <select name="selectState" class="selectCategory">
-                                <option selected disabled>Selecione a cidade</option>
-                                <option value="Paraná">Paraná</option>
-                                <option value="Santa Catarina">Santa Catarina</option>
-                                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                            </select>
-                        </div>
-
-                        <div class="select">
-                            <select name="selectState" class="selectCategory">
-                                <option selected disabled>Selecione o estado</option>
-                                <option value="Paraná">Paraná</option>
-                                <option value="Santa Catarina">Santa Catarina</option>
-                                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                            </select>
-                        </div>
+                    <div class="select">
+                        <select name="selectState" class="selectCategory" id="selectState" disabled>
+                            <option selected disabled>Selecione o estado</option>
+                            <option value="" id="optionState"></option>
+                        </select>
                     </div>
                 </div>
 
@@ -198,3 +195,5 @@ if (isset($_GET['id'])) {
     // Footer
     include_once 'includes/footer.php';
 } ?>
+</body>
+</html>
