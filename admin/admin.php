@@ -89,7 +89,7 @@ include_once '../includes/headerAdmin.php';
                 // sql getting the data from the tb_usuarios
                 $datas = selectAllFromTable("tb_usuarios");
                 foreach ($datas as $data) {
-                    if ($data['email_cliente'] == "admin@admin.com" && $data['tipo_cadastro'] == 'A') {
+                    if ($data['email_usuario'] == "admin@admin.com" && $data['tipo_cadastro'] == 'A') {
                         // administrador
                     } else {
                 ?>

@@ -56,7 +56,7 @@ $productSubCategory = selectAllFromTableWhere("tb_subcategorias", "cod_subcatego
                 <p class="product-especification"><span>Modelo: </span><?php echo $productSubCategory['nome_subcategoria']; ?></p>
                 <p id="available">Produto disponível</p>
                 <p class="product-value">R$ <?php echo $productDatas['preco_atual_produto'] ?> reais</p>
-                <button id="btn-product-add">Adicionar ao carrinho</button>
+                <a href="shopping-cart.php?productcode=<?php echo $productDatas['cod_produto']; ?>" id="btn-product-add">Adicionar ao carrinho</a>
             </div>
         </div>
     </main>

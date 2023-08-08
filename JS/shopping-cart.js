@@ -6,6 +6,8 @@ const freightValue = $(".freight-value span");
 const totalValues = $(".paragraph-total span");
 const productValue = document.querySelectorAll(".product-value");
 const removeProduct = document.querySelectorAll(".remove-cart-product");
+const addMoreProducts = document.querySelectorAll(".addMore");
+const subtrationProducts = document.querySelectorAll(".subtration");
 let productValueTotal = 0;
 
 // function to get only numbers
@@ -55,4 +57,28 @@ productValue.forEach((value) => {
 
 addingEverythingCart();
 
+// addMore products amount
+addMoreProducts.forEach(e => {
+    e.addEventListener("click", () => {
+        elementProductAmount = e.nextElementSibling;
+        valueProductAmount = Number(e.nextElementSibling.textContent) + 1;
+        elementProductAmount.textContent = valueProductAmount;
+    })
+})
+
+// subtration products amount
+subtrationProducts.forEach(e => {
+    e.addEventListener("click", () => {
+        elementProductAmount = e.previousElementSibling;
+
+        if(elementProductAmount.textContent === "0") {
+            elementProductAmount.textContent = "0";
+            console.log("É igual a zero");
+        }
+        else {
+            valueProductAmount = Number(e.previousElementSibling.textContent) - 1;
+            elementProductAmount.textContent = valueProductAmount;
+        }
+    })
+})
 

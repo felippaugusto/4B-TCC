@@ -55,7 +55,7 @@ include_once 'includes/header.php';
             </div>
         </div>
 
-        <!-- choice of product kits  -->
+        <!-- change to the products kits  -->
         <div class="container-choose-hardwares">
             <div class="container-hardwares">
                 <p class="paragraph-hardwares">Processador</p>

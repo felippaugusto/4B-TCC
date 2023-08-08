@@ -12,10 +12,10 @@ if(isset($_POST['btnDeleteUsers'])) {
     $stmt->bindParam(':id', $id);
 
     if($stmt->execute()) {
-        header('Location: ../admin.php?Deletado');
+        header('Location: ../admin/admin.php?Deletado');
     }
     else {
-        header('Location: ../admin.php?Falha');
+        header('Location: ../admin/admin.php?Falha');
     }
 }
 else if(isset($_POST['btnDeleteProducts'])) {

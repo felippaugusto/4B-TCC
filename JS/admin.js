@@ -88,12 +88,13 @@ arrowCloseModal.click(() => {
 });
 
 // open modals for remove users, products, categories or sub-categories
+bodyHeight = body.outerHeight();
 openModalRemove.each(function () {
   $(this).click((tag) => {
     boxModel.append(`
                                 <div class="model-description displayFlex">
                                     <p id="paragraph"></p>
-                                    <form action="../php_actions/deletes.php" method="POST" class="displayFlex container-form">
+                                    <form action="../php_actions/deletes.php" method="POST" class="displayFlex container-form" id="containerFormAdmin">
                                         <input type="hidden" name="id" value="">
 
                                         <!-- button to delete the user -->
@@ -111,6 +112,9 @@ openModalRemove.each(function () {
     const modelParagraph = $(".model-description #paragraph");
     boxModel.attr("id", `modal${hrefOnlyNumber}`);
     inputHiddenCod.attr("value", hrefOnlyNumber);
+
+    // dynamic height relative to the body
+    boxModel.outerHeight(bodyHeight);
 
     if(tag.currentTarget.attributes.id.nodeValue == "users") {
         btnRemoveForm.attr("name", "btnDeleteUsers");

@@ -67,7 +67,7 @@ include_once 'includes/header.php';
                                 <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                                 <span class="displayFlex">
                                     <p class="addMore">+</p>
-                                    <p class="amount">1</p>
+                                    <p class="amount">2</p>
                                     <p class="subtration">-</p>
                                 </span>
                             </div>
@@ -84,7 +84,7 @@ include_once 'includes/header.php';
                                 <p class="product-description">Processador Ryzen 5 5600x 6 núcleos 12 threads frequência base 3.6Ghz turbo max. 4.6Ghz</p>
                                 <span class="displayFlex">
                                     <p class="addMore">+</p>
-                                    <p class="amount">1</p>
+                                    <p class="amount">3</p>
                                     <p class="subtration">-</p>
                                 </span>
                             </div>
@@ -105,17 +105,6 @@ include_once 'includes/header.php';
                             <input type="radio" name="freight" id="correio"><label for="correio">Correios PAC</label>
                             <span>R$ 50,00 reais</span>
                         </div>
-
-                        <!-- a possible implementation
-                             <div class="container-freight-two">
-                            <input type="radio" name="freight" id="Rede_sul"><label for="Rede_sul">Rede Sul</label>
-                            <span>R$ 50,00 reais</span>
-                        </div>
-
-                        <div class="container-freight-three">
-                            <input type="radio" name="freight" id="brasspress"><label for="brasspress">BrassPress</label>
-                            <span>R$ 50,00 reais</span>
-                        </div> -->
                     </div>
                 </div>
             </div>

@@ -32,3 +32,6 @@ window.addEventListener("scroll", () => {
         goToHeader.removeClass("active");
     }
 })
+
+// dynamic height relative to the body
+boxModelChooseHardwares.outerHeight(body.outerHeight());

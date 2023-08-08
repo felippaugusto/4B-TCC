@@ -68,7 +68,7 @@ $productDatas = selectAllFromTable("tb_produtos");
                         <p class="product-especification"><?php echo $productData['descricao_produto']; ?></p>
                         <p class="product-value">R$ <?php echo $productData['preco_atual_produto']; ?> reais</p>
                     </a>
-                    <a href="productPage.php?productId=<?php echo $productData['cod_produto']; ?>" class="add-cart">Adicionar ao carrinho</a>
+                    <a href="shopping-cart.php?productId=<?php echo $productData['cod_produto']; ?>" class="add-cart">Adicionar ao carrinho</a>
                 </td>
                 <?php }; ?>
             </tr>
@@ -77,8 +77,6 @@ $productDatas = selectAllFromTable("tb_produtos");
 
     <!-- button to navegate to header -->
     <a href="#header" class="goToHeader"><img src="IMAGES/includes/down-arrow-navegation-website.png" alt=""></a>
-
-    <!-- <p id="paragraphMessages">Sucesso ao cadastrar</p> -->
 
 <?php
 // Footer
