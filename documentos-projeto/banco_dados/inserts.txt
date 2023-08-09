@@ -5635,3 +5635,11 @@ INSERT INTO tb_kits (nome_kit, descricao_kit) VALUES
 ("kit Intel com Nvidia", "Kit com componentes baseados na marca Amd e Nvidia"),
 ("Kit Amd com Nvidia", "Kit com componentes baseados na marca Amd com Nvidia");
 COMMIT;
+
+INSERT INTO tb_produtos (descricao_produto, ativo, preco_atual_produto, id_categorias, id_subcategorias, imagem, nome_produto) VALUES
+("Intel Core I7-10700K 8 núcleos 16 threads frequência base 3.6GHz turbo max 5.1GHz", 'S', 1500.21, 1, 1, "I7-10700K.png", "I7 10700K"),
+("Ryzen 5 5600x 6 núcleos 12 threads 3.4GHz base turbo max 4.6GHz 16mb cache L3", 'S', 1100.21, 4, 2, "ryzen5-5600x.png", "ryzen 5 5600x"),
+("Ryzen 5 7600 6 núcleos 16 threads zen 4 clock base 3.8GHz turbo max 5.1GHz 32mb cache L3", 'S', 2000.21, 4, 4, "ryzen5-7600.png", "ryzen 5 7600"),
+("Memórias Kingston fury renegade 2x16 3600MHz CL16 ARGB", 'S', 752.99, 5, 7, "Kingston-fury-renegade.png", "Kingston Fury Renegade"),
+("Water cooler Cooler Master 240ml V2 RGB 70,000 horas 62 CFM (máx)", 'S', "550.32", 8, 10, "water-cooler-240ml-v2.png", "Water cooler Cooler Master 240ml V2");
+COMMIT;

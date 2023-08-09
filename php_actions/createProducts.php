@@ -16,18 +16,18 @@ if(isset($_POST['btn_submit_products'])) {
     $active = 'S';
 
    // verify file extension
-    $allowedFormats = array("png", "jpeg", "jpg", "gif", "svg");
+    $allowedFormats = array("png", "svg");
     $fileExtension = pathinfo($_FILES['productImage']['name'], PATHINFO_EXTENSION);
 
     if(empty($productName) || empty($valueProduct) || empty($productCategory) || empty($productSubcategory) || empty($productDescription)) {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Preencha todos os campos";
-        header('Location: ../registerCategoriesAndProducts.php');
+        header('Location: ../admin/registerCategoriesAndProducts.php');
     }
     else if(!in_array($fileExtension, $allowedFormats)) {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Formato de extensão para o produto inválido!";
-        header('Location: ../registerCategoriesAndProducts.php');
+        header('Location: ../admin/registerCategoriesAndProducts.php');
     }
     else {
         // get path the folder

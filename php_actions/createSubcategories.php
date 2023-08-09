@@ -13,7 +13,7 @@ if(isset($_POST['btn_submit_subcategories'])) {
     if(empty($categoryDescription)) {
         $_SESSION['messagesVerify'] = true;
         $_SESSION['messages'] = "Digite o nome da sub-categoria!";
-        header('Location: ../registerCategoriesAndProducts.php');
+        header('Location: ../admin/registerCategoriesAndProducts.php');
     }
     else {
         $sql = "INSERT INTO tb_subcategorias (nome_subcategoria) VALUES (:categoryDescription)";

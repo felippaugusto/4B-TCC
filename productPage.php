@@ -51,7 +51,7 @@ $productSubCategory = selectAllFromTableWhere("tb_subcategorias", "cod_subcatego
         <div class="container-product productPage displayFlex">
             <img src="IMAGES/product_images/<?php echo $productDatas['imagem']; ?>" alt="" class="hardware-image">
             <div class="product-description">
-                <p class="product-especification"><span>Descrição:</span><?php echo $productDatas['descricao_produto']; ?></p>
+                <p class="product-especification"><span>Descrição: </span><?php echo $productDatas['descricao_produto']; ?></p>
                 <p class="product-especification"><span>Marca: </span><?php echo $productCategory['nome_categoria']; ?></p>
                 <p class="product-especification"><span>Modelo: </span><?php echo $productSubCategory['nome_subcategoria']; ?></p>
                 <p id="available">Produto disponível</p>
