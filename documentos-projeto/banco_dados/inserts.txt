@@ -5615,7 +5615,7 @@ INSERT INTO tb_cidades (id, nome, estado) VALUES
 (5564, 'Xambioá', 'TO');
 COMMIT;
 
-INSERT INTO tb_usuarios (nome_usuario, sobrenome, cpf, data_nasc, telefone_usuario, email_usuario, senha, ativo, cep, complemento, rua, bairro, numero_casa, tipo_cadastro, codcid_fk) VALUES 
+INSERT INTO tb_usuarios (nome_usuario, sobrenome, cpf, data_nasc, telefone_usuario, email_usuario, senha, ativo, cep, complemento, rua, bairro, numero_casa, tipo_cadastro, codcid_fk) VALUES
 ("felipp", "piran", 20391832453, "2000-02-03", 45994325432, "felipp@gmail.com", "felipp123", 'S', 85345928, "casa", "pericles", "clarito", 214, 'C', 2999),
 ("luiza", "pereira", 54382934537, "1999-02-21", 45923401923, "luiza@gmail.com", "luiza321", 'S', 92183245, "casa", "pereirinha", "pato", 2192, 'C', 2232),
 ("leonardo", "lima", 93183429382, "2003-02-11", 45920192456, "leo@gmail.com", "leo12345", 'S', 55823212, "casa", "castelinho", "presidente lima", 2229, 'C', 1112),

@@ -1,41 +1,71 @@
-CREATE TABLE tb_cidades (
+DROP TABLE IF EXISTS tb_kits_produtos;
+DROP TABLE IF EXISTS tb_compras_prod;
+DROP TABLE IF EXISTS tb_compras;
+DROP TABLE IF EXISTS tb_kits;
+DROP TABLE IF EXISTS tb_produtos;
+DROP TABLE IF EXISTS tb_categorias;
+DROP TABLE IF EXISTS tb_subcategorias;
+DROP TABLE IF EXISTS tb_usuarios;
+DROP TABLE IF EXISTS tb_cidades;
+
+CREATE TABLE IF NOT EXISTS tb_cidades (
    id INT PRIMARY KEY AUTO_INCREMENT,
    nome VARCHAR(50) NOT NULL,
-   estado VARCHAR(2) CHECK (estadocid IN ('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RR','RO','RJ','RN','RS','SC','SP','SE','TO'))
+   estado VARCHAR(2) CHECK (estado IN ('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RR','RO','RJ','RN','RS','SC','SP','SE','TO'))
 );
 
-CREATE TABLE tb_usuarios (
+CREATE TABLE IF NOT EXISTS tb_usuarios (
    cod_usuario INT PRIMARY KEY AUTO_INCREMENT,
-   nome_cliente VARCHAR(70) NOT NULL,
+   nome_usuario VARCHAR(70) NOT NULL,
    sobrenome VARCHAR(70) NOT NULL,
-   cpf BIGINT NOT NULL UNIQUE,
+   cpf BIGINT(11) ZEROFILL NOT NULL UNIQUE,
    data_nasc DATE,
-   telefone_cliente BIGINT NOT NULL,
-   email_cliente VARCHAR(80) NOT NULL UNIQUE,
-   senha VARCHAR(50) NOT NULL,
-   ativo CHAR(1) CHECK(ativo IN ("S", "N")),
-   cep INT,
+   telefone_usuario BIGINT ZEROFILL NOT NULL,
+   email_usuario VARCHAR(80) NOT NULL UNIQUE,
+   senha VARCHAR(255) NOT NULL,
+   ativo CHAR(1) DEFAULT 'S' CHECK(ativo IN ('S', 'N')),
+   cep INT(8),
    complemento VARCHAR(20) NOT NULL,
    rua VARCHAR(50) NOT NULL,
    bairro VARCHAR(50) NOT NULL,
    numero_casa INT NOT NULL,
-   tipo_cadastro CHAR(1) CHECK(tipo_cadastro IN ("C", "A")),
+   tipo_cadastro CHAR(1) DEFAULT 'C' CHECK(tipo_cadastro IN ("C", "A")),
    codcid_fk INT,
-   CONSTRAINT u_person UNIQUE(cpf, email_cliente),
+   CONSTRAINT check_idade CHECK (data_nasc > 0 AND data_nasc <= 120),
+   CONSTRAINT u_person UNIQUE(cpf, email_usuario),
    CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES tb_cidades(id)
 );
 
-CREATE TABLE tb_categorias (
+CREATE TABLE IF NOT EXISTS tb_categorias (
    cod_categoria INT PRIMARY KEY AUTO_INCREMENT,
    nome_categoria VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE tb_subcategorias (
+CREATE TABLE IF NOT EXISTS tb_subcategorias (
    cod_subcategoria INT PRIMARY KEY AUTO_INCREMENT,
    nome_subcategoria VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE tb_compras (
+CREATE TABLE IF NOT EXISTS tb_produtos (
+    cod_produto INT PRIMARY KEY AUTO_INCREMENT,
+    nome_produto VARCHAR(50) NOT NULL,
+    descricao_produto VARCHAR(100) NOT NULL,
+    ativo CHAR(1) DEFAULT 'S' CHECK(ativo IN ('S', 'N')),
+    preco_atual_produto FLOAT(6, 2) NOT NULL,
+    id_categoria INT,
+    id_subcategoria INT,
+    imagem VARCHAR(255) NOT NULL,
+    CONSTRAINT fk_idcategorias FOREIGN KEY (id_categoria) REFERENCES tb_categorias (cod_categoria),
+    CONSTRAINT fk_idsubcategorias FOREIGN KEY (id_subcategoria) REFERENCES tb_subcategorias (cod_subcategoria)
+);
+
+CREATE TABLE IF NOT EXISTS tb_kits (
+    cod_kit INT PRIMARY KEY AUTO_INCREMENT,
+    nome_kit VARCHAR(50) NOT NULL,
+    descricao_kit VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tb_compras (
     cod_compra INT PRIMARY KEY AUTO_INCREMENT,
     cod_transportadora INT NOT NULL,
     codusuario_fk INT,
@@ -46,34 +76,16 @@ CREATE TABLE tb_compras (
     CONSTRAINT fk_codcliente FOREIGN KEY (codusuario_fk) REFERENCES tb_usuarios (cod_usuario)
 );
 
-CREATE TABLE tb_produtos (
-    cod_produto INT PRIMARY KEY AUTO_INCREMENT,
-    descricao_produto VARCHAR(100) NOT NULL,
-    ativo CHAR(1) NOT NULL CHECK (ativo IN ('S', 'N')),
-    preco_atual_produto FLOAT(6, 2) NOT NULL,
-    id_categorias INT,
-    id_subcategorias INT,
-    imagem VARCHAR(50) NOT NULL,
-    CONSTRAINT fk_idcategorias FOREIGN KEY (id_categorias) REFERENCES tb_categorias (cod_categoria),
-    CONSTRAINT fk_idsubcategorias FOREIGN KEY (id_subcategorias) REFERENCES tb_subcategorias (cod_subcategoria)
-);
-
-CREATE TABLE tb_compras_prod (
+CREATE TABLE IF NOT EXISTS tb_compras_prod (
     cod_carrinho_itens INT PRIMARY KEY AUTO_INCREMENT,
-    codprodutos_fk INT,
+    codproduto_fk INT,
     quantidade INT NOT NULL DEFAULT 1,
     valor_compra_produto FLOAT(6,2) NOT NULL,
-    CONSTRAINT codprodutos_fk FOREIGN KEY (codprodutos_fk) REFERENCES tb_produtos (cod_produto)
+    CONSTRAINT codprodutos_fk FOREIGN KEY (codproduto_fk) REFERENCES tb_produtos (cod_produto)
 );
 
-CREATE TABLE tb_kits (
-    cod_kit INT PRIMARY KEY AUTO_INCREMENT,
-    nome_kit VARCHAR(50) NOT NULL,
-    descricao_kit VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE tb_kits_produtos (
-    cod_kit_produtos INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS tb_kits_produtos (
+    cod_kit_produto INT PRIMARY KEY AUTO_INCREMENT,
     cod_kit INT,
     cod_produto INT,
     quantidade INT NOT NULL,
