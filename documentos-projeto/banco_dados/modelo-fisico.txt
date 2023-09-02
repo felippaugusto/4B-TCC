@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS tb_usuarios (
    sobrenome VARCHAR(70) NOT NULL,
    cpf BIGINT(11) ZEROFILL NOT NULL UNIQUE,
    data_nasc DATE,
-   telefone_usuario BIGINT ZEROFILL NOT NULL,
+   telefone_usuario BIGINT(11) ZEROFILL NOT NULL,
    email_usuario VARCHAR(80) NOT NULL UNIQUE,
    senha VARCHAR(255) NOT NULL,
    ativo CHAR(1) DEFAULT 'S' CHECK(ativo IN ('S', 'N')),
@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS tb_usuarios (
    numero_casa INT NOT NULL,
    tipo_cadastro CHAR(1) DEFAULT 'C' CHECK(tipo_cadastro IN ("C", "A")),
    codcid_fk INT,
-   CONSTRAINT check_idade CHECK (data_nasc > 0 AND data_nasc <= 120),
    CONSTRAINT u_person UNIQUE(cpf, email_usuario),
    CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES tb_cidades(id)
 );
@@ -73,6 +72,7 @@ CREATE TABLE IF NOT EXISTS tb_compras (
     data DATE NOT NULL,
     valor_entrega FLOAT(6, 2) NOT NULL,
     tipo_pagamento CHAR(1) CHECK(tipo_pagamento IN('D', 'P')),
+    status CHAR(1) CHECK(status IN ('R', 'A')),
     CONSTRAINT fk_codcliente FOREIGN KEY (codusuario_fk) REFERENCES tb_usuarios (cod_usuario)
 );
 

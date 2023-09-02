@@ -2809,7 +2809,7 @@ INSERT INTO tb_cidades (id, nome, estado) VALUES
 (2782, 'Vista Serrana', 'PB'),
 (2783, 'Zabelê', 'PB');
 
-INSERT INTO tb_cidades (codcid, nomecid, estadocid) VALUES
+INSERT INTO tb_cidades (id, nome, estado) VALUES
 (2784, 'Abatiá', 'PR'),
 (2785, 'Adrianópolis', 'PR'),
 (2786, 'Agudos do Sul', 'PR'),
@@ -3885,7 +3885,7 @@ INSERT INTO tb_cidades (id, nome, estado) VALUES
 (3848, 'Viçosa', 'RN'),
 (3849, 'Vila Flor', 'RN');
 
-INSERT INTO tb_cidades (codcid, nomecid, estadocid) VALUES
+INSERT INTO tb_cidades (id, nome, estado) VALUES
 (3850, 'Aceguá', 'RS'),
 (3851, 'Água Santa', 'RS'),
 (3852, 'Agudo', 'RS'),
@@ -4454,7 +4454,7 @@ INSERT INTO tb_cidades (id, nome, estado) VALUES
 (4411, 'São Luiz', 'RR'),
 (4412, 'Uiramutã', 'RR');
 
-INSERT INTO tb_cidades (codcid, nomecid, estadocid) VALUES
+INSERT INTO tb_cidades (id, nome, estado) VALUES
 (4413, 'Abdon Batista', 'SC'),
 (4414, 'Abelardo Luz', 'SC'),
 (4415, 'Agrolândia', 'SC'),
