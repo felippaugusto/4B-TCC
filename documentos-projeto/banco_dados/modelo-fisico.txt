@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS tb_usuarios (
    sobrenome VARCHAR(70) NOT NULL,
    cpf BIGINT(11) ZEROFILL NOT NULL UNIQUE,
    data_nasc DATE,
-   telefone_usuario BIGINT(11) ZEROFILL NOT NULL,
+   telefone_usuario BIGINT ZEROFILL NOT NULL,
    email_usuario VARCHAR(80) NOT NULL UNIQUE,
    senha VARCHAR(255) NOT NULL,
    ativo CHAR(1) DEFAULT 'S' CHECK(ativo IN ('S', 'N')),
@@ -31,8 +31,12 @@ CREATE TABLE IF NOT EXISTS tb_usuarios (
    numero_casa INT NOT NULL,
    tipo_cadastro CHAR(1) DEFAULT 'C' CHECK(tipo_cadastro IN ("C", "A")),
    codcid_fk INT,
+   CONSTRAINT check_idade CHECK (data_nasc > 0 AND data_nasc <= 120),
    CONSTRAINT u_person UNIQUE(cpf, email_usuario),
    CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES tb_cidades(id)
+    ON DELETE CASCADE
+        ON UPDATE CASCADE
+
 );
 
 CREATE TABLE IF NOT EXISTS tb_categorias (
@@ -54,8 +58,13 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
     id_categoria INT,
     id_subcategoria INT,
     imagem VARCHAR(255) NOT NULL,
-    CONSTRAINT fk_idcategorias FOREIGN KEY (id_categoria) REFERENCES tb_categorias (cod_categoria),
+    tipo_produto VARCHAR(50) NOT NULL,
+    CONSTRAINT fk_idcategorias FOREIGN KEY (id_categoria) REFERENCES tb_categorias (cod_categoria)
+        ON DELETE CASCADE
+            ON UPDATE CASCADE,
     CONSTRAINT fk_idsubcategorias FOREIGN KEY (id_subcategoria) REFERENCES tb_subcategorias (cod_subcategoria)
+        ON DELETE CASCADE
+            ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tb_kits (
@@ -72,8 +81,9 @@ CREATE TABLE IF NOT EXISTS tb_compras (
     data DATE NOT NULL,
     valor_entrega FLOAT(6, 2) NOT NULL,
     tipo_pagamento CHAR(1) CHECK(tipo_pagamento IN('D', 'P')),
-    status CHAR(1) CHECK(status IN ('R', 'A')),
     CONSTRAINT fk_codcliente FOREIGN KEY (codusuario_fk) REFERENCES tb_usuarios (cod_usuario)
+      ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tb_compras_prod (
@@ -82,6 +92,8 @@ CREATE TABLE IF NOT EXISTS tb_compras_prod (
     quantidade INT NOT NULL DEFAULT 1,
     valor_compra_produto FLOAT(6,2) NOT NULL,
     CONSTRAINT codprodutos_fk FOREIGN KEY (codproduto_fk) REFERENCES tb_produtos (cod_produto)
+        ON DELETE CASCADE
+            ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tb_kits_produtos (
@@ -89,6 +101,11 @@ CREATE TABLE IF NOT EXISTS tb_kits_produtos (
     cod_kit INT,
     cod_produto INT,
     quantidade INT NOT NULL,
-    CONSTRAINT fk_codkit FOREIGN KEY(cod_kit) REFERENCES tb_kits(cod_kit),
+    tipo_kit VARCHAR(5) CHECK(tipo_kit IN ("INTEL", "AMD"),
+    CONSTRAINT fk_codkit FOREIGN KEY(cod_kit) REFERENCES tb_kits(cod_kit)
+        ON DELETE CASCADE
+            ON UPDATE CASCADE,
     CONSTRAINT fk_produtos FOREIGN KEY(cod_produto) REFERENCES tb_produtos(cod_produto)
+        ON DELETE CASCADE
+            ON UPDATE CASCADE
 );

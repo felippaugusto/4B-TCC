@@ -5616,6 +5616,7 @@ INSERT INTO tb_cidades (id, nome, estado) VALUES
 COMMIT;
 
 INSERT INTO tb_usuarios (nome_usuario, sobrenome, cpf, data_nasc, telefone_usuario, email_usuario, senha, ativo, cep, complemento, rua, bairro, numero_casa, tipo_cadastro, codcid_fk) VALUES
+("admin", "admin", 99999999999, "2000-01-01", 45999999999, "admin@admin.com", "$2y$10$oq8M3qeI5kzSJJuUKiJVwe7g5l55x4QyX4d/CIID4WDQSU4bezbqy", 'S', 85231234, "casa", "admin", "admin", 111, 'A', 3000),
 ("felipp", "piran", 20391832453, "2000-02-03", 45994325432, "felipp@gmail.com", "felipp123", 'S', 85345928, "casa", "pericles", "clarito", 214, 'C', 2999),
 ("luiza", "pereira", 54382934537, "1999-02-21", 45923401923, "luiza@gmail.com", "luiza321", 'S', 92183245, "casa", "pereirinha", "pato", 2192, 'C', 2232),
 ("leonardo", "lima", 93183429382, "2003-02-11", 45920192456, "leo@gmail.com", "leo12345", 'S', 55823212, "casa", "castelinho", "presidente lima", 2229, 'C', 1112),
