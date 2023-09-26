@@ -59,12 +59,13 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
     id_subcategoria INT,
     imagem VARCHAR(255) NOT NULL,
     tipo_produto VARCHAR(50) NOT NULL,
+    modelo_hardware VARCHAR(5) NOT NULL CHECK(modelo_hardware IN('INTEL', 'AMD', 'MISTO')),
     CONSTRAINT fk_idcategorias FOREIGN KEY (id_categoria) REFERENCES tb_categorias (cod_categoria)
-        ON DELETE CASCADE
-            ON UPDATE CASCADE,
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT,
     CONSTRAINT fk_idsubcategorias FOREIGN KEY (id_subcategoria) REFERENCES tb_subcategorias (cod_subcategoria)
-        ON DELETE CASCADE
-            ON UPDATE CASCADE
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS tb_kits (
@@ -101,7 +102,7 @@ CREATE TABLE IF NOT EXISTS tb_kits_produtos (
     cod_kit INT,
     cod_produto INT,
     quantidade INT NOT NULL,
-    tipo_kit VARCHAR(5) CHECK(tipo_kit IN ("INTEL", "AMD"),
+    tipo_kit VARCHAR(5) CHECK(tipo_kit IN ("INTEL", "AMD")),
     CONSTRAINT fk_codkit FOREIGN KEY(cod_kit) REFERENCES tb_kits(cod_kit)
         ON DELETE CASCADE
             ON UPDATE CASCADE,
