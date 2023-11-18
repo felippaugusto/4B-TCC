@@ -106,9 +106,9 @@ CREATE TABLE IF NOT EXISTS tb_kits_produtos (
     tipo_kit VARCHAR(5) COMMENT '"Contém o tipo do kit especificado para compatibilidade na hora 
 da escolha do modelo Intel ou Amd"' CHECK(tipo_kit IN ("INTEL", "AMD")),
     CONSTRAINT fk_codkit FOREIGN KEY(cod_kit) REFERENCES tb_kits(cod_kit)
-        ON DELETE CASCADE
-            ON UPDATE CASCADE,
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT,
     CONSTRAINT fk_produtos FOREIGN KEY(cod_produto) REFERENCES tb_produtos(cod_produto)
-        ON DELETE CASCADE
-            ON UPDATE CASCADE
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT
 );
