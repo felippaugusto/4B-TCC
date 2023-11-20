@@ -1,0 +1,23 @@
+-- Cadastro de produto
+
+Memória Kingston Fury Beast
+150.00
+memória-ram-ddr4-kingston
+Memória RAM Kingston Fury Beast 8GB DDR4 3200MHz
+
+-- Cadastro de cliente
+
+Reginaldo
+Alberto
+54368172345
+23081982
+44992385947
+reginaldo@gmail.com
+albertinhoCarrasco123
+
+-- CEP para cadastro de endereço
+41321-470
+
+-- Login do administrador
+admin@admin.com
+administrator

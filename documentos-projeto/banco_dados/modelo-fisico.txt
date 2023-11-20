@@ -1,0 +1,114 @@
+DROP TABLE IF EXISTS tb_kits_produtos;
+DROP TABLE IF EXISTS tb_compras_prod;
+DROP TABLE IF EXISTS tb_compras;
+DROP TABLE IF EXISTS tb_kits;
+DROP TABLE IF EXISTS tb_produtos;
+DROP TABLE IF EXISTS tb_categorias;
+DROP TABLE IF EXISTS tb_subcategorias;
+DROP TABLE IF EXISTS tb_usuarios;
+DROP TABLE IF EXISTS tb_cidades;
+
+CREATE TABLE IF NOT EXISTS tb_cidades (
+   id INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Código da cidade',
+   nome VARCHAR(50) NOT NULL COMMENT 'Nome da cidade',
+   estado VARCHAR(2) COMMENT 'Nome do estado' CHECK (estado IN ('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RR','RO','RJ','RN','RS','SC','SP','SE','TO'))
+);
+
+CREATE TABLE IF NOT EXISTS tb_usuarios (
+   cod_usuario INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código do usuário',
+   nome_usuario VARCHAR(70) NOT NULL COMMENT 'Contém o nome do usuário',
+   sobrenome VARCHAR(70) NOT NULL COMMENT 'Contém o sobrenome do usuário',
+   cpf BIGINT(11) ZEROFILL NOT NULL UNIQUE COMMENT 'Contém o CPF do usuário',
+   data_nasc DATE COMMENT 'Contém a data de nascimento do usuário',
+   telefone_usuario BIGINT NOT NULL COMMENT 'Contém o telefone do usuário',
+   email_usuario VARCHAR(80) NOT NULL UNIQUE COMMENT 'Contém o email do usuário',
+   senha VARCHAR(255) NOT NULL COMMENT 'Contém a senha do usuário',
+   ativo CHAR(1) DEFAULT 'S' COMMENT 'Verifica se o usuário está ativo ou não' CHECK(ativo IN ('S', 'N')),
+   cep INT(8) COMMENT 'Contém o cep do usuário',
+   complemento VARCHAR(20) NOT NULL COMMENT 'Contém o complemento do usuário',
+   rua VARCHAR(50) NOT NULL COMMENT 'Contém o endereço da rua do usuário',
+   bairro VARCHAR(50) NOT NULL COMMENT 'Contém o endereço do bairro do usuário',
+   numero_casa INT NOT NULL COMMENT 'Contém o endereço do número da residência do usuário',
+   tipo_cadastro CHAR(1) DEFAULT 'C' COMMENT 'Verifica se o cadastrado é cliente ou administrador' CHECK(tipo_cadastro IN ("C", "A")),
+   codcid_fk INT COMMENT 'Contém o código da tabela cidades',
+   CONSTRAINT u_person UNIQUE(cpf, email_usuario),
+   CONSTRAINT fk_cidade FOREIGN KEY (codcid_fk) REFERENCES tb_cidades(id)
+    ON DELETE CASCADE
+        ON UPDATE CASCADE
+
+);
+
+CREATE TABLE IF NOT EXISTS tb_categorias (
+   cod_categoria INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código da categoria',
+   nome_categoria VARCHAR(50) NOT NULL COMMENT 'Contém o nome da categoria'
+);
+
+CREATE TABLE IF NOT EXISTS tb_subcategorias (
+   cod_subcategoria INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código da subcategoria',
+   nome_subcategoria VARCHAR(50) NOT NULL COMMENT 'Contém o nome da subcategoria'
+);
+
+CREATE TABLE IF NOT EXISTS tb_produtos (
+    cod_produto INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código do produto',
+    nome_produto VARCHAR(50) NOT NULL COMMENT 'Contém o nome do produto',
+    descricao_produto VARCHAR(100) NOT NULL COMMENT 'Contém a descrição do produto',
+    ativo CHAR(1) DEFAULT 'S' COMMENT 'Verifica se o produto está ativo ou não para o seu uso' CHECK(ativo IN ('S', 'N')),
+    preco_atual_produto FLOAT(6, 2) NOT NULL COMMENT 'Contém o preço atual do produto',
+    id_categoria INT COMMENT 'Contém o código da categoria da tabela categoria',
+    id_subcategoria INT COMMENT 'Contém o código da subcategoria da tabela subcategoria',
+    imagem VARCHAR(255) NOT NULL COMMENT 'Contém o caminho da imagem do produto',
+    modelo_hardware VARCHAR(5) NOT NULL COMMENT 'Contém a compatibilidade do produto com as marcas Intel e Amd' CHECK(modelo_hardware IN('INTEL', 'AMD', 'MISTO')),
+    CONSTRAINT fk_idcategorias FOREIGN KEY (id_categoria) REFERENCES tb_categorias (cod_categoria)
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT,
+    CONSTRAINT fk_idsubcategorias FOREIGN KEY (id_subcategoria) REFERENCES tb_subcategorias (cod_subcategoria)
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS tb_kits (
+    cod_kit INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código do kit',
+    nome_kit VARCHAR(50) NOT NULL COMMENT 'Contém o nome do kit',
+    descricao_kit VARCHAR(100) NOT NULL COMMENT 'Contém a descrição do kit'
+);
+
+CREATE TABLE IF NOT EXISTS tb_compras (
+    cod_compra INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código do pedido',
+    cod_transportadora INT NOT NULL COMMENT 'Contém o código da transportadora',
+    codusuario_fk INT COMMENT 'Contém o código do cliente da tabela usuarios',
+    tipo_frete CHAR(1) NOT NULL COMMENT 'Qual vai ser o tipo de frete' CHECK(tipo_frete IN ('R', 'P', 'C', 'T')),
+    data DATE NOT NULL COMMENT 'A data do pedido feito pelo usuário',
+    valor_entrega FLOAT(6, 2) NOT NULL COMMENT 'Valor da entrega',
+    tipo_pagamento CHAR(1) COMMENT 'Tipo de pagamento na hora da compra' CHECK(tipo_pagamento IN('D', 'P')),
+    status VARCHAR(9) NOT NULL CHECK(status IN('APROVADO', 'REPROVADO', 'PENDENTE')),
+    CONSTRAINT fk_codcliente FOREIGN KEY (codusuario_fk) REFERENCES tb_usuarios (cod_usuario)
+      ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tb_compras_prod (
+    cod_carrinho_itens INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código dos carrinhos',
+    codproduto_fk INT COMMENT 'Contém o código do produto da tabela produto',
+    quantidade INT NOT NULL DEFAULT 1 COMMENT 'Contém a quantidade do produto pedido',
+    valor_compra_produto FLOAT(6,2) NOT NULL COMMENT 'Contém o valor da compra do produto',
+    cod_compra_fk INT COMMENT 'Contém o código da compra feito pelo usuário',
+    CONSTRAINT codcompra_fk FOREIGN KEY(cod_compra_fk) REFERENCES tb_compras(cod_compra),
+    CONSTRAINT codprodutos_fk FOREIGN KEY (codproduto_fk) REFERENCES tb_produtos (cod_produto)
+        ON DELETE CASCADE
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tb_kits_produtos (
+    cod_kit_produto INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Contém o código do kits produto',
+    cod_kit INT COMMENT 'Contém o código do kit da tabela kit',
+    cod_produto INT COMMENT 'Contém o código do produto da tabela produto',
+    quantidade INT NOT NULL COMMENT 'Contém a quantidade do produto',
+    tipo_kit VARCHAR(5) COMMENT '"Contém o tipo do kit especificado para compatibilidade na hora 
+da escolha do modelo Intel ou Amd"' CHECK(tipo_kit IN ("INTEL", "AMD")),
+    CONSTRAINT fk_codkit FOREIGN KEY(cod_kit) REFERENCES tb_kits(cod_kit)
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT,
+    CONSTRAINT fk_produtos FOREIGN KEY(cod_produto) REFERENCES tb_produtos(cod_produto)
+        ON DELETE RESTRICT
+            ON UPDATE RESTRICT
+);
